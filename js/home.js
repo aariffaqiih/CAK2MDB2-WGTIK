@@ -128,8 +128,11 @@ function htmlEsc(s) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
+function sanitizeXmlString(s) {
+  return String(s || "").replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, "");
+}
 function xmlEsc(s) {
-  return String(s || "")
+  return sanitizeXmlString(String(s || ""))
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -216,7 +219,15 @@ function drawConnections() {
     }
   }
 }
+let animationActive = true;
+document.addEventListener("visibilitychange", () => {
+  animationActive = !document.hidden;
+  if (animationActive) {
+    requestAnimationFrame(animate);
+  }
+});
 function animate() {
+  if (!animationActive) return;
   ctx.clearRect(0, 0, vw, vh);
   for (const p of particles) {
     p.update();
@@ -407,8 +418,8 @@ function buildDailyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.shortLabel || sf.label
-          )}</span> <span class="detail-sub-value">${htmlEsc(
+            sf.label
+          )}:</span> <span class="detail-sub-value">${htmlEsc(
             obstacles[sf.key] || "\u2014"
           )}</span> </div>`
       )
@@ -424,8 +435,8 @@ function buildDailyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.shortLabel || sf.label
-          )}</span> <span class="detail-sub-value">${htmlEsc(
+            sf.label
+          )}:</span> <span class="detail-sub-value">${htmlEsc(
             reflection[sf.key] || ""
           )}</span> </div>`
       )
@@ -493,7 +504,7 @@ function buildWeeklyDetail(journal) {
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
             sf.label
-          )}</span> <span class="detail-sub-value">${htmlEsc(
+          )}:</span> <span class="detail-sub-value">${htmlEsc(
             semesterTarget[sf.key] || ""
           )}</span> </div>`
       )
@@ -511,8 +522,8 @@ function buildWeeklyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.shortLabel || sf.label
-          )}</span> <span class="detail-sub-value">${htmlEsc(
+            sf.label
+          )}:</span> <span class="detail-sub-value">${htmlEsc(
             obstacles[sf.key] || "\u2014"
           )}</span> </div>`
       )
@@ -524,8 +535,8 @@ function buildWeeklyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.shortLabel || sf.label
-          )}</span> <span class="detail-sub-value">${htmlEsc(
+            sf.label
+          )}:</span> <span class="detail-sub-value">${htmlEsc(
             evaluation[sf.key] || ""
           )}</span> </div>`
       )
