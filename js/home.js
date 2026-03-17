@@ -60,30 +60,6 @@ window.addEventListener("scroll", () => {
     scrollTicking = true;
   }
 });
-const navSections = [
-  { id: "_1_face", navId: "nav-home" },
-  { id: "_2_me", navId: "nav-tentang" },
-  { id: "_3_journal", navId: "nav-jurnal" },
-];
-window.addEventListener("scroll", () => {
-  navSections.forEach(({ id, navId }) => {
-    const el = document.getElementById(id);
-    const nav = document.getElementById(navId);
-    if (!el || !nav) return;
-    const rect = el.getBoundingClientRect();
-    const inView =
-      rect.top <= window.innerHeight / 2 &&
-      rect.bottom >= window.innerHeight / 2;
-    nav.classList.toggle("active", inView);
-  });
-});
-document.querySelectorAll("._0_page a").forEach((a) => {
-  a.addEventListener("click", (e) => {
-    e.preventDefault();
-    const target = document.querySelector(a.getAttribute("href"));
-    if (target) target.scrollIntoView({ behavior: "smooth" });
-  });
-});
 const greetings = [
   "Halo",
   "Bonjour",
@@ -128,11 +104,8 @@ function htmlEsc(s) {
     .replace(/"/g, "&quot;")
     .replace(/'/g, "&#39;");
 }
-function sanitizeXmlString(s) {
-  return String(s || "").replace(/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F]/g, "");
-}
 function xmlEsc(s) {
-  return sanitizeXmlString(String(s || ""))
+  return String(s || "")
     .replace(/&/g, "&amp;")
     .replace(/</g, "&lt;")
     .replace(/>/g, "&gt;")
@@ -219,15 +192,7 @@ function drawConnections() {
     }
   }
 }
-let animationActive = true;
-document.addEventListener("visibilitychange", () => {
-  animationActive = !document.hidden;
-  if (animationActive) {
-    requestAnimationFrame(animate);
-  }
-});
 function animate() {
-  if (!animationActive) return;
   ctx.clearRect(0, 0, vw, vh);
   for (const p of particles) {
     p.update();
@@ -418,8 +383,8 @@ function buildDailyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.label
-          )}:</span> <span class="detail-sub-value">${htmlEsc(
+            sf.shortLabel || sf.label
+          )}</span> <span class="detail-sub-value">${htmlEsc(
             obstacles[sf.key] || "\u2014"
           )}</span> </div>`
       )
@@ -435,8 +400,8 @@ function buildDailyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.label
-          )}:</span> <span class="detail-sub-value">${htmlEsc(
+            sf.shortLabel || sf.label
+          )}</span> <span class="detail-sub-value">${htmlEsc(
             reflection[sf.key] || ""
           )}</span> </div>`
       )
@@ -467,7 +432,7 @@ function buildWeeklyDetail(journal) {
     .map((col) => `<th>${htmlEsc(col.label)}</th>`)
     .join("");
   const totalHours = activities.reduce(
-    (sum, a) => sum + parseFloat(a.duration || 0),
+    (sum, a) => sum + (parseFloat(a.duration) || 0),
     0
   );
   const actRows = activities
@@ -504,7 +469,7 @@ function buildWeeklyDetail(journal) {
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
             sf.label
-          )}:</span> <span class="detail-sub-value">${htmlEsc(
+          )}</span> <span class="detail-sub-value">${htmlEsc(
             semesterTarget[sf.key] || ""
           )}</span> </div>`
       )
@@ -522,8 +487,8 @@ function buildWeeklyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.label
-          )}:</span> <span class="detail-sub-value">${htmlEsc(
+            sf.shortLabel || sf.label
+          )}</span> <span class="detail-sub-value">${htmlEsc(
             obstacles[sf.key] || "\u2014"
           )}</span> </div>`
       )
@@ -535,8 +500,8 @@ function buildWeeklyDetail(journal) {
       .map(
         (sf) =>
           `<div class="detail-sub-item"> <span class="detail-sub-label">${htmlEsc(
-            sf.label
-          )}:</span> <span class="detail-sub-value">${htmlEsc(
+            sf.shortLabel || sf.label
+          )}</span> <span class="detail-sub-value">${htmlEsc(
             evaluation[sf.key] || ""
           )}</span> </div>`
       )
@@ -657,6 +622,10 @@ async function downloadDocx(journal, type) {
     type === "daily"
       ? document.getElementById("btnDocx")
       : document.getElementById("weeklyDocxBtn");
+  if (typeof JSZip === "undefined") {
+    alert("Pustaka JSZip tidak tersedia. Unduhan DOCX tidak dapat dilakukan.");
+    return;
+  }
   btn.disabled = true;
   btn.innerHTML = '<i class="ph ph-spinner"></i> Memproses...';
   try {
@@ -943,7 +912,7 @@ async function buildDocxWeekly(journal) {
   return await zip.generateAsync({ type: "blob" });
 }
 function validateData() {
-  if (typeof JOURNALS === "undefined") return;
+  if (typeof JOURNALS === "undefined") return false;
   const violations = [];
   const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
   const idSet = new Set();
@@ -984,6 +953,17 @@ function validateData() {
               err: "Field wajib tidak ditemukan",
             });
         });
+        if (
+          journal.daily.reflection &&
+          typeof journal.daily.reflection.score !== "number"
+        ) {
+          violations.push({
+            id: journal.id,
+            date: journal.date,
+            field: "reflection.score",
+            err: "Skor harus berupa angka",
+          });
+        }
       }
     }
     if (journal.type === "weekly") {
@@ -1007,10 +987,33 @@ function validateData() {
               err: "Field wajib tidak ditemukan",
             });
         });
+        if (journal.weekly.activities) {
+          journal.weekly.activities.forEach((act, idx) => {
+            if (act.duration && isNaN(parseFloat(act.duration))) {
+              violations.push({
+                id: journal.id,
+                date: journal.date,
+                field: `activities[${idx}].duration`,
+                err: "Durasi harus berupa angka",
+              });
+            }
+          });
+        }
+        if (
+          journal.weekly.semesterTarget &&
+          typeof journal.weekly.semesterTarget.progress !== "number"
+        ) {
+          violations.push({
+            id: journal.id,
+            date: journal.date,
+            field: "semesterTarget.progress",
+            err: "Progress harus berupa angka",
+          });
+        }
       }
     }
   });
-  if (violations.length === 0) return;
+  if (violations.length === 0) return true;
   console.group(
     "%c\u26a0 data.js \u2014 Peringatan Integritas Data",
     "color:#b45309;font-weight:bold"
@@ -1054,9 +1057,18 @@ function validateData() {
   banner.appendChild(textBlock);
   banner.appendChild(closeBtn);
   document.body.prepend(banner);
+  return false;
 }
-validateData();
-renderJournals("all");
+const isValidData = validateData();
+if (!isValidData) {
+  const grid = document.getElementById("journalGrid");
+  if (grid) {
+    grid.innerHTML =
+      '<p style="grid-column:1/-1;text-align:center;color:red;padding:var(--size-3x04) 0;">Data jurnal tidak valid. Periksa konsol untuk detail.</p>';
+  }
+} else {
+  renderJournals("all");
+}
 const weeklyDetailContainer = document.getElementById("weeklyDetailContainer");
 const weeklyDetailContent = document.getElementById("weeklyDetailContent");
 const journalHeader = document.querySelector(".journal-header");
@@ -1064,7 +1076,7 @@ const journalGrid = document.getElementById("journalGrid");
 const backBtn = document.getElementById("backToGridBtn");
 function showWeeklyDetail(journal) {
   try {
-    toggleFaceMe(true);
+    toggleFaceMe(false);
     currentWeeklyJournal = journal;
     journalHeader.style.display = "none";
     journalGrid.style.display = "none";
@@ -1184,6 +1196,7 @@ function hideWeeklyDetail() {
   weeklyDetailContainer.style.display = "none";
   journalHeader.style.display = "";
   journalGrid.style.display = "";
+  toggleFaceMe(true);
   const url = new URL(window.location);
   url.searchParams.delete("week");
   history.pushState({}, "", url);
