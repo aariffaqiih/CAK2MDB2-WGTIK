@@ -129,35 +129,6 @@ a {
   text-decoration: none;
   cursor: pointer;
 }
-._0_page {
-  position: fixed;
-  top: var(--size-3x02);
-  left: 50%;
-  transform: translateX(-50%);
-  gap: var(--size-3x02);
-  padding: var(--size-3x-6) var(--size-3x01);
-  border-radius: 100vh;
-  backdrop-filter: blur(var(--size-1x06));
-  -webkit-backdrop-filter: blur(var(--size-1x06));
-  z-index: 100;
-  border: var(--size-1x01) solid var(--color-quaternary);
-  background: rgba(255, 255, 255, 0.7);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-._0_page p {
-  transition: color var(--transition-fast);
-  color: var(--color-tertiary);
-  cursor: pointer;
-  min-width: max-content;
-  font-size: var(--size-3x-6);
-  letter-spacing: 0.03em;
-}
-._0_page p:hover,
-._0_page p.active {
-  color: var(--color-primary);
-}
 ._1_face,
 ._2_me,
 ._4_link,
