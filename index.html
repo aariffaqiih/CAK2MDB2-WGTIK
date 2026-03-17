@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>'Aarif Faqiih - Journal</title>
+    <meta
+      name="description"
+      content="Catatan harian dan mingguan perjalanan belajar data science oleh 'Aarif Faqiih."
+    />
+    <link rel="stylesheet" href="./css/global.css" />
+    <link rel="stylesheet" href="./css/home.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+  </head>
+  <body>
+    <section class="_1_face" id="_1_face">
+      <canvas id="dataParticles"></canvas>
+      <h1>'Aarif <span>Faqiih</span></h1>
+      <p id="heroSubtitle">Junior Data Science Practitioner</p>
+    </section>
+    <section class="_2_me" id="_2_me">
+      <div class="text">
+        <h2 id="greeting">Hello</h2>
+        <p id="bio">Memuat...</p>
+      </div>
+      <div class="photo" id="photoEl">
+        <span class="photo-placeholder" aria-hidden="true">&#128100;</span>
+      </div>
+    </section>
+    <section class="_3_journal" id="_3_journal">
+      <div class="journal-header">
+        <h3>Jurnal Saya</h3>
+        <p>Catatan harian &amp; mingguan perjalanan belajar</p>
+        <div class="filter-pills">
+          <button class="filter-btn active" data-filter="all">Semua</button>
+          <button class="filter-btn" data-filter="daily">Harian</button>
+          <button class="filter-btn" data-filter="weekly">Mingguan</button>
+        </div>
+      </div>
+      <div class="journal-grid" id="journalGrid" aria-live="polite"></div>
+      <div
+        id="weeklyDetailContainer"
+        class="weekly-detail-container"
+        style="display: none"
+      >
+        <div class="detail-header">
+          <button id="backToGridBtn" class="back-btn">
+            <i class="ph ph-arrow-left"></i> Kembali
+          </button>
+          <div class="detail-actions">
+            <button class="btn-docx" id="weeklyDocxBtn">
+              <i class="ph ph-file-doc"></i> Unduh .docx
+            </button>
+            <button class="btn-print" id="weeklyPrintBtn">
+              <i class="ph ph-printer"></i> Cetak PDF
+            </button>
+          </div>
+        </div>
+        <div id="weeklyIdentity" class="weekly-identity"></div>
+        <div id="weeklyDetailContent" class="weekly-detail-content"></div>
+      </div>
+    </section>
+    <div class="_4_link">
+      <a
+        href="https://github.com/"
+        target="_blank"
+        rel="noopener"
+        aria-label="GitHub"
+      >
+        <i class="ph ph-github-logo"></i>
+      </a>
+      <a
+        href="https://linkedin.com/"
+        target="_blank"
+        rel="noopener"
+        aria-label="LinkedIn"
+      >
+        <i class="ph ph-linkedin-logo"></i>
+      </a>
+      <a href="/cdn-cgi/l/email-protection#9d" aria-label="Email">
+        <i class="ph ph-envelope-simple"></i>
+      </a>
+      <a
+        href="https://wa.me/"
+        target="_blank"
+        rel="noopener"
+        aria-label="WhatsApp"
+      >
+        <i class="ph ph-whatsapp-logo"></i>
+      </a>
+    </div>
+    <div
+      class="_journal-modal"
+      id="journalModal"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Detail Jurnal"
+    >
+      <div class="modal-backdrop" id="modalBackdrop"></div>
+      <div class="modal-panel" id="modalPanel">
+        <div class="modal-top-bar">
+          <div class="modal-label">
+            <span class="card-badge" id="modalBadge">Harian</span>
+            <span class="modal-date" id="modalDate"></span>
+          </div>
+          <button class="modal-close" id="modalClose" aria-label="Tutup">
+            <i class="ph ph-x"></i>
+          </button>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+        <div class="modal-footer">
+          <button class="btn-docx" id="btnDocx">
+            <i class="ph ph-file-doc"></i> Unduh .docx
+          </button>
+          <button class="btn-print" id="btnPrint">
+            <i class="ph ph-printer"></i> Cetak PDF
+          </button>
+        </div>
+      </div>
+    </div>
+    <div id="printArea" aria-hidden="true"></div>
+    <script src="./js/data.js"></script>
+    <script src="./js/template-schema.js"></script>
+    <script src="./js/home.js"></script>
+  </body>
+</html>
