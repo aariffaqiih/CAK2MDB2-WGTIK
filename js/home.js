@@ -1,7 +1,4 @@
 const JournalApp = (() => {
-  // ----------------------------------------------------------------------
-  // DEPENDENCY CHECK
-  // ----------------------------------------------------------------------
   const assertDependencies = () => {
     if (typeof JOURNALS === "undefined")
       throw new Error("JOURNALS tidak di-load dari data.js");
@@ -10,10 +7,6 @@ const JournalApp = (() => {
     if (typeof IDENTITY === "undefined")
       throw new Error("IDENTITY tidak di-load dari data.js");
   };
-
-  // ----------------------------------------------------------------------
-  // CONSTANTS (from TEMPLATE_SCHEMA + local)
-  // ----------------------------------------------------------------------
   const ANIM = TEMPLATE_SCHEMA.animation || {
     particleCount: 90,
     particleSizeVh: 0.3,
@@ -22,12 +15,7 @@ const JournalApp = (() => {
     greetingInterval: 2000,
     greetingFadeTime: 500,
   };
-
   const UI_TEXTS = TEMPLATE_SCHEMA.ui || {};
-
-  // ----------------------------------------------------------------------
-  // STATE
-  // ----------------------------------------------------------------------
   let state = {
     currentDailyJournal: null,
     currentWeeklyJournal: null,
@@ -42,12 +30,7 @@ const JournalApp = (() => {
     vh: window.innerHeight,
     pxPerVh: window.innerHeight / 100,
   };
-
-  // ----------------------------------------------------------------------
-  // UTILITIES
-  // ----------------------------------------------------------------------
   const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
-
   const htmlEsc = (s) => {
     if (s == null) return "";
     return String(s)
@@ -57,7 +40,6 @@ const JournalApp = (() => {
       .replace(/"/g, "&quot;")
       .replace(/'/g, "&#39;");
   };
-
   const xmlEsc = (s) => {
     if (s == null) return "";
     return String(s)
@@ -66,7 +48,6 @@ const JournalApp = (() => {
       .replace(/>/g, "&gt;")
       .replace(/"/g, "&quot;");
   };
-
   const isValidImageUrl = (url) => {
     if (!url) return false;
     try {
@@ -76,18 +57,15 @@ const JournalApp = (() => {
       return false;
     }
   };
-
   const getIdentity = () =>
     typeof IDENTITY !== "undefined"
       ? IDENTITY
       : { nama: "—", nim: "—", kelas: "—", bio: "", photo: "" };
-
   const getScrollProgress = (el) => {
     if (!el) return 0;
     const top = el.getBoundingClientRect().top;
     return clamp(1 - top / window.innerHeight, 0, 1);
   };
-
   const interpolateColor = (p, a, b, c) => {
     let r, g, bb;
     if (p <= 0.4) {
@@ -107,14 +85,12 @@ const JournalApp = (() => {
     }
     return `rgb(${r | 0},${g | 0},${bb | 0})`;
   };
-
   const applyVisualEffect = (el, p) => {
     if (!el) return;
     el.style.transform = `scale(${1 - p * 0.5})`;
     el.style.opacity = `${1 - p * 1.5}`;
     el.style.filter = `blur(${p * 3}vh)`;
   };
-
   const applyShadow = (el, p) => {
     if (!el) return;
     const col = interpolateColor(
@@ -125,10 +101,6 @@ const JournalApp = (() => {
     );
     el.style.boxShadow = `0 0 100vh ${col}`;
   };
-
-  // ----------------------------------------------------------------------
-  // GREETING ROTATION
-  // ----------------------------------------------------------------------
   const greetings = [
     "Halo",
     "Bonjour",
@@ -155,10 +127,8 @@ const JournalApp = (() => {
     "Xin chào",
     "Hello",
   ];
-
   let greetingIndex = 0;
   let greetingIntervalId = null;
-
   const startGreetingRotation = () => {
     const greetingEl = document.getElementById("greeting");
     if (!greetingEl) return;
@@ -172,10 +142,6 @@ const JournalApp = (() => {
       }, 500);
     }, ANIM.greetingInterval || 2000);
   };
-
-  // ----------------------------------------------------------------------
-  // PARTICLE ANIMATION
-  // ----------------------------------------------------------------------
   class Particle {
     constructor(canvasWidth, canvasHeight, pxPerVh, sizeVh) {
       this.pxPerVh = pxPerVh;
@@ -208,7 +174,6 @@ const JournalApp = (() => {
       ctx.fill();
     }
   }
-
   const initParticles = (canvas) => {
     if (!canvas) return;
     state.canvas = canvas;
@@ -225,7 +190,6 @@ const JournalApp = (() => {
       );
     }
   };
-
   const resizeCanvas = () => {
     if (!state.canvas) return;
     state.vw = window.innerWidth;
@@ -238,7 +202,6 @@ const JournalApp = (() => {
       p.size = ANIM.particleSizeVh * state.pxPerVh;
     });
   };
-
   const drawConnections = (ctx, particles, maxDist) => {
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
@@ -257,7 +220,6 @@ const JournalApp = (() => {
       }
     }
   };
-
   const animateParticles = () => {
     if (!state.ctx || !state.canvas) return;
     state.ctx.clearRect(0, 0, state.vw, state.vh);
@@ -269,10 +231,6 @@ const JournalApp = (() => {
     drawConnections(state.ctx, state.particles, maxDist);
     state.particleAnimationFrame = requestAnimationFrame(animateParticles);
   };
-
-  // ----------------------------------------------------------------------
-  // SCROLL EFFECTS
-  // ----------------------------------------------------------------------
   let scrollTicking = false;
   const handleScroll = () => {
     if (!scrollTicking) {
@@ -280,7 +238,6 @@ const JournalApp = (() => {
         const hero = document.getElementById("hero");
         const about = document.getElementById("about");
         const journal = document.getElementById("journal");
-
         if (hero && hero.style.display !== "none") {
           const mp = getScrollProgress(about);
           applyVisualEffect(hero, mp);
@@ -296,21 +253,15 @@ const JournalApp = (() => {
       scrollTicking = true;
     }
   };
-
-  // ----------------------------------------------------------------------
-  // RENDER JOURNALS
-  // ----------------------------------------------------------------------
   const renderJournals = (filter) => {
     const grid = document.getElementById("journalGrid");
     if (!grid) return;
-
     try {
       const sorted = [...JOURNALS].sort((a, b) =>
         b.dateSort.localeCompare(a.dateSort)
       );
       const filtered =
         filter === "all" ? sorted : sorted.filter((j) => j.type === filter);
-
       grid.innerHTML = "";
       if (filtered.length === 0) {
         const msg = document.createElement("p");
@@ -320,7 +271,6 @@ const JournalApp = (() => {
         grid.appendChild(msg);
         return;
       }
-
       filtered.forEach((journal, i) => {
         const card = buildCard(journal, i);
         grid.appendChild(card);
@@ -330,7 +280,6 @@ const JournalApp = (() => {
       grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:red;">Terjadi kesalahan saat memuat jurnal.</p>`;
     }
   };
-
   const buildCard = (journal, index) => {
     const card = document.createElement("article");
     card.className = "journal-card";
@@ -338,36 +287,25 @@ const JournalApp = (() => {
     card.setAttribute("role", "button");
     card.setAttribute("tabindex", "0");
     card.setAttribute("aria-label", `Buka jurnal ${journal.date}`);
-
-    // --- Meta section ---
     const meta = document.createElement("div");
     meta.className = "card-meta";
-
     const dateSpan = document.createElement("span");
     dateSpan.className = "card-date";
     dateSpan.textContent = journal.date;
-
     const badgeSpan = document.createElement("span");
     badgeSpan.className = `card-badge ${
       journal.type === "daily" ? "daily" : "weekly"
     }`;
     badgeSpan.textContent = journal.type === "daily" ? "Harian" : "Mingguan";
-
     meta.appendChild(dateSpan);
     meta.appendChild(badgeSpan);
-
-    // --- Divider ---
     const divider = document.createElement("div");
     divider.className = "card-divider";
-
     card.appendChild(meta);
     card.appendChild(divider);
-
-    // --- Content based on type ---
     if (journal.type === "daily") {
       const d = journal.daily || {};
       const targets = d.targets || [];
-
       const targetsDiv = document.createElement("div");
       targetsDiv.className = "card-targets";
       targets.slice(0, 2).forEach((t) => {
@@ -384,35 +322,27 @@ const JournalApp = (() => {
         targetsDiv.appendChild(more);
       }
       card.appendChild(targetsDiv);
-
       if (d.results) {
         const snippet = document.createElement("p");
         snippet.className = "card-snippet";
         snippet.textContent = d.results;
         card.appendChild(snippet);
       }
-
       const score = d.reflection?.score || 0;
       const scoreRow = document.createElement("div");
       scoreRow.className = "card-score";
-
       const scoreLabel = document.createElement("span");
       scoreLabel.className = "card-score-label";
       scoreLabel.textContent = UI_TEXTS.productivityLabel || "Produktivitas";
-
       const barContainer = document.createElement("div");
       barContainer.className = "card-score-bar";
-
       const barFill = document.createElement("div");
       barFill.className = "card-score-fill";
       barFill.style.width = `${score * 10}%`;
-
       barContainer.appendChild(barFill);
-
       const scoreNum = document.createElement("span");
       scoreNum.className = "card-score-num";
       scoreNum.textContent = `${score}/10`;
-
       scoreRow.appendChild(scoreLabel);
       scoreRow.appendChild(barContainer);
       scoreRow.appendChild(scoreNum);
@@ -420,7 +350,6 @@ const JournalApp = (() => {
     } else {
       const w = journal.weekly || {};
       const achievements = w.achievements || [];
-
       const achDiv = document.createElement("div");
       achDiv.className = "card-achievements";
       achievements.slice(0, 2).forEach((a) => {
@@ -437,47 +366,34 @@ const JournalApp = (() => {
         achDiv.appendChild(more);
       }
       card.appendChild(achDiv);
-
       const progress = w.semesterTarget?.progress || 0;
       const progRow = document.createElement("div");
       progRow.className = "card-progress-row";
-
       const progLabel = document.createElement("span");
       progLabel.className = "card-score-label";
       progLabel.textContent = UI_TEXTS.progressLabel || "Progress Semester";
-
       const progBar = document.createElement("div");
       progBar.className = "card-progress-bar";
-
       const progFill = document.createElement("div");
       progFill.className = "card-progress-fill";
       progFill.style.width = `${progress}%`;
-
       progBar.appendChild(progFill);
-
       const progNum = document.createElement("span");
       progNum.className = "card-progress-num";
       progNum.textContent = `${progress}%`;
-
       progRow.appendChild(progLabel);
       progRow.appendChild(progBar);
       progRow.appendChild(progNum);
       card.appendChild(progRow);
     }
-
-    // --- Read more ---
     const readMore = document.createElement("div");
     readMore.className = "card-read-more";
     readMore.textContent = UI_TEXTS.readMore || "Baca selengkapnya";
-
     const arrow = document.createElement("i");
     arrow.className = "ph ph-arrow-right";
     arrow.setAttribute("aria-hidden", "true");
     readMore.appendChild(arrow);
-
     card.appendChild(readMore);
-
-    // --- Event listeners ---
     const openHandler = () => {
       if (journal.type === "weekly") {
         showWeeklyDetail(journal);
@@ -489,13 +405,8 @@ const JournalApp = (() => {
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") openHandler();
     });
-
     return card;
   };
-
-  // ----------------------------------------------------------------------
-  // MODAL (DAILY)
-  // ----------------------------------------------------------------------
   const openModal = (journal) => {
     try {
       state.currentDailyJournal = journal;
@@ -503,16 +414,12 @@ const JournalApp = (() => {
       const body = document.getElementById("modalBody");
       const badge = document.getElementById("modalBadge");
       const dateEl = document.getElementById("modalDate");
-
       badge.className = "card-badge daily";
       badge.textContent = "Harian";
       dateEl.textContent = journal.date;
-
-      // Build content safely using DOM methods
-      body.innerHTML = ""; // clear
+      body.innerHTML = "";
       const sections = buildDailyDetailDOM(journal);
       sections.forEach((sec) => body.appendChild(sec));
-
       modal.classList.add("open");
       document.body.style.overflow = "hidden";
       body.scrollTop = 0;
@@ -522,25 +429,19 @@ const JournalApp = (() => {
       alert("Terjadi kesalahan saat membuka jurnal.");
     }
   };
-
   const closeModal = () => {
     const modal = document.getElementById("journalModal");
     modal.classList.remove("open");
     document.body.style.overflow = "";
     state.currentDailyJournal = null;
   };
-
-  // Build daily detail as DOM elements (safe)
   const buildDailyDetailDOM = (journal) => {
     const d = journal.daily || {};
     const sc = TEMPLATE_SCHEMA.daily.sections;
     if (!Array.isArray(sc) || sc.length < 6)
       throw new Error("Schema daily invalid");
     const [s0, s1, s2, s3, s4, s5] = sc;
-
     const sections = [];
-
-    // Helper to create section title
     const createTitle = (num, title, isWeekly = false) => {
       const div = document.createElement("div");
       div.className = "detail-section-title";
@@ -551,8 +452,6 @@ const JournalApp = (() => {
       div.appendChild(document.createTextNode(" " + title));
       return div;
     };
-
-    // Section 0: Targets
     const sec0 = document.createElement("div");
     sec0.className = "detail-section";
     sec0.appendChild(createTitle(s0.num, s0.title));
@@ -572,8 +471,6 @@ const JournalApp = (() => {
     });
     sec0.appendChild(list0);
     sections.push(sec0);
-
-    // Section 1: Activities table
     const sec1 = document.createElement("div");
     sec1.className = "detail-section";
     sec1.appendChild(createTitle(s1.num, s1.title));
@@ -609,8 +506,6 @@ const JournalApp = (() => {
     table.appendChild(tbody);
     sec1.appendChild(table);
     sections.push(sec1);
-
-    // Section 2: Results
     const sec2 = document.createElement("div");
     sec2.className = "detail-section";
     sec2.appendChild(createTitle(s2.num, s2.title));
@@ -619,8 +514,6 @@ const JournalApp = (() => {
     pResults.textContent = d.results || "";
     sec2.appendChild(pResults);
     sections.push(sec2);
-
-    // Section 3: Obstacles
     const sec3 = document.createElement("div");
     sec3.className = "detail-section";
     sec3.appendChild(createTitle(s3.num, s3.title));
@@ -641,8 +534,6 @@ const JournalApp = (() => {
     });
     sec3.appendChild(sub3);
     sections.push(sec3);
-
-    // Section 4: Solutions
     const sec4 = document.createElement("div");
     sec4.className = "detail-section";
     sec4.appendChild(createTitle(s4.num, s4.title));
@@ -651,8 +542,6 @@ const JournalApp = (() => {
     pSol.textContent = d.solutions || "";
     sec4.appendChild(pSol);
     sections.push(sec4);
-
-    // Section 5: Reflection
     const sec5 = document.createElement("div");
     sec5.className = "detail-section";
     sec5.appendChild(createTitle(s5.num, s5.title));
@@ -694,80 +583,73 @@ const JournalApp = (() => {
     scoreDiv.appendChild(scoreInfo);
     sec5.appendChild(scoreDiv);
     sections.push(sec5);
-
     return sections;
   };
-
-  // ----------------------------------------------------------------------
-  // WEEKLY DETAIL
-  // ----------------------------------------------------------------------
   const showWeeklyDetail = (journal) => {
     try {
       state.lastScrollPosition = window.scrollY;
       state.currentWeeklyJournal = journal;
       state.isWeeklyDetailVisible = true;
-
       const journalHeader = document.querySelector(".journal-header");
       const journalGrid = document.getElementById("journalGrid");
       const weeklyContainer = document.getElementById("weeklyDetailContainer");
       const weeklyContent = document.getElementById("weeklyDetailContent");
       const weeklyIdentity = document.getElementById("weeklyIdentity");
-
       journalHeader.style.display = "none";
       journalGrid.style.display = "none";
       weeklyContainer.style.display = "block";
-
-      weeklyContent.innerHTML = ""; // clear
+      let noteEl = weeklyContainer.querySelector(".weekly-note");
+      if (!noteEl) {
+        noteEl = document.createElement("div");
+        noteEl.className = "weekly-note";
+        noteEl.textContent =
+          "Untuk info lebih detail per hari, bisa klik tombol kembali dan baca jurnal harian yang ada.";
+        const header = weeklyContainer.querySelector(".detail-header");
+        header.insertAdjacentElement("afterend", noteEl);
+      } else {
+        noteEl.textContent =
+          "Untuk info lebih detail per hari, bisa klik tombol kembali dan baca jurnal harian yang ada.";
+      }
+      weeklyContent.innerHTML = "";
       const sections = buildWeeklyDetailDOM(journal);
       sections.forEach((sec) => weeklyContent.appendChild(sec));
-
-      weeklyIdentity.innerHTML = ""; // clear
+      weeklyIdentity.innerHTML = "";
       weeklyIdentity.appendChild(buildIdentityHTML());
-
       const url = new URL(window.location);
-      url.searchParams.set("week", journal.id);
+      url.searchParams.set("week", journal.weekly.weekNumber);
       history.pushState({}, "", url);
       document.title = `Jurnal Mingguan - ${journal.date}`;
-
       toggleFaceMe(false);
     } catch (e) {
       console.error("Gagal menampilkan detail mingguan:", e);
       alert("Terjadi kesalahan saat membuka jurnal mingguan.");
     }
   };
-
   const hideWeeklyDetail = () => {
     const weeklyContainer = document.getElementById("weeklyDetailContainer");
     const journalHeader = document.querySelector(".journal-header");
     const journalGrid = document.getElementById("journalGrid");
-
     weeklyContainer.style.display = "none";
     journalHeader.style.display = "";
     journalGrid.style.display = "";
-
     toggleFaceMe(true);
     state.isWeeklyDetailVisible = false;
     state.currentWeeklyJournal = null;
-
     const url = new URL(window.location);
     url.searchParams.delete("week");
     history.pushState({}, "", url);
     document.title = "'Aarif Faqiih - Journal";
-
     setTimeout(() => {
       window.scrollTo(0, state.lastScrollPosition);
     }, 0);
   };
-
   const buildWeeklyDetailDOM = (journal) => {
     const w = journal.weekly || {};
     const sc = TEMPLATE_SCHEMA.weekly.sections;
     if (!Array.isArray(sc) || sc.length < 6)
       throw new Error("Schema weekly invalid");
     const [s0, s1, s2, s3, s4, s5] = sc;
-
     const sections = [];
-
     const createTitle = (num, title, isWeekly = true) => {
       const div = document.createElement("div");
       div.className = "detail-section-title";
@@ -778,8 +660,6 @@ const JournalApp = (() => {
       div.appendChild(document.createTextNode(" " + title));
       return div;
     };
-
-    // Section 0: Activities table
     const sec0 = document.createElement("div");
     sec0.className = "detail-section";
     sec0.appendChild(createTitle(s0.num, s0.title, true));
@@ -813,7 +693,6 @@ const JournalApp = (() => {
       tbody.appendChild(tr);
       totalHours += parseFloat(a.duration) || 0;
     });
-    // total row
     const trTotal = document.createElement("tr");
     const tdTotalLabel = document.createElement("td");
     tdTotalLabel.colSpan = 3;
@@ -831,8 +710,6 @@ const JournalApp = (() => {
     table.appendChild(tbody);
     sec0.appendChild(table);
     sections.push(sec0);
-
-    // Section 1: Achievements
     const sec1 = document.createElement("div");
     sec1.className = "detail-section";
     sec1.appendChild(createTitle(s1.num, s1.title, true));
@@ -853,8 +730,6 @@ const JournalApp = (() => {
     });
     sec1.appendChild(list1);
     sections.push(sec1);
-
-    // Section 2: Semester Progress
     const sec2 = document.createElement("div");
     sec2.className = "detail-section";
     sec2.appendChild(createTitle(s2.num, s2.title, true));
@@ -890,8 +765,6 @@ const JournalApp = (() => {
     progRow.appendChild(progNum);
     sec2.appendChild(progRow);
     sections.push(sec2);
-
-    // Section 3: Obstacles
     const sec3 = document.createElement("div");
     sec3.className = "detail-section";
     sec3.appendChild(createTitle(s3.num, s3.title, true));
@@ -912,8 +785,6 @@ const JournalApp = (() => {
     });
     sec3.appendChild(sub3);
     sections.push(sec3);
-
-    // Section 4: Evaluation
     const sec4 = document.createElement("div");
     sec4.className = "detail-section";
     sec4.appendChild(createTitle(s4.num, s4.title, true));
@@ -934,8 +805,6 @@ const JournalApp = (() => {
     });
     sec4.appendChild(sub4);
     sections.push(sec4);
-
-    // Section 5: Next week plan
     const sec5 = document.createElement("div");
     sec5.className = "detail-section";
     sec5.appendChild(createTitle(s5.num, s5.title, true));
@@ -956,20 +825,16 @@ const JournalApp = (() => {
     });
     sec5.appendChild(list5);
     sections.push(sec5);
-
     return sections;
   };
-
   const buildIdentityHTML = () => {
     const id = getIdentity();
     const container = document.createElement("div");
     container.className = "weekly-identity";
-
     const header = document.createElement("div");
     header.className = "identity-header";
     header.textContent = UI_TEXTS.identityHeader || "Identitas Mahasiswa";
     container.appendChild(header);
-
     const addRow = (label, value) => {
       const row = document.createElement("div");
       row.className = "identity-row";
@@ -982,7 +847,6 @@ const JournalApp = (() => {
       row.appendChild(val);
       container.appendChild(row);
     };
-
     addRow("Nama:", id.nama);
     addRow("NIM:", id.nim);
     addRow("Kelas:", id.kelas || "—");
@@ -994,20 +858,14 @@ const JournalApp = (() => {
       "Tujuan:",
       UI_TEXTS.tujuan || "Web untuk memenuhi tugas Weekly Journal WGTIK."
     );
-
     return container;
   };
-
   const toggleFaceMe = (show) => {
     const hero = document.getElementById("hero");
     const about = document.getElementById("about");
     if (hero) hero.style.display = show ? "" : "none";
     if (about) about.style.display = show ? "" : "none";
   };
-
-  // ----------------------------------------------------------------------
-  // PRINT & DOCX
-  // ----------------------------------------------------------------------
   const handlePrintClick = () => {
     try {
       if (!state.currentDailyJournal)
@@ -1021,7 +879,6 @@ const JournalApp = (() => {
       alert("Gagal membuka preview cetak: " + err.message);
     }
   };
-
   const handleWeeklyPrintClick = () => {
     try {
       if (!state.currentWeeklyJournal)
@@ -1035,14 +892,12 @@ const JournalApp = (() => {
       alert("Gagal membuka preview cetak: " + err.message);
     }
   };
-
   const buildPrintDaily = (journal) => {
     const d = journal.daily || {};
     const id = getIdentity();
     const sc = TEMPLATE_SCHEMA.daily.sections;
     const [s0, s1, s2, s3, s4, s5] = sc;
     const idf = TEMPLATE_SCHEMA.identity;
-
     const colHeaders = s1.columns
       .map(
         (col) =>
@@ -1065,7 +920,6 @@ const JournalApp = (() => {
         : "";
     const emptyRows =
       '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
-
     const targets = d.targets || [];
     const targetItems = targets
       .map((t, i) => `<li>${s0.itemPrefix} ${i + 1}: ${htmlEsc(t)}</li>`)
@@ -1073,86 +927,68 @@ const JournalApp = (() => {
     const padTargets = Array.from({ length: Math.max(0, 3 - targets.length) })
       .map((_, i) => `<li>${s0.itemPrefix} ${targets.length + i + 1}: —</li>`)
       .join("");
-
-    return `
-      <div class="print-page">
-        <div class="print-title">${htmlEsc(
-          TEMPLATE_SCHEMA.daily.docTitle
-        )}</div>
-        <div class="print-identitas print-section">
-          <p><strong>${htmlEsc(idf.label)}</strong> <em>${htmlEsc(
-      idf.note
-    )}</em></p>
-          ${idf.fields
-            .map(
-              (f) => `<p>${htmlEsc(f.label)}: ${htmlEsc(id[f.key] || "—")}</p>`
-            )
-            .join("")}
-        </div>
-      </div>
-      <div class="print-page">
-        <div class="print-section">
-          <div class="print-section-header">${s0.num} ${htmlEsc(
-      s0.title
-    )} (${htmlEsc(journal.date)})</div>
-          <p class="print-note">${htmlEsc(s0.note)}</p>
-          <ul>${targetItems}${padTargets}</ul>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s1.num} ${htmlEsc(s1.title)}</div>
-          <table class="print-table">
-            <thead><tr>${colHeaders}</tr></thead>
-            <tbody>${hintRow}${actRows}${emptyRows}</tbody>
-          </table>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s2.num} ${htmlEsc(s2.title)}</div>
-          <p class="print-note">${htmlEsc(s2.note)}</p>
-          <p>${htmlEsc(d.results)}</p>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s3.num} ${htmlEsc(s3.title)}</div>
-          <ul>${s3.subFields
-            .map(
-              (sf) =>
-                `<li>${htmlEsc(sf.label)}: ${htmlEsc(
-                  d.obstacles?.[sf.key] || "—"
-                )}</li>`
-            )
-            .join("")}</ul>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s4.num} ${htmlEsc(s4.title)}</div>
-          <p>${htmlEsc(d.solutions)}</p>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s5.num} ${htmlEsc(s5.title)}</div>
-          <p class="print-note">${htmlEsc(s5.note)}</p>
-          <ul>
-            ${s5.subFields
-              .map(
-                (sf) =>
-                  `<li>${htmlEsc(sf.label)} ${htmlEsc(
-                    d.reflection?.[sf.key] || ""
-                  )}</li>`
-              )
-              .join("")}
-            <li>${htmlEsc(s5.scoreLabel)}: <span class="print-score">${htmlEsc(
+    return ` <div class="print-page"> <div class="print-title">${htmlEsc(
+      TEMPLATE_SCHEMA.daily.docTitle
+    )}</div> <div class="print-identitas print-section"> <p><strong>${htmlEsc(
+      idf.label
+    )}</strong> <em>${htmlEsc(idf.note)}</em></p> ${idf.fields
+      .map((f) => `<p>${htmlEsc(f.label)}: ${htmlEsc(id[f.key] || "—")}</p>`)
+      .join(
+        ""
+      )} </div> </div> <div class="print-page"> <div class="print-section"> <div class="print-section-header">${
+      s0.num
+    } ${htmlEsc(s0.title)} (${htmlEsc(
+      journal.date
+    )})</div> <p class="print-note">${htmlEsc(
+      s0.note
+    )}</p> <ul>${targetItems}${padTargets}</ul> </div> <div class="print-section"> <div class="print-section-header">${
+      s1.num
+    } ${htmlEsc(
+      s1.title
+    )}</div> <table class="print-table"> <thead><tr>${colHeaders}</tr></thead> <tbody>${hintRow}${actRows}${emptyRows}</tbody> </table> </div> <div class="print-section"> <div class="print-section-header">${
+      s2.num
+    } ${htmlEsc(s2.title)}</div> <p class="print-note">${htmlEsc(
+      s2.note
+    )}</p> <p>${htmlEsc(
+      d.results
+    )}</p> </div> <div class="print-section"> <div class="print-section-header">${
+      s3.num
+    } ${htmlEsc(s3.title)}</div> <ul>${s3.subFields
+      .map(
+        (sf) =>
+          `<li>${htmlEsc(sf.label)}: ${htmlEsc(
+            d.obstacles?.[sf.key] || "—"
+          )}</li>`
+      )
+      .join(
+        ""
+      )}</ul> </div> <div class="print-section"> <div class="print-section-header">${
+      s4.num
+    } ${htmlEsc(s4.title)}</div> <p>${htmlEsc(
+      d.solutions
+    )}</p> </div> <div class="print-section"> <div class="print-section-header">${
+      s5.num
+    } ${htmlEsc(s5.title)}</div> <p class="print-note">${htmlEsc(
+      s5.note
+    )}</p> <ul> ${s5.subFields
+      .map(
+        (sf) =>
+          `<li>${htmlEsc(sf.label)} ${htmlEsc(
+            d.reflection?.[sf.key] || ""
+          )}</li>`
+      )
+      .join("")} <li>${htmlEsc(
+      s5.scoreLabel
+    )}: <span class="print-score">${htmlEsc(
       d.reflection?.score
-    )}</span></li>
-          </ul>
-        </div>
-      </div>
-    `;
+    )}</span></li> </ul> </div> </div> `;
   };
-
   const buildPrintWeekly = (journal) => {
     const w = journal.weekly || {};
     const sc = TEMPLATE_SCHEMA.weekly.sections;
     const [s0, s1, s2, s3, s4, s5] = sc;
     const id = getIdentity();
     const idf = TEMPLATE_SCHEMA.identity;
-
     const colHeaders = s0.columns
       .map(
         (col) =>
@@ -1171,7 +1007,6 @@ const JournalApp = (() => {
       .join("");
     const emptyRows =
       '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
-
     const achItems = (w.achievements || [])
       .map((a) => `<li>✔ ${htmlEsc(a)}</li>`)
       .join("");
@@ -1180,7 +1015,6 @@ const JournalApp = (() => {
     })
       .map(() => "<li>✔ —</li>")
       .join("");
-
     const planItems = (w.nextWeekPlan || [])
       .map((t, i) => `<li>${s5.itemPrefix} ${i + 1}: ${htmlEsc(t)}</li>`)
       .join("");
@@ -1194,84 +1028,62 @@ const JournalApp = (() => {
           }: —</li>`
       )
       .join("");
-
-    return `
-      <div class="print-page">
-        <div class="print-title">${htmlEsc(
-          TEMPLATE_SCHEMA.weekly.docTitle
-        )}</div>
-        <div class="print-identitas print-section">
-          <p><strong>${htmlEsc(idf.label)}</strong> <em>${htmlEsc(
-      idf.note
-    )}</em></p>
-          ${idf.fields
-            .map(
-              (f) => `<p>${htmlEsc(f.label)}: ${htmlEsc(id[f.key] || "—")}</p>`
-            )
-            .join("")}
-        </div>
-      </div>
-      <div class="print-page">
-        <div class="print-section-header">${s0.num} ${htmlEsc(
-      s0.title
-    )} (${htmlEsc(journal.date)})</div>
-        <table class="print-table">
-          <thead><tr>${colHeaders}</tr></thead>
-          <tbody>${actRows}${emptyRows}</tbody>
-        </table>
-        <div class="print-section">
-          <div class="print-section-header">${s1.num} ${htmlEsc(s1.title)}</div>
-          <p class="print-note">${htmlEsc(s1.note)}</p>
-          <ul>${achItems}${padAch}</ul>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s2.num} ${htmlEsc(s2.title)}</div>
-          <ul>
-            <li>${htmlEsc(s2.subFields[0].label)}: ${htmlEsc(
-      w.semesterTarget?.target || ""
-    )}</li>
-            <li>${htmlEsc(s2.progressLabel)}: ${htmlEsc(
-      w.semesterTarget?.progress || 0
-    )}%</li>
-            <li>${htmlEsc(s2.subFields[1].label)}: ${htmlEsc(
+    return ` <div class="print-page"> <div class="print-title">${htmlEsc(
+      TEMPLATE_SCHEMA.weekly.docTitle
+    )}</div> <div class="print-identitas print-section"> <p><strong>${htmlEsc(
+      idf.label
+    )}</strong> <em>${htmlEsc(idf.note)}</em></p> ${idf.fields
+      .map((f) => `<p>${htmlEsc(f.label)}: ${htmlEsc(id[f.key] || "—")}</p>`)
+      .join(
+        ""
+      )} </div> </div> <div class="print-page"> <div class="print-section-header">${
+      s0.num
+    } ${htmlEsc(s0.title)} (${htmlEsc(
+      journal.date
+    )})</div> <table class="print-table"> <thead><tr>${colHeaders}</tr></thead> <tbody>${actRows}${emptyRows}</tbody> </table> <div class="print-section"> <div class="print-section-header">${
+      s1.num
+    } ${htmlEsc(s1.title)}</div> <p class="print-note">${htmlEsc(
+      s1.note
+    )}</p> <ul>${achItems}${padAch}</ul> </div> <div class="print-section"> <div class="print-section-header">${
+      s2.num
+    } ${htmlEsc(s2.title)}</div> <ul> <li>${htmlEsc(
+      s2.subFields[0].label
+    )}: ${htmlEsc(w.semesterTarget?.target || "")}</li> <li>${htmlEsc(
+      s2.progressLabel
+    )}: ${htmlEsc(w.semesterTarget?.progress || 0)}%</li> <li>${htmlEsc(
+      s2.subFields[1].label
+    )}: ${htmlEsc(
       w.semesterTarget?.note || ""
-    )}</li>
-          </ul>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s3.num} ${htmlEsc(s3.title)}</div>
-          <ul>${s3.subFields
-            .map(
-              (sf) =>
-                `<li>${htmlEsc(sf.label)}: ${htmlEsc(
-                  w.obstacles?.[sf.key] || "—"
-                )}</li>`
-            )
-            .join("")}</ul>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s4.num} ${htmlEsc(s4.title)}</div>
-          <p class="print-note">${htmlEsc(s4.note)}</p>
-          <ul>${s4.subFields
-            .map(
-              (sf) =>
-                `<li>${htmlEsc(sf.label)} ${htmlEsc(
-                  w.evaluation?.[sf.key] || ""
-                )}</li>`
-            )
-            .join("")}</ul>
-        </div>
-        <div class="print-section">
-          <div class="print-section-header">${s5.num} ${htmlEsc(s5.title)}</div>
-          <ul>${planItems}${padPlan}</ul>
-        </div>
-      </div>
-    `;
+    )}</li> </ul> </div> <div class="print-section"> <div class="print-section-header">${
+      s3.num
+    } ${htmlEsc(s3.title)}</div> <ul>${s3.subFields
+      .map(
+        (sf) =>
+          `<li>${htmlEsc(sf.label)}: ${htmlEsc(
+            w.obstacles?.[sf.key] || "—"
+          )}</li>`
+      )
+      .join(
+        ""
+      )}</ul> </div> <div class="print-section"> <div class="print-section-header">${
+      s4.num
+    } ${htmlEsc(s4.title)}</div> <p class="print-note">${htmlEsc(
+      s4.note
+    )}</p> <ul>${s4.subFields
+      .map(
+        (sf) =>
+          `<li>${htmlEsc(sf.label)} ${htmlEsc(
+            w.evaluation?.[sf.key] || ""
+          )}</li>`
+      )
+      .join(
+        ""
+      )}</ul> </div> <div class="print-section"> <div class="print-section-header">${
+      s5.num
+    } ${htmlEsc(
+      s5.title
+    )}</div> <ul>${planItems}${padPlan}</ul> </div> </div> `;
   };
-
-  // ----------------------------------------------------------------------
-  // DOCX HELPERS (same as before, but with error handling)
-  // ----------------------------------------------------------------------
   const wr = (text, opts = {}) => {
     const rpr = [
       opts.bold ? "<w:b/>" : "",
@@ -1286,7 +1098,6 @@ const JournalApp = (() => {
       text
     )}</w:t></w:r>`;
   };
-
   const wp = (runs, opts = {}) => {
     const ppr = [];
     if (opts.numId)
@@ -1316,7 +1127,6 @@ const JournalApp = (() => {
     const pprStr = ppr.length > 0 ? `<w:pPr>${ppr.join("")}</w:pPr>` : "";
     return `<w:p>${pprStr}${runs}</w:p>`;
   };
-
   const wtc = (text, width, isHeader = false) => {
     const shading = isHeader
       ? '<w:shd w:val="clear" w:color="auto" w:fill="E8E8E8"/>'
@@ -1326,15 +1136,12 @@ const JournalApp = (() => {
       { bold: isHeader, sz: 20 }
     )}</w:p></w:tc>`;
   };
-
   const wtr = (cells) => `<w:tr>${cells}</w:tr>`;
-
   const wtable = (colWidths, rows) => {
     const total = colWidths.reduce((a, b) => a + b, 0);
     const grid = colWidths.map((w) => `<w:gridCol w:w="${w}"/>`).join("");
     return `<w:tbl><w:tblPr><w:tblW w:w="${total}" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:left w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:right w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="444444"/></w:tblBorders><w:tblCellMar><w:top w:w="72" w:type="dxa"/><w:bottom w:w="72" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>${grid}</w:tblGrid>${rows}</w:tbl>`;
   };
-
   const emptyTr = (colWidths) => {
     const cells = colWidths
       .map(
@@ -1344,7 +1151,6 @@ const JournalApp = (() => {
       .join("");
     return `<w:tr><w:trPr><w:trHeight w:val="400" w:hRule="atLeast"/></w:trPr>${cells}</w:tr>`;
   };
-
   const wsh = (text) =>
     wp(wr(text, { bold: true, sz: 22 }), {
       before: 180,
@@ -1361,25 +1167,18 @@ const JournalApp = (() => {
   const widp = (text) =>
     wp(wr(text, { sz: 22 }), { borderLeft: true, before: 40, after: 40 });
   const wnp = (text) => wp(wr(text, { sz: 22 }), { before: 40, after: 80 });
-
   const makeDocumentXml = (bodyContent) =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14"><w:body>${bodyContent}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1418" w:bottom="1134" w:left="1418"/></w:sectPr></w:body></w:document>`;
-
   const makeNumberingXml = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:abstractNum w:abstractNumId="0"><w:lvl w:ilvl="0"><w:start w:val="1"/><w:numFmt w:val="bullet"/><w:lvlText w:val="•"/><w:lvlJc w:val="left"/><w:pPr><w:ind w:left="720" w:hanging="360"/></w:pPr><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/></w:rPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num></w:numbering>`;
-
   const makeStylesXml = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/><w:sz w:val="22"/><w:szCs w:val="22"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="120"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:styleId="Normal" w:default="1"><w:name w:val="Normal"/></w:style></w:styles>`;
-
   const makeContentTypes = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/></Types>`;
-
   const makeRels = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>`;
-
   const makeWordRels = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/></Relationships>`;
-
   const buildDocxDaily = async (journal) => {
     const d = journal.daily || {};
     const id = getIdentity();
@@ -1387,7 +1186,6 @@ const JournalApp = (() => {
     const [s0, s1, s2, s3, s4, s5] = sc;
     const idf = TEMPLATE_SCHEMA.identity;
     const cw = s1.columns.map((col) => col.docxWidth);
-
     const headerRow = wtr(
       s1.columns.map((col, i) => wtc(col.label, cw[i], true)).join("")
     );
@@ -1412,7 +1210,6 @@ const JournalApp = (() => {
           )
         : "";
     const emptyRows = emptyTr(cw) + emptyTr(cw);
-
     const titlePara = wp(
       wr(TEMPLATE_SCHEMA.daily.docTitle, { bold: true, sz: 28 }),
       { align: "center", before: 0, after: 200, titleBorder: true }
@@ -1420,7 +1217,6 @@ const JournalApp = (() => {
     const targets = d.targets || [];
     const paddedTargets = [...targets];
     while (paddedTargets.length < 3) paddedTargets.push("—");
-
     const body = [
       titlePara,
       wp(
@@ -1453,7 +1249,6 @@ const JournalApp = (() => {
       ),
       wbp(s5.scoreLabel + ": " + (d.reflection?.score || "")),
     ].join("\n");
-
     const zip = new JSZip();
     zip.file("[Content_Types].xml", makeContentTypes());
     zip.file("_rels/.rels", makeRels());
@@ -1463,7 +1258,6 @@ const JournalApp = (() => {
     zip.file("word/document.xml", makeDocumentXml(body));
     return await zip.generateAsync({ type: "blob" });
   };
-
   const buildDocxWeekly = async (journal) => {
     const w = journal.weekly || {};
     const sc = TEMPLATE_SCHEMA.weekly.sections;
@@ -1471,7 +1265,6 @@ const JournalApp = (() => {
     const id = getIdentity();
     const idf = TEMPLATE_SCHEMA.identity;
     const cw = s0.columns.map((col) => col.docxWidth);
-
     const headerRow = wtr(
       s0.columns.map((col, i) => wtc(col.label, cw[i], true)).join("")
     );
@@ -1487,7 +1280,6 @@ const JournalApp = (() => {
       )
       .join("");
     const emptyRows = emptyTr(cw) + emptyTr(cw);
-
     const titlePara = wp(
       wr(TEMPLATE_SCHEMA.weekly.docTitle, { bold: true, sz: 28 }),
       { align: "center", before: 0, after: 200, titleBorder: true }
@@ -1498,7 +1290,6 @@ const JournalApp = (() => {
     const nextWeekPlan = w.nextWeekPlan || [];
     const paddedPlan = [...nextWeekPlan];
     while (paddedPlan.length < 3) paddedPlan.push("—");
-
     const identitasParts = [
       titlePara,
       wp(
@@ -1509,7 +1300,6 @@ const JournalApp = (() => {
       ...idf.fields.map((f) => widp(f.label + ": " + (id[f.key] || "—"))),
       wp('<w:r><w:br w:type="page"/></w:r>', { before: 0, after: 0 }),
     ];
-
     const mainParts = [
       wsh(s0.num + " " + s0.title + " (" + journal.date + ")"),
       wtable(cw, headerRow + dataRows + emptyRows),
@@ -1534,9 +1324,7 @@ const JournalApp = (() => {
         wbp(s5.itemPrefix + " " + (i + 1) + ": " + t)
       ),
     ];
-
     const body = identitasParts.concat(mainParts).join("\n");
-
     const zip = new JSZip();
     zip.file("[Content_Types].xml", makeContentTypes());
     zip.file("_rels/.rels", makeRels());
@@ -1546,17 +1334,14 @@ const JournalApp = (() => {
     zip.file("word/document.xml", makeDocumentXml(body));
     return await zip.generateAsync({ type: "blob" });
   };
-
   const downloadDocx = async (journal, type) => {
     const btn =
       type === "daily"
         ? document.getElementById("btnDocx")
         : document.getElementById("weeklyDocxBtn");
     if (!btn) return;
-
     btn.disabled = true;
     btn.innerHTML = '<i class="ph ph-spinner"></i> Memproses...';
-
     try {
       if (typeof JSZip === "undefined") {
         throw new Error(
@@ -1583,7 +1368,6 @@ const JournalApp = (() => {
       btn.innerHTML = '<i class="ph ph-file-doc"></i> Unduh .docx';
     }
   };
-
   const handleDocxClick = () => {
     if (state.currentDailyJournal)
       downloadDocx(state.currentDailyJournal, "daily");
@@ -1592,15 +1376,10 @@ const JournalApp = (() => {
     if (state.currentWeeklyJournal)
       downloadDocx(state.currentWeeklyJournal, "weekly");
   };
-
-  // ----------------------------------------------------------------------
-  // VALIDATION
-  // ----------------------------------------------------------------------
   const validateData = () => {
     const violations = [];
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     const idSet = new Set();
-
     JOURNALS.forEach((journal) => {
       if (!dateRegex.test(journal.dateSort)) {
         violations.push({
@@ -1619,7 +1398,6 @@ const JournalApp = (() => {
         });
       }
       idSet.add(journal.id);
-
       if (journal.type === "daily") {
         if (!journal.daily) {
           violations.push({
@@ -1655,7 +1433,6 @@ const JournalApp = (() => {
           }
         }
       }
-
       if (journal.type === "weekly") {
         if (!journal.weekly) {
           violations.push({
@@ -1704,7 +1481,6 @@ const JournalApp = (() => {
         }
       }
     });
-
     if (violations.length) {
       console.group(
         "%c⚠️ data.js — Peringatan Integritas Data",
@@ -1714,7 +1490,6 @@ const JournalApp = (() => {
         console.warn(`[${v.id}] "${v.date}" → ${v.field}: ${v.err}`)
       );
       console.groupEnd();
-
       const banner = document.createElement("div");
       banner.id = "dataValidationBanner";
       banner.setAttribute("role", "alert");
@@ -1748,28 +1523,32 @@ const JournalApp = (() => {
       banner.appendChild(textBlock);
       banner.appendChild(closeBtn);
       document.body.prepend(banner);
-
       return false;
     }
     return true;
   };
-
-  // ----------------------------------------------------------------------
-  // URL HANDLER (popstate)
-  // ----------------------------------------------------------------------
   const loadFromURL = () => {
     const params = new URLSearchParams(window.location.search);
-    const weekId = params.get("week");
+    const weekParam = params.get("week");
     const isDetailVisible =
       document.getElementById("weeklyDetailContainer")?.style.display ===
       "block";
-
-    if (weekId) {
-      const journal = JOURNALS.find(
-        (j) => j.id === weekId && j.type === "weekly"
-      );
-      if (journal) {
-        if (!isDetailVisible) showWeeklyDetail(journal);
+    if (weekParam) {
+      const weekNumber = parseInt(weekParam, 10);
+      if (!isNaN(weekNumber)) {
+        const journal = JOURNALS.find(
+          (j) => j.type === "weekly" && j.weekly.weekNumber === weekNumber
+        );
+        if (journal) {
+          if (!isDetailVisible) showWeeklyDetail(journal);
+        } else {
+          if (isDetailVisible) hideWeeklyDetail();
+          else {
+            const url = new URL(window.location);
+            url.searchParams.delete("week");
+            history.replaceState({}, "", url);
+          }
+        }
       } else {
         if (isDetailVisible) hideWeeklyDetail();
         else {
@@ -1788,12 +1567,7 @@ const JournalApp = (() => {
       )
     );
   };
-
-  // ----------------------------------------------------------------------
-  // EVENT LISTENERS SETUP (delegation)
-  // ----------------------------------------------------------------------
   const setupEventListeners = () => {
-    // Filter pills - event delegation
     document.addEventListener("click", (e) => {
       const btn = e.target.closest(".filter-btn");
       if (btn) {
@@ -1805,20 +1579,14 @@ const JournalApp = (() => {
         renderJournals(state.activeFilter);
       }
     });
-
-    // Modal backdrop & close
     const backdrop = document.getElementById("modalBackdrop");
     const closeBtn = document.getElementById("modalClose");
     if (backdrop) backdrop.addEventListener("click", closeModal);
     if (closeBtn) closeBtn.addEventListener("click", closeModal);
-
-    // Print & Docx buttons (daily modal)
     const btnPrint = document.getElementById("btnPrint");
     const btnDocx = document.getElementById("btnDocx");
     if (btnPrint) btnPrint.addEventListener("click", handlePrintClick);
     if (btnDocx) btnDocx.addEventListener("click", handleDocxClick);
-
-    // Weekly detail buttons
     const weeklyPrint = document.getElementById("weeklyPrintBtn");
     const weeklyDocx = document.getElementById("weeklyDocxBtn");
     const backBtn = document.getElementById("backToGridBtn");
@@ -1826,32 +1594,19 @@ const JournalApp = (() => {
       weeklyPrint.addEventListener("click", handleWeeklyPrintClick);
     if (weeklyDocx) weeklyDocx.addEventListener("click", handleWeeklyDocxClick);
     if (backBtn) backBtn.addEventListener("click", hideWeeklyDetail);
-
-    // Scroll
     window.addEventListener("scroll", handleScroll);
-
-    // Popstate
     window.addEventListener("popstate", loadFromURL);
-
-    // Resize for canvas
     window.addEventListener("resize", resizeCanvas);
   };
-
-  // ----------------------------------------------------------------------
-  // INIT
-  // ----------------------------------------------------------------------
   const init = () => {
     try {
       assertDependencies();
-
-      // Load identity
       const id = getIdentity();
       const bioEl = document.getElementById("bio");
       if (bioEl) bioEl.textContent = id.bio || "";
-
       const photoEl = document.getElementById("photoEl");
       if (photoEl) {
-        photoEl.innerHTML = ""; // clear placeholder
+        photoEl.innerHTML = "";
         if (id.photo && isValidImageUrl(id.photo)) {
           const img = document.createElement("img");
           img.src = id.photo;
@@ -1868,15 +1623,11 @@ const JournalApp = (() => {
           photoEl.appendChild(placeholder);
         }
       }
-
-      // Particle canvas
       const canvas = document.getElementById("dataParticles");
       if (canvas) {
         initParticles(canvas);
         animateParticles();
       }
-
-      // Validate and render
       if (validateData()) {
         renderJournals(state.activeFilter);
       } else {
@@ -1886,7 +1637,6 @@ const JournalApp = (() => {
             '<p style="grid-column:1/-1;text-align:center;color:red;padding:var(--size-3x04) 0;">Data jurnal tidak valid. Periksa konsol untuk detail.</p>';
         }
       }
-
       loadFromURL();
       startGreetingRotation();
       setupEventListeners();
@@ -1895,9 +1645,6 @@ const JournalApp = (() => {
       document.body.innerHTML = `<p style="color:red; padding:20px;">⚠️ ${err.message}</p>`;
     }
   };
-
   return { init };
 })();
-
-// Start the app
 JournalApp.init();

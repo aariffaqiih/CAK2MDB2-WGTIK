@@ -1,29 +1,4 @@
-/**
- * @typedef {Object} SchemaField
- * @property {string} label
- * @property {string} key
- * @property {string} [shortLabel]
- * @property {string} [printWidth]
- * @property {number} [docxWidth]
- */
-
-/**
- * @typedef {Object} Section
- * @property {string} num
- * @property {string} title
- * @property {string} [note]
- * @property {string} field
- * @property {string} type
- * @property {string} [itemPrefix]
- * @property {SchemaField[]} [columns]
- * @property {SchemaField[]} [subFields]
- * @property {string} [progressLabel]
- * @property {string} [scoreLabel]
- * @property {boolean} [showTotal]
- */
-
 const TEMPLATE_SCHEMA = {
-  /** @type {{label:string, note:string, fields:SchemaField[]}} */
   identity: {
     label: "Identitas",
     note: "(Tulis di halaman pertama dari notes)",
@@ -32,10 +7,8 @@ const TEMPLATE_SCHEMA = {
       { label: "NIM", key: "nim" },
     ],
   },
-
   daily: {
     docTitle: "TEMPLATE JOURNAL HARIAN MAHASISWA",
-    /** @type {string[]} */
     requiredFields: [
       "targets",
       "activities",
@@ -44,7 +17,6 @@ const TEMPLATE_SCHEMA = {
       "solutions",
       "reflection",
     ],
-    /** @type {Section[]} */
     sections: [
       {
         num: "1️⃣",
@@ -131,10 +103,8 @@ const TEMPLATE_SCHEMA = {
       },
     ],
   },
-
   weekly: {
     docTitle: "TEMPLATE JOURNAL MINGGUAN MAHASISWA",
-    /** @type {string[]} */
     requiredFields: [
       "activities",
       "achievements",
@@ -143,7 +113,6 @@ const TEMPLATE_SCHEMA = {
       "evaluation",
       "nextWeekPlan",
     ],
-    /** @type {Section[]} */
     sections: [
       {
         num: "1️⃣",
@@ -235,8 +204,6 @@ const TEMPLATE_SCHEMA = {
       },
     ],
   },
-
-  // Konfigurasi teks UI (hardcoded, bisa diganti jika perlu i18n di masa depan)
   ui: {
     back: "Kembali",
     downloadDocx: "Unduh .docx",
@@ -253,8 +220,6 @@ const TEMPLATE_SCHEMA = {
     dosenPengampu: "Rakhmad Maulidi, S.Kom., M.Kom.",
     tujuan: "Web untuk memenuhi tugas Weekly Journal WGTIK.",
   },
-
-  // Konstanta animasi dan partikel
   animation: {
     particleCount: 90,
     particleSizeVh: 0.3,

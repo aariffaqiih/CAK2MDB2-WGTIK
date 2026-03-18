@@ -1,13 +1,3 @@
-/**
- * @typedef {Object} Identity
- * @property {string} nama
- * @property {string} nim
- * @property {string} kelas
- * @property {string} bio
- * @property {string} photo
- */
-
-/** @type {Identity} */
 const IDENTITY = {
   nama: "'Aarif Rahmaan Jalaluddin Faqiih",
   nim: "103112430182",
@@ -15,38 +5,6 @@ const IDENTITY = {
   bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi.",
   photo: "",
 };
-
-/**
- * @typedef {Object} JournalBase
- * @property {string} id
- * @property {'daily'|'weekly'} type
- * @property {string} date
- * @property {string} dateSort
- */
-
-/**
- * @typedef {Object} DailyJournal
- * @property {string[]} targets
- * @property {Array<{time:string, activity:string, output:string, status:string}>} activities
- * @property {string} results
- * @property {{teknis:string, nonTeknis:string, manajemenWaktu:string}} obstacles
- * @property {string} solutions
- * @property {{learned:string, improve:string, score:number}} reflection
- */
-
-/**
- * @typedef {Object} WeeklyJournal
- * @property {Array<{day:string, focus:string, output:string, duration:string}>} activities
- * @property {string[]} achievements
- * @property {{target:string, progress:number, note:string}} semesterTarget
- * @property {{akademik:string, teknis:string, pribadi:string}} obstacles
- * @property {{bestSuccess:string, biggestMistake:string, nextStrategy:string}} evaluation
- * @property {string[]} nextWeekPlan
- */
-
-/**
- * @type {Array<JournalBase & ({type:'daily', daily:DailyJournal} | {type:'weekly', weekly:WeeklyJournal})>}
- */
 const JOURNALS = [
   {
     id: "daily-2026-02-23",
@@ -362,7 +320,7 @@ const JOURNALS = [
         bestSuccess:
           "Berhasil meningkatkan performa model dari 0,72 ke 0,74 setelah menambahkan fitur dari tabel subsidiary.",
         biggestMistake:
-          "Kurang fokus saat kuliah IMK sehingga nilai tidak maksimal.",
+          "Kurang mendokumentasikan proses EDA secara rinci sejak awal.",
         nextStrategy:
           "Alokasikan waktu lebih untuk memahami heuristic search dan lanjutkan tuning model.",
       },
