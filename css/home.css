@@ -26,7 +26,6 @@
 .hero > p {
   font-size: var(--size-3x01);
   color: var(--color-tertiary);
-  letter-spacing: 0.06em;
   font-weight: 300;
 }
 .about {
@@ -112,7 +111,6 @@
   color: var(--color-tertiary);
   cursor: pointer;
   transition: all var(--transition-fast);
-  letter-spacing: 0.03em;
 }
 .filter-btn:hover {
   color: var(--color-primary);
@@ -173,7 +171,6 @@
   padding: calc(var(--size-3x-4) * 0.3) calc(var(--size-3x-4) * 0.8);
   border-radius: 100vh;
   font-weight: 500;
-  letter-spacing: 0.04em;
   text-transform: uppercase;
 }
 .card-badge.daily {
@@ -557,7 +554,6 @@
   border-bottom: calc(var(--size-1x01) * 2) solid var(--color-quaternary);
   font-size: var(--size-3x-6);
   text-transform: uppercase;
-  letter-spacing: 0.04em;
 }
 .detail-table td {
   padding: var(--size-3x-6) var(--size-3x-8);
@@ -731,7 +727,6 @@
   margin-bottom: var(--size-3x-4);
   color: #1a1a1a;
   text-transform: uppercase;
-  letter-spacing: 0.05em;
 }
 .weekly-identity .identity-row {
   display: flex;

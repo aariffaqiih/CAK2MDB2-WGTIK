@@ -3,7 +3,8 @@ const IDENTITY = {
   nim: "103112430182",
   kelas: "PS1IF-12-REG06",
   bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi.",
-  photo: "",
+  photo:
+    "https://media.licdn.com/dms/image/v2/D5603AQF_6_AR3OXybA/profile-displayphoto-scale_400_400/B56ZlSzn1HH8Ag-/0/1758030924397?e=1775692800&v=beta&t=mGwxVLsPyAj2A7UjrMRNRu1q5Ig5NxDz7zyhNIp7H4A",
 };
 const JOURNALS = [
   {
@@ -18,20 +19,20 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "10:30–12:00",
+          time: "10:30-12:00",
           activity: "Kuliah Dasar Kecerdasan Artificial",
           output: "Memahami materi pengenalan AI dan konsep searching",
           status: "✓",
         },
         {
-          time: "13:00–15:00",
+          time: "13:00-15:00",
           activity: "Eksplorasi dataset Home Credit",
           output:
             "Memahami struktur data, identifikasi missing values, insight awal",
           status: "✓",
         },
         {
-          time: "15:30–17:00",
+          time: "15:30-17:00",
           activity: "Membaca dokumentasi pandas dan matplotlib",
           output: "Catatan ringkas",
           status: "Proses",
@@ -67,21 +68,21 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08:00–09:30",
+          time: "08:00-09:30",
           activity: "Kuliah Interaksi Manusia dan Komputer",
           output:
             "Memahami prinsip dasar IMK, konsep usability, dan user-centered design",
           status: "✓",
         },
         {
-          time: "10:00–12:00",
+          time: "10:00-12:00",
           activity:
             "Data cleaning: menangani missing values pada dataset aplikasi",
           output: "Imputasi sederhana pada kolom numerik dan kategorik",
           status: "✓",
         },
         {
-          time: "13:00–15:00",
+          time: "13:00-15:00",
           activity: "Mengerjakan tugas IMK",
           output: "Membuat makalah singkat tentang prinsip IMK",
           status: "Proses",
@@ -118,20 +119,20 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08:00–09:30",
+          time: "08:00-09:30",
           activity: "Kuliah Strategi Algoritma",
           output: "Memahami notasi Big O, Theta, Omega beserta contoh",
           status: "✓",
         },
         {
-          time: "10:00–11:00",
+          time: "10:00-11:00",
           activity: "Konsultasi dengan Pak Affan",
           output:
             "Mendapat saran untuk fokus pada EDA dan analisis data terlebih dahulu",
           status: "✓",
         },
         {
-          time: "13:00–16:00",
+          time: "13:00-16:00",
           activity:
             "Project: feature engineering dasar (membuat agregat dari tabel lain)",
           output:
@@ -167,19 +168,19 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "09:00–11:00",
+          time: "09:00-11:00",
           activity: "Encoding variabel kategorik pada dataset",
           output: "Menggunakan one-hot encoding untuk beberapa fitur",
           status: "✓",
         },
         {
-          time: "13:00–16:00",
+          time: "13:00-16:00",
           activity: "Membangun model baseline dengan Logistic Regression",
           output: "Model selesai dengan ROC-AUC 0,72",
           status: "✓",
         },
         {
-          time: "16:30–17:30",
+          time: "16:30-17:30",
           activity: "Evaluasi model dan mencatat hasil",
           output: "Confusion matrix, classification report",
           status: "Proses",
@@ -215,26 +216,26 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "14:30–16:30",
+          time: "14:30-16:30",
           activity: "Kuliah Pemrograman Berorientasi Objek",
           output: "Memahami kelas, objek, inheritance, polymorphism",
           status: "✓",
         },
         {
-          time: "10:00–12:00",
+          time: "10:00-12:00",
           activity: "Project: join data subsidiary dan encoding ulang",
           output:
             "Berhasil menambahkan fitur baru dari tabel subsidiary, encoding ulang",
           status: "✓",
         },
         {
-          time: "13:00–14:00",
+          time: "13:00-14:00",
           activity: "Training ulang model dengan fitur baru",
           output: "ROC-AUC meningkat menjadi 0,74",
           status: "✓",
         },
         {
-          time: "18:00–20:00",
+          time: "18:00-20:00",
           activity: "Buka bersama komunitas literasi",
           output: "Diskusi buku dan berbagi pengalaman",
           status: "✓",
@@ -261,7 +262,7 @@ const JOURNALS = [
   {
     id: "weekly-2026-02-27",
     type: "weekly",
-    date: "Minggu ke-1 · 23–27 Februari 2026",
+    date: "Minggu ke-1 · 23-27 Februari 2026",
     dateSort: "2026-02-27",
     weekly: {
       weekNumber: 1,
@@ -343,13 +344,13 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "10:30 – 12:00",
+          time: "10:30 - 12:00",
           activity: "Mata kuliah dasar kecerdasan artificial",
           output: "Memahami konsep searching (BFS, DFS) dan catatan kuliah",
           status: "✓",
         },
         {
-          time: "13:00 – 16:00",
+          time: "13:00 - 16:00",
           activity:
             "Mengerjakan project data scientist: membuat PPT dan upload ke GitHub",
           output: "PPT selesai, repository GitHub terupdate",
@@ -387,20 +388,20 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08.00–09.30",
+          time: "08.00-09.30",
           activity: "Mata kuliah interaksi manusia dan komputer.",
           output: "Memahami konsep user-centered design (UCD) dan tahapannya",
           status: "✓",
         },
         {
-          time: "09:30 – 11:00",
+          time: "09:30 - 11:00",
           activity:
             "Mata kuliah pemrograman berorientasi objek. Praktikum install java dan apache netbeans.",
           output: "Selesai",
           status: "Selesai",
         },
         {
-          time: "11:00 – 12:00",
+          time: "11:00 - 12:00",
           activity: "Mengerjakan quiz week 1 IMK",
           output: "Quiz week 1 IMK selesai dikerjakan",
           status: "✓",
@@ -435,13 +436,13 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08.00–09.30",
+          time: "08.00-09.30",
           activity: "Mata kuliah strategi algoritma.",
           output: "Memahami konsep brute force, contoh-contoh algoritma",
           status: "✓",
         },
         {
-          time: "10:00 – 12:00",
+          time: "10:00 - 12:00",
           activity: "Mengerjakan latihan soal algoritma brute force",
           output: "Latihan soal brute force selesai",
           status: "✓",
@@ -489,7 +490,7 @@ const JOURNALS = [
           status: "✓",
         },
         {
-          time: "15:30 – 16:30",
+          time: "15:30 - 16:30",
           activity: "Mengerjakan quiz 1 jaringan komputer",
           output: "Quiz 1 jaringan komputer selesai",
           status: "✓",
@@ -526,19 +527,19 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "09:30 – 11:00",
+          time: "09:30 - 11:00",
           activity: "Mata kuliah wawasan global TIK",
           output: "Memahami materi wawasan global TIK",
           status: "✓",
         },
         {
-          time: "14:30 – 16:00",
+          time: "14:30 - 16:00",
           activity: "Kelas teori pemrograman berorientasi objek.",
           output: "Memahami materi PBO (konsep class, object)",
           status: "✓",
         },
         {
-          time: "16:30 – 19:00",
+          time: "16:30 - 19:00",
           activity:
             "Mengerjakan quiz PBO minggu 1 dan membuat model AI dengan Teachable Machine",
           output: "Quiz PBO selesai, model AI deteksi ekspresi wajah terlatih",
@@ -566,7 +567,7 @@ const JOURNALS = [
   {
     id: "weekly-2026-03-06",
     type: "weekly",
-    date: "Minggu ke-2 · 2–6 Maret 2026",
+    date: "Minggu ke-2 · 2-6 Maret 2026",
     dateSort: "2026-03-06",
     weekly: {
       weekNumber: 2,
@@ -630,6 +631,84 @@ const JOURNALS = [
         "Memahami konsep algoritma greedy di strategi algoritma.",
         "Mempersiapkan praktikum jaringan komputer selanjutnya.",
       ],
+    },
+  },
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  // ###################################################################################################################
+  {
+    id: "daily-2026-03-19",
+    type: "daily",
+    date: "19 Maret 2026",
+    dateSort: "2026-03-19",
+    daily: {
+      targets: [
+        "Menyelesaikan modul 3 & 4 praktikum Jaringan Komputer",
+        "Memahami dan mencatat materi week 3 mata kuliah Jaringan Komputer",
+        "Mengulas kembali materi week 1 - 3 mata kuliah Pemrograman Berorientasi Objek",
+      ],
+      activities: [
+        {
+          time: "06:30 - 08:30",
+          activity: "Mengerjakan modul 3 & 4 praktikum Jaringan Komputer",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "09:00 - 12:30",
+          activity: "Praktikum Jaringan Komputer",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "12:30 - 15:30",
+          activity: "Kelas teori Jaringan Komputer",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Belajar materi week 3 mata kuliah Jaringan Komputer",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "20:00 - 22:00",
+          activity:
+            "Belajar materi week 1 - 3 mata kuliah Pemrograman Berorientasi Objek",
+          output: "#############",
+          status: "#############",
+        },
+      ],
+      results: "#############",
+      obstacles: {
+        teknis: "#############",
+        nonTeknis: "#############",
+        manajemenWaktu: "#############",
+      },
+      solutions: "#############",
+      reflection: {
+        learned: "#############",
+        improve: "#############",
+        score: 0,
+      },
     },
   },
 ];

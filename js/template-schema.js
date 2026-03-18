@@ -99,7 +99,7 @@ const TEMPLATE_SCHEMA = {
             shortLabel: "Tingkatkan",
           },
         ],
-        scoreLabel: "Skor produktivitas hari ini (1–10)",
+        scoreLabel: "Skor produktivitas hari ini (1-10)",
       },
     ],
   },

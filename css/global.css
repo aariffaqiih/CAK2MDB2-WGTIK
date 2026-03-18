@@ -16,7 +16,7 @@
   --size-1x06: calc(1vh * 0.6);
   --size-3x-1: calc(3vh * 0.1);
   --size-3x-4: calc(3vh * 0.4);
-  --size-3x-6: calc(3vh * 0.6);
+  --size-3x-6: calc(3vh * 0.5);
   --size-3x-8: calc(3vh * 0.8);
   --size-3x01: calc(3vh * 1);
   --size-3x_2: calc(3vh * 1.2);
@@ -48,7 +48,6 @@
   font-family: "Literata", serif;
   font-optical-sizing: auto;
   font-style: normal;
-  cursor: default;
   text-decoration: none;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -193,7 +192,6 @@ a {
     border-bottom: 2pt solid #000;
     padding-bottom: 8pt;
     text-transform: uppercase;
-    letter-spacing: 0.05em;
   }
   .print-section {
     margin-bottom: 14pt;

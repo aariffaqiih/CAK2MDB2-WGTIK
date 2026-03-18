@@ -916,7 +916,7 @@ const JournalApp = (() => {
       .join("");
     const hintRow =
       d.activities?.length === 0
-        ? "<tr><td>08.00–09.30</td><td></td><td></td><td></td></tr>"
+        ? "<tr><td>08.00-09.30</td><td></td><td></td><td></td></tr>"
         : "";
     const emptyRows =
       '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
@@ -1203,7 +1203,7 @@ const JournalApp = (() => {
     const hintRow =
       activities.length === 0
         ? wtr(
-            wtc("08.00–09.30", cw[0]) +
+            wtc("08.00-09.30", cw[0]) +
               wtc("", cw[1]) +
               wtc("", cw[2]) +
               wtc("", cw[3])
