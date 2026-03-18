@@ -1,3 +1,13 @@
+/**
+ * @typedef {Object} Identity
+ * @property {string} nama
+ * @property {string} nim
+ * @property {string} kelas
+ * @property {string} bio
+ * @property {string} photo - URL foto (harus aman)
+ */
+
+/** @type {Identity} */
 const IDENTITY = {
   nama: "'Aarif Faqiih",
   nim: "230401010001",
@@ -5,6 +15,38 @@ const IDENTITY = {
   bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi.",
   photo: "",
 };
+
+/**
+ * @typedef {Object} JournalBase
+ * @property {string} id
+ * @property {'daily'|'weekly'} type
+ * @property {string} date - Tanggal tampilan
+ * @property {string} dateSort - Format YYYY-MM-DD
+ */
+
+/**
+ * @typedef {Object} DailyJournal
+ * @property {string[]} targets
+ * @property {Array<{time:string, activity:string, output:string, status:string}>} activities
+ * @property {string} results
+ * @property {{teknis:string, nonTeknis:string, manajemenWaktu:string}} obstacles
+ * @property {string} solutions
+ * @property {{learned:string, improve:string, score:number}} reflection
+ */
+
+/**
+ * @typedef {Object} WeeklyJournal
+ * @property {Array<{day:string, focus:string, output:string, duration:string}>} activities
+ * @property {string[]} achievements
+ * @property {{target:string, progress:number, note:string}} semesterTarget
+ * @property {{akademik:string, teknis:string, pribadi:string}} obstacles
+ * @property {{bestSuccess:string, biggestMistake:string, nextStrategy:string}} evaluation
+ * @property {string[]} nextWeekPlan
+ */
+
+/**
+ * @type {Array<JournalBase & ({type:'daily', daily:DailyJournal} | {type:'weekly', weekly:WeeklyJournal})>}
+ */
 const JOURNALS = [
   {
     id: "daily-2025-07-14",
