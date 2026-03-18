@@ -331,4 +331,305 @@ const JOURNALS = [
       ],
     },
   },
+  {
+    id: "daily-2026-03-02",
+    type: "daily",
+    date: "2 Maret 2026",
+    dateSort: "2026-03-02",
+    daily: {
+      targets: [
+        "Menyelesaikan project based internship data scientist, membuat PPT penjelasan pengerjaan dan upload hasil pengerjaan ke github.",
+        "Di mata kuliah dasar kecerdasan artificial, saya ingin memahami konsep pencarian/searching sebagai cara AI menyelesaikan masalah di representasi ruang yang tersedia.",
+      ],
+      activities: [
+        {
+          time: "10:30 – 12:00",
+          activity: "Mata kuliah dasar kecerdasan artificial",
+          output: "Memahami konsep searching (BFS, DFS) dan catatan kuliah",
+          status: "✓",
+        },
+        {
+          time: "13:00 – 16:00",
+          activity:
+            "Mengerjakan project data scientist: membuat PPT dan upload ke GitHub",
+          output: "PPT selesai, repository GitHub terupdate",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hari ini saya berhasil memahami konsep searching dalam AI melalui kuliah, serta menyelesaikan project internship dengan membuat PPT presentasi dan menguploadnya ke GitHub.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Besok saya akan mempersiapkan materi untuk kuliah interaksi manusia dan komputer, serta memastikan instalasi Java dan Netbeans untuk praktikum.",
+      reflection: {
+        learned:
+          "Saya mempelajari konsep searching dalam AI, seperti BFS dan DFS, serta bagaimana representasi ruang masalah. Juga belajar membuat presentasi yang baik untuk project.",
+        improve:
+          "Saya bisa meningkatkan manajemen waktu agar lebih fokus, dan mungkin membaca materi sebelum kuliah.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-03",
+    type: "daily",
+    date: "3 Maret 2026",
+    dateSort: "2026-03-03",
+    daily: {
+      targets: [
+        "di mata kuliah interaksi manusia dan komputer, saya ingin memahami proses desain interface menggunakan metode user-centered design beserta tahapannya.",
+        "mengerjakan quiz week 1 mata kuliah interaksi manusia komputer.",
+        "mengikuti praktikum pemrograman berorientasi objek.",
+      ],
+      activities: [
+        {
+          time: "08.00–09.30",
+          activity: "Mata kuliah interaksi manusia dan komputer.",
+          output: "Memahami konsep user-centered design (UCD) dan tahapannya",
+          status: "✓",
+        },
+        {
+          time: "09:30 – 11:00",
+          activity:
+            "Mata kuliah pemrograman berorientasi objek. Praktikum install java dan apache netbeans.",
+          output: "Selesai",
+          status: "Selesai",
+        },
+        {
+          time: "11:00 – 12:00",
+          activity: "Mengerjakan quiz week 1 IMK",
+          output: "Quiz week 1 IMK selesai dikerjakan",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hari ini saya mengikuti kuliah IMK dan memahami user-centered design, menyelesaikan quiz week 1, serta mengikuti praktikum PBO dan berhasil menginstal Java dan Netbeans.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Besok saya akan mempersiapkan materi strategi algoritma dan mengulang kembali konsep brute force.",
+      reflection: {
+        learned:
+          "Saya belajar tentang user-centered design, tahapan empathize, define, ideate, prototype, test. Juga belajar instalasi Java dan Netbeans untuk praktikum.",
+        improve:
+          "Lebih cepat dalam mengerjakan quiz agar ada waktu untuk review.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-04",
+    type: "daily",
+    date: "4 Maret 2026",
+    dateSort: "2026-03-04",
+    daily: {
+      targets: [
+        "Di mata kuliah strategi algoritma, saya ingin memahami konsep algoritma brute force.",
+      ],
+      activities: [
+        {
+          time: "08.00–09.30",
+          activity: "Mata kuliah strategi algoritma.",
+          output: "Memahami konsep brute force, contoh-contoh algoritma",
+          status: "✓",
+        },
+        {
+          time: "10:00 – 12:00",
+          activity: "Mengerjakan latihan soal algoritma brute force",
+          output: "Latihan soal brute force selesai",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hari ini saya memahami konsep brute force dalam strategi algoritma, dan mengerjakan latihan soal untuk memperdalam pemahaman.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Besok saya akan mempersiapkan praktikum jaringan komputer dan mengerjakan quiz.",
+      reflection: {
+        learned:
+          "Saya belajar tentang algoritma brute force, kelebihan dan kekurangannya, serta contoh seperti linear search dan bubble sort.",
+        improve:
+          "Saya perlu lebih banyak berlatih soal agar bisa mengimplementasikan.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-05",
+    type: "daily",
+    date: "5 Maret 2026",
+    dateSort: "2026-03-05",
+    daily: {
+      targets: [
+        "Mengikuti praktikum jaringan komputer",
+        "Mengerjakan quiz 1 mata kuliah jaringan komputer.",
+      ],
+      activities: [
+        {
+          time: "09:30-12:30",
+          activity: "Praktikum jaringan kompuer",
+          output: "Membuat kabel LAN straight dan cross.",
+          status: "selesai",
+        },
+        {
+          time: "13:00-15:00",
+          activity: "Kelas teori jaringan komputer.",
+          output: "Memahami materi teori jaringan (OSI layer, TCP/IP)",
+          status: "✓",
+        },
+        {
+          time: "15:30 – 16:30",
+          activity: "Mengerjakan quiz 1 jaringan komputer",
+          output: "Quiz 1 jaringan komputer selesai",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hari ini saya mengikuti praktikum jaringan komputer dan berhasil membuat kabel LAN straight dan cross, kemudian mengikuti kelas teori dan mengerjakan quiz 1 dengan baik.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Besok saya akan mempersiapkan kuliah wawasan global TIK dan PBO, serta melanjutkan project AI.",
+      reflection: {
+        learned:
+          "Saya belajar cara membuat kabel UTP straight dan cross, serta memahami teori jaringan seperti OSI layer dan TCP/IP.",
+        improve:
+          "Saya bisa lebih teliti dalam praktikum agar kabel yang dibuat berfungsi dengan baik.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-06",
+    type: "daily",
+    date: "6 Maret 2026",
+    dateSort: "2026-03-06",
+    daily: {
+      targets: [
+        "Mengikuti 2 mata kuliah.",
+        "Mengerjakan quiz minggu 1 mata kuliah pemrograman berorientasi objek.",
+        "Membuat model AI untuk mendeteksi ekspresi wajah, datasetnya ambil dari hugging face, training menggunakan teachable machine.",
+      ],
+      activities: [
+        {
+          time: "09:30 – 11:00",
+          activity: "Mata kuliah wawasan global TIK",
+          output: "Memahami materi wawasan global TIK",
+          status: "✓",
+        },
+        {
+          time: "14:30 – 16:00",
+          activity: "Kelas teori pemrograman berorientasi objek.",
+          output: "Memahami materi PBO (konsep class, object)",
+          status: "✓",
+        },
+        {
+          time: "16:30 – 19:00",
+          activity:
+            "Mengerjakan quiz PBO minggu 1 dan membuat model AI dengan Teachable Machine",
+          output: "Quiz PBO selesai, model AI deteksi ekspresi wajah terlatih",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hari ini saya mengikuti dua mata kuliah, yaitu wawasan global TIK dan PBO, menyelesaikan quiz PBO minggu 1, serta berhasil membuat model AI untuk deteksi ekspresi wajah menggunakan Teachable Machine dengan dataset dari Hugging Face.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Besok saya akan merapikan jurnal mingguan dan mempersiapkan materi minggu depan.",
+      reflection: {
+        learned:
+          "Saya belajar tentang wawasan global TIK, konsep OOP lebih dalam, dan cara membuat model AI sederhana dengan transfer learning.",
+        improve:
+          "Saya perlu mengatur waktu agar bisa mengerjakan project lebih awal.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-03-06",
+    type: "weekly",
+    date: "Minggu ke-2 · 2–6 Maret 2026",
+    dateSort: "2026-03-06",
+    weekly: {
+      weekNumber: 2,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Kuliah Dasar AI dan Project Data Scientist",
+          output: "Memahami searching, PPT dan GitHub upload",
+          duration: "4.5",
+        },
+        {
+          day: "Selasa",
+          focus: "Kuliah IMK, Praktikum PBO, Quiz IMK",
+          output: "Memahami UCD, instalasi Java, quiz selesai",
+          duration: "4",
+        },
+        {
+          day: "Rabu",
+          focus: "Strategi Algoritma & Latihan",
+          output: "Memahami brute force, latihan soal",
+          duration: "3.5",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktikum Jaringan, Teori, Quiz",
+          output: "Membuat kabel LAN, materi OSI, quiz",
+          duration: "6",
+        },
+        {
+          day: "Jumat",
+          focus: "Kuliah Wawasan Global, PBO, Quiz & Project AI",
+          output: "Memahami wawasan global, OOP, quiz, model AI",
+          duration: "5.5",
+        },
+      ],
+      achievements: [
+        "Memahami konsep searching dalam AI dan menyelesaikan project internship (PPT + GitHub).",
+        "Mengikuti praktikum PBO dan jaringan komputer, serta mengerjakan quiz IMK, PBO, dan jaringan.",
+        "Membuat model AI deteksi ekspresi wajah menggunakan Teachable Machine dengan dataset Hugging Face.",
+      ],
+      semesterTarget: {
+        target:
+          "Menyelesaikan semua tugas dan proyek mata kuliah dengan baik, serta mengembangkan portofolio data science.",
+        progress: 10,
+        note: "Minggu pertama berjalan lancar, semua target tercapai.",
+      },
+      obstacles: {
+        akademik: "Tidak ada kendala berarti, materi masih dapat dipahami.",
+        teknis: "Tidak ada",
+        pribadi: "Tidak ada",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil menyelesaikan project internship dan membuat model AI dalam satu minggu.",
+        biggestMistake:
+          "Kurang mempersiapkan materi sebelum kuliah sehingga perlu waktu ekstra untuk memahami.",
+        nextStrategy:
+          "Membaca materi sebelum kuliah, mengatur jadwal lebih terstruktur, dan mulai mengerjakan tugas lebih awal.",
+      },
+      nextWeekPlan: [
+        "Memahami konsep algoritma greedy di strategi algoritma.",
+        "Mempersiapkan praktikum jaringan komputer selanjutnya.",
+      ],
+    },
+  },
 ];
