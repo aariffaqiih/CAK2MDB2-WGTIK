@@ -1,7 +1,7 @@
 const IDENTITY = {
   nama: "'Aarif Rahmaan Jalaluddin Faqiih",
   nim: "103112430182",
-  kelas: "IF-4A",
+  kelas: "PS1IF-12-REG06",
   bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi.",
   photo: "",
 };
