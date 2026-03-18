@@ -4,13 +4,13 @@
  * @property {string} nim
  * @property {string} kelas
  * @property {string} bio
- * @property {string} photo - URL foto (harus aman)
+ * @property {string} photo
  */
 
 /** @type {Identity} */
 const IDENTITY = {
-  nama: "'Aarif Faqiih",
-  nim: "230401010001",
+  nama: "'Aarif Rahmaan Jalaluddin Faqiih",
+  nim: "103112430182",
   kelas: "IF-4A",
   bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi.",
   photo: "",
@@ -20,8 +20,8 @@ const IDENTITY = {
  * @typedef {Object} JournalBase
  * @property {string} id
  * @property {'daily'|'weekly'} type
- * @property {string} date - Tanggal tampilan
- * @property {string} dateSort - Format YYYY-MM-DD
+ * @property {string} date
+ * @property {string} dateSort
  */
 
 /**
@@ -49,235 +49,328 @@ const IDENTITY = {
  */
 const JOURNALS = [
   {
-    id: "daily-2025-07-14",
+    id: "daily-2026-02-23",
     type: "daily",
-    date: "14 Juli 2025",
-    dateSort: "2025-07-14",
+    date: "23 Februari 2026",
+    dateSort: "2026-02-23",
     daily: {
       targets: [
-        "Menyelesaikan implementasi bubble sort & quick sort",
-        "Membaca 2 bab materi Introduction to AI",
-        "Update portfolio dengan proyek FMCG analysis",
+        "Di mata kuliah Dasar Kecerdasan Artificial, memahami teori dasar kecerdasan buatan, mulai dari pengenalan, hingga konsep Searching dan Reasoning.",
+        "Mengerjakan project based data scientist, memahami keseluruhan data dan melakukan EDA agar paham konteks bisnisnya serta mendapatkan insight awal.",
       ],
       activities: [
         {
-          time: "07.00–08.30",
-          activity: "Implementasi bubble sort dan quick sort di Python",
-          output: "2 fungsi sorting berhasil diimplementasi & diuji",
+          time: "10:30–12:00",
+          activity: "Kuliah Dasar Kecerdasan Artificial",
+          output: "Memahami materi pengenalan AI dan konsep searching",
           status: "✓",
         },
         {
-          time: "09.00–10.30",
-          activity: "Baca bab 3–4 Introduction to AI (search algorithms)",
-          output: "Catatan ringkasan 3 halaman",
+          time: "13:00–15:00",
+          activity: "Eksplorasi dataset Home Credit",
+          output:
+            "Memahami struktur data, identifikasi missing values, insight awal",
           status: "✓",
         },
         {
-          time: "13.00–15.00",
-          activity: "Update portfolio: menambahkan proyek FMCG analysis",
-          output: "Halaman case study — selesai draft-nya",
+          time: "15:30–17:00",
+          activity: "Membaca dokumentasi pandas dan matplotlib",
+          output: "Catatan ringkas",
           status: "Proses",
-        },
-        {
-          time: "15.30–17.00",
-          activity: "Latihan soal algoritma dari LeetCode",
-          output: "3 soal easy berhasil diselesaikan",
-          status: "✓",
         },
       ],
       results:
-        "Hari ini sangat produktif. Berhasil menyelesaikan implementasi sorting algorithm dan membaca materi AI sesuai target. Update portfolio masih dalam proses karena butuh lebih banyak penulisan deskripsi proyek.",
+        "Hari ini berhasil mengikuti kuliah Dasar AI dengan pemahaman yang baik. Pada project, saya mulai mengeksplorasi dataset Home Credit, memahami kolom-kolom utama, dan mengidentifikasi banyak missing values. Saya juga membaca dokumentasi untuk persiapan visualisasi besok.",
       obstacles: {
-        teknis: "Quick sort recursive sempat error karena base case yang salah",
-        nonTeknis: "—",
-        manajemenWaktu: "Estimasi untuk update portfolio terlalu singkat",
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
       },
       solutions:
-        "Besok lanjutkan penulisan deskripsi portfolio. Untuk algoritma, review rekursi secara menyeluruh agar tidak terulang.",
+        "Besok fokus pada visualisasi EDA dan menyusun laporan insight awal.",
       reflection: {
         learned:
-          "Memahami perbedaan time complexity O(n²) vs O(n log n) secara praktis melalui implementasi langsung",
+          "Konsep searching dalam AI (uninformed search) dan pentingnya EDA sebelum membangun model.",
         improve:
-          "Perlu lebih akurat mengestimasi waktu untuk task kreatif seperti menulis",
+          "Manajemen waktu antara kuliah dan project perlu disesuaikan agar tidak kelelahan.",
         score: 8,
       },
     },
   },
   {
-    id: "daily-2025-07-10",
+    id: "daily-2026-02-24",
     type: "daily",
-    date: "10 Juli 2025",
-    dateSort: "2025-07-10",
+    date: "24 Februari 2026",
+    dateSort: "2026-02-24",
     daily: {
       targets: [
-        "Menyelesaikan class diagram UML untuk tugas OOP",
-        "Latihan soal algoritma sorting",
-        "Review materi Introduction to AI — chapter 1–2",
+        "Di mata kuliah interaksi manusia dan komputer, memahami prinsip dasar dan pengertian interaksi manusia dan komputer.",
+        "Mengerjakan project based data scientist, melakukan data cleaning.",
       ],
       activities: [
         {
-          time: "08.00–09.30",
-          activity: "Mengerjakan class diagram UML untuk tugas OOP",
-          output: "Class diagram dengan 5 kelas selesai",
+          time: "08:00–09:30",
+          activity: "Kuliah Interaksi Manusia dan Komputer",
+          output:
+            "Memahami prinsip dasar IMK, konsep usability, dan user-centered design",
           status: "✓",
         },
         {
-          time: "10.00–11.30",
-          activity: "Latihan bubble sort & insertion sort",
-          output: "3 latihan soal selesai",
+          time: "10:00–12:00",
+          activity:
+            "Data cleaning: menangani missing values pada dataset aplikasi",
+          output: "Imputasi sederhana pada kolom numerik dan kategorik",
           status: "✓",
         },
         {
-          time: "13.00–14.30",
-          activity: "Review slide AI — chapter 1–2 (uninformed search)",
-          output: "Catatan ringkasan chapter 1 saja",
+          time: "13:00–15:00",
+          activity: "Mengerjakan tugas IMK",
+          output: "Membuat makalah singkat tentang prinsip IMK",
           status: "Proses",
         },
       ],
       results:
-        "Class diagram OOP selesai tepat waktu. Latihan sorting berjalan lancar. Review AI belum tuntas karena kehabisan energi dan waktu di sore hari.",
+        "Kuliah IMK memberikan pemahaman baru tentang interaksi manusia dan komputer. Pada project, saya melakukan data cleaning dasar pada dataset aplikasi, termasuk imputasi missing values. Tugas IMK masih setengah jadi.",
       obstacles: {
-        teknis: "Bingung dengan perbedaan relasi agregasi vs komposisi di UML",
-        nonTeknis: "Sulit fokus setelah makan siang",
-        manajemenWaktu: "Estimasi waktu review AI terlalu singkat",
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
       },
       solutions:
-        "Besok review referensi UML dan tanya ke dosen. Jadwalkan sesi review lebih awal, sebelum makan siang.",
+        "Besok lanjutkan tugas IMK dan fokus pada feature engineering di project.",
       reflection: {
-        learned: "Perbedaan konseptual antara agregasi dan komposisi dalam OOP",
-        improve: "Manajemen energi setelah makan siang perlu diperbaiki",
+        learned:
+          "Prinsip desain antarmuka yang baik dan pentingnya konsistensi data.",
+        improve:
+          "Konsentrasi setelah makan siang menurun, perlu istirahat cukup.",
+        score: 6,
+      },
+    },
+  },
+  {
+    id: "daily-2026-02-25",
+    type: "daily",
+    date: "25 Februari 2026",
+    dateSort: "2026-02-25",
+    daily: {
+      targets: [
+        "Bertemu dengan pak Affan (dosen mata kuliah dasar kecerdasan artificial) untuk konsultasi masalah karir. Pak Affan menyarankan maksimalkan EDA dan belajar data analysis dulu sebelum ke data scientist.",
+        "Mengerjakan project based data scientist, melanjutkan data cleaning untuk penanganan missing values dan feature engineering dasar.",
+        "Memahami dasar strategi algoritma, mengulas kembali apa itu notasi big O, teta, dan omega.",
+      ],
+      activities: [
+        {
+          time: "08:00–09:30",
+          activity: "Kuliah Strategi Algoritma",
+          output: "Memahami notasi Big O, Theta, Omega beserta contoh",
+          status: "✓",
+        },
+        {
+          time: "10:00–11:00",
+          activity: "Konsultasi dengan Pak Affan",
+          output:
+            "Mendapat saran untuk fokus pada EDA dan analisis data terlebih dahulu",
+          status: "✓",
+        },
+        {
+          time: "13:00–16:00",
+          activity:
+            "Project: feature engineering dasar (membuat agregat dari tabel lain)",
+          output:
+            "Berhasil membuat fitur jumlah pengajuan sebelumnya dan rata-rata jumlah hari tunggakan",
+          status: "Proses",
+        },
+      ],
+      results:
+        "Konsultasi dengan Pak Affan sangat bermanfaat, memberikan arahan karir. Kuliah strategi algoritma memperdalam pemahaman kompleksitas. Pada project, saya mulai melakukan feature engineering dengan menggabungkan data dari tabel pendukung. Masih perlu penyempurnaan.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Besok lanjutkan feature engineering dan evaluasi fitur yang sudah dibuat.",
+      reflection: {
+        learned:
+          "Pentingnya menguasai analisis data sebelum machine learning, dan cara menghitung kompleksitas algoritma.",
+        improve: "Lebih disiplin dalam mencatat hasil konsultasi.",
         score: 7,
       },
     },
   },
   {
-    id: "weekly-2025-w28",
-    type: "weekly",
-    date: "Minggu ke-28 · 7–13 Juli 2025",
-    dateSort: "2025-07-13",
-    weekly: {
-      weekNumber: 28,
+    id: "daily-2026-02-26",
+    type: "daily",
+    date: "26 Februari 2026",
+    dateSort: "2026-02-26",
+    daily: {
+      targets: [
+        "Mengerjakan project based data scientist, melakukan encoding dan membuat model baseline.",
+      ],
       activities: [
         {
-          day: "Senin",
-          focus: "OOP — class diagram UML",
-          output: "Diagram selesai",
-          duration: "3.5",
+          time: "09:00–11:00",
+          activity: "Encoding variabel kategorik pada dataset",
+          output: "Menggunakan one-hot encoding untuk beberapa fitur",
+          status: "✓",
         },
         {
-          day: "Selasa",
-          focus: "Algoritma sorting & searching",
-          output: "5 soal latihan selesai",
-          duration: "3",
+          time: "13:00–16:00",
+          activity: "Membangun model baseline dengan Logistic Regression",
+          output: "Model selesai dengan ROC-AUC 0,72",
+          status: "✓",
         },
         {
-          day: "Rabu",
-          focus: "Review AI — uninformed search",
-          output: "Catatan 4 halaman",
-          duration: "2.5",
-        },
-        {
-          day: "Kamis",
-          focus: "Computer Networks — TCP/IP layer",
-          output: "Ringkasan materi + mind map",
-          duration: "3",
-        },
-        {
-          day: "Jumat",
-          focus: "HCI — wireframe lo-fi project",
-          output: "Wireframe 5 halaman selesai",
-          duration: "4",
-        },
-        {
-          day: "Sabtu",
-          focus: "Data project: FMCG analysis",
-          output: "Dataset cleaned, EDA awal",
-          duration: "2.5",
-        },
-        {
-          day: "Minggu",
-          focus: "Review mingguan & journaling",
-          output: "Jurnal mingguan ini",
-          duration: "1",
+          time: "16:30–17:30",
+          activity: "Evaluasi model dan mencatat hasil",
+          output: "Confusion matrix, classification report",
+          status: "Proses",
         },
       ],
-      achievements: [
-        "Menyelesaikan class diagram OOP yang tertunda 1 minggu",
-        "Wireframe lo-fi project HCI selesai tepat deadline",
-        "Memulai side project data science pertama (FMCG analysis)",
-      ],
-      semesterTarget: {
-        target:
-          "Memiliki 3 data project terdokumentasi di portfolio sebelum akhir semester",
-        progress: 33,
-        note: "1 project sedang berjalan (FMCG analysis), 2 lagi belum dimulai",
-      },
+      results:
+        "Berhasil melakukan encoding dan membuat model baseline menggunakan Logistic Regression. ROC-AUC mencapai 0,72, cukup baik untuk baseline. Namun masih perlu tuning dan handling imbalance class.",
       obstacles: {
-        akademik:
-          "Materi AI chapter 3 mulai kompleks — heuristic search membutuhkan pemahaman lebih dalam",
-        teknis:
-          "Environment conflict saat install scikit-learn versi baru di virtual env yang lama",
-        pribadi:
-          "Kurang tidur 2 malam menyebabkan penurunan konsentrasi yang signifikan",
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
       },
-      evaluation: {
-        bestSuccess:
-          "Wireframe HCI selesai lebih cepat dari estimasi dan dapat feedback positif dari teman",
-        biggestMistake:
-          "Menunda review AI chapter 3 sehingga menumpuk di akhir minggu dan tidak sempat selesai",
-        nextStrategy:
-          "Jadwalkan 30 menit review AI setiap pagi, sebelum mulai aktivitas belajar lainnya",
+      solutions:
+        "Besok lakukan handling imbalance (SMOTE) dan coba model lain.",
+      reflection: {
+        learned:
+          "Proses encoding dan evaluasi model baseline dengan Logistic Regression.",
+        improve: "Perlu memahami lebih dalam tentang imbalance class.",
+        score: 8,
       },
-      nextWeekPlan: [
-        "Lanjutkan FMCG analysis: eksplorasi visualisasi dan insight awal",
-        "Selesaikan tugas essay Computer Networks (deadline Jumat)",
-        "Mulai belajar Decision Tree untuk persiapan UTS Introduction to AI",
-      ],
     },
   },
   {
-    id: "daily-2025-07-07",
+    id: "daily-2026-02-27",
     type: "daily",
-    date: "7 Juli 2025",
-    dateSort: "2025-07-07",
+    date: "27 Februari 2026",
+    dateSort: "2026-02-27",
     daily: {
       targets: [
-        "Membaca dokumentasi pandas — groupby & pivot_table",
-        "Eksplorasi dataset FMCG: memahami struktur data",
-        "Setup environment Python baru untuk proyek data",
+        "Memahami konsep dasar pemrograman berorientasi objek.",
+        "Mengerjakan project based data scientist, join data subsidiary dari tabel lain ke pipeline, melakukan encoding lagi, dan training ulang.",
+        "Buka bersama dengan komunitas literasi.",
       ],
       activities: [
         {
-          time: "09.00–10.30",
-          activity: "Baca dokumentasi pandas groupby & pivot_table",
-          output: "Ringkasan 2 halaman + contoh kode",
+          time: "14:30–16:30",
+          activity: "Kuliah Pemrograman Berorientasi Objek",
+          output: "Memahami kelas, objek, inheritance, polymorphism",
           status: "✓",
         },
         {
-          time: "11.00–12.30",
-          activity: "Eksplorasi awal dataset FMCG di Jupyter Notebook",
-          output: "Laporan shape, null values, dtypes",
+          time: "10:00–12:00",
+          activity: "Project: join data subsidiary dan encoding ulang",
+          output:
+            "Berhasil menambahkan fitur baru dari tabel subsidiary, encoding ulang",
           status: "✓",
         },
         {
-          time: "14.00–16.00",
-          activity: "Setup virtual environment & install dependencies",
-          output: "Environment siap, requirements.txt terbuat",
+          time: "13:00–14:00",
+          activity: "Training ulang model dengan fitur baru",
+          output: "ROC-AUC meningkat menjadi 0,74",
+          status: "✓",
+        },
+        {
+          time: "18:00–20:00",
+          activity: "Buka bersama komunitas literasi",
+          output: "Diskusi buku dan berbagi pengalaman",
           status: "✓",
         },
       ],
       results:
-        "Hari pembuka yang sangat baik untuk proyek FMCG. Berhasil memahami struktur dataset dan setup environment berjalan mulus. Siap memulai EDA proper besok.",
-      obstacles: { teknis: "—", nonTeknis: "—", manajemenWaktu: "—" },
+        "Hari ini produktif: memahami OOP, meningkatkan performa model dengan fitur baru, dan mengikuti acara sosial. Model sekarang mencapai ROC-AUC 0,74, lebih baik dari baseline.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
       solutions:
-        "Lanjutkan EDA besok dengan fokus pada distribusi variabel dan missing value analysis.",
+        "Minggu depan fokus pada tuning hyperparameter dan dokumentasi proyek.",
       reflection: {
         learned:
-          "Dataset FMCG memiliki pola transaksi yang menarik — ada kolom status yang sangat informatif untuk analisis kegagalan transaksi",
+          "Konsep OOP dan pentingnya feature engineering dalam meningkatkan model.",
         improve:
-          "Dokumentasi eksplorasi awal seharusnya lebih sistematis sejak hari pertama",
-        score: 9,
+          "Manajemen waktu antara kegiatan akademik dan sosial sudah baik.",
+        score: 8,
       },
+    },
+  },
+  {
+    id: "weekly-2026-02-27",
+    type: "weekly",
+    date: "Minggu ke-1 · 23–27 Februari 2026",
+    dateSort: "2026-02-27",
+    weekly: {
+      weekNumber: 1,
+      activities: [
+        {
+          day: "Senin",
+          focus: "AI & EDA",
+          output: "Memahami AI, eksplorasi dataset",
+          duration: "4.5",
+        },
+        {
+          day: "Selasa",
+          focus: "IMK & Data Cleaning",
+          output: "Memahami IMK, imputasi missing values",
+          duration: "5",
+        },
+        {
+          day: "Rabu",
+          focus: "Strategi Algoritma & Feature Engineering",
+          output: "Konsultasi karir, feature engineering",
+          duration: "5",
+        },
+        {
+          day: "Kamis",
+          focus: "Encoding & Model Baseline",
+          output: "Encoding, Logistic Regression baseline",
+          duration: "5",
+        },
+        {
+          day: "Jumat",
+          focus: "OOP & Model Improvement",
+          output: "Pemahaman OOP, model dengan fitur baru",
+          duration: "6",
+        },
+      ],
+      achievements: [
+        "Memahami konsep searching AI dan EDA pada dataset Home Credit",
+        "Berhasil membuat model baseline Logistic Regression dengan ROC-AUC 0,72",
+        "Mendapat arahan karir dari Pak Affan untuk fokus pada analisis data",
+        "Mengimplementasikan feature engineering dan meningkatkan model menjadi 0,74",
+        "Memahami dasar OOP dan strategi algoritma",
+      ],
+      semesterTarget: {
+        target:
+          "Menyelesaikan project-based internship Home Credit dengan model yang optimal dan laporan insight bisnis.",
+        progress: 40,
+        note: "Tahap EDA, cleaning, feature engineering, dan model baseline sudah selesai. Selanjutnya tuning dan dokumentasi.",
+      },
+      obstacles: {
+        akademik:
+          "Materi AI cukup banyak, perlu waktu lebih untuk memahami heuristic search.",
+        teknis: "Tidak ada",
+        pribadi: "Tidak ada",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil meningkatkan performa model dari 0,72 ke 0,74 setelah menambahkan fitur dari tabel subsidiary.",
+        biggestMistake:
+          "Kurang fokus saat kuliah IMK sehingga nilai tidak maksimal.",
+        nextStrategy:
+          "Alokasikan waktu lebih untuk memahami heuristic search dan lanjutkan tuning model.",
+      },
+      nextWeekPlan: [
+        "Menyelesaikan tuning hyperparameter model (Random Forest, XGBoost)",
+        "Dokumentasi proyek dan menyusun laporan insight bisnis",
+        "Belajar konsep heuristic search di AI",
+      ],
     },
   },
 ];
