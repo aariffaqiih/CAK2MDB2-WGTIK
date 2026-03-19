@@ -633,66 +633,80 @@ const JOURNALS = [
       ],
     },
   },
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
-  // ###################################################################################################################
   {
     id: "daily-2026-03-19",
     type: "daily",
     date: "19 Maret 2026",
     dateSort: "2026-03-19",
     daily: {
+      targets: ["Menyelesaikan modul 3 & 4 praktikum Jaringan Komputer"],
+      activities: [
+        {
+          time: "06:00 - 07:30",
+          activity:
+            "Membaca berita perkembangan AI terkini dari blog hugging face",
+          output:
+            "Mengetahui info bahwa China mendominasi, semakin banyak developer independen, dataset semakin melimpah, dan ternyata sekarang robotik sedang sangat ramai, serta perbandingan statistik dibanding tahun sebelumnya cukup signifikan.",
+          status: "selesai",
+        },
+        {
+          time: "07:30 - 11:30",
+          activity: "Mengerjakan modul 3 praktikum Jaringan Komputer",
+          output:
+            "PDF laporan modul 3 praktikum Jaringan Komputer dikumpulkan ke classroom",
+          status: "selesai",
+        },
+        {
+          time: "18:30 - 23:30",
+          activity: "Mengerjakan modul 4 praktikum Jaringan Komputer",
+          output:
+            "PDF laporan modul 4 praktikum Jaringan Komputer dikumpulkan ke classroom",
+          status: "selesai",
+        },
+      ],
+      results:
+        "Modul 3 dan 4 praktikum Jaringan Komputer berhasil diselesaikan dan dikumpulkan tepat waktu serta mendapatkan wawasan baru tentang perkembangan AI.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Rasa kantuk di siang hari",
+        manajemenWaktu: "Sedikit terganggu karena tidur siang terlalu lama.",
+      },
+      solutions: "Pasang alarm untuk tidur siang agar tidak terlalu lama.",
+      reflection: {
+        learned:
+          "Mengetahui bagaimana cara kerja wireshark mengnakap protokol seperti HTTP dan DNS, serta perkembangan AI terkini.",
+        improve:
+          "Jangan terlalu lama dan perfeksionis di 1 nomor agar waktunya lebih efisien.",
+        score: 8.2,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-20",
+    type: "daily",
+    date: "20 Maret 2026",
+    dateSort: "2026-03-20",
+    daily: {
       targets: [
-        "Menyelesaikan modul 3 & 4 praktikum Jaringan Komputer",
-        "Memahami dan mencatat materi week 3 mata kuliah Jaringan Komputer",
-        "Mengulas kembali materi week 1 - 3 mata kuliah Pemrograman Berorientasi Objek",
+        "Menyelesaikan weekly journal 3 WGTIK",
+        "Mengulas kembali materi Pemrograman Berorientasi Objek dari week 1 sampai 3",
       ],
       activities: [
         {
-          time: "06:30 - 08:30",
-          activity: "Mengerjakan modul 3 & 4 praktikum Jaringan Komputer",
+          time: "#############",
+          activity: "#############",
           output: "#############",
           status: "#############",
         },
         {
-          time: "09:00 - 12:30",
-          activity: "Praktikum Jaringan Komputer",
+          time: "#############",
+          activity: "#############",
           output: "#############",
           status: "#############",
         },
         {
-          time: "12:30 - 15:30",
-          activity: "Kelas teori Jaringan Komputer",
-          output: "#############",
-          status: "#############",
-        },
-        {
-          time: "15:30 - 17:00",
-          activity: "Belajar materi week 3 mata kuliah Jaringan Komputer",
-          output: "#############",
-          status: "#############",
-        },
-        {
-          time: "20:00 - 22:00",
-          activity:
-            "Belajar materi week 1 - 3 mata kuliah Pemrograman Berorientasi Objek",
+          time: "#############",
+          activity: "#############",
           output: "#############",
           status: "#############",
         },
