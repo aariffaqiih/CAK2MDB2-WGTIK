@@ -71,7 +71,9 @@ const TEMPLATE_SCHEMA = {
           {
             label: "Manajemen waktu",
             key: "manajemenWaktu",
-            shortLabel: "Waktu",
+            // Ubah shortLabel agar sesuai dengan template (opsional, tidak dipakai di modal karena kita pakai label penuh)
+            // Tapi biarkan shortLabel tetap ada untuk keperluan lain.
+            shortLabel: "Manajemen waktu",
           },
         ],
       },

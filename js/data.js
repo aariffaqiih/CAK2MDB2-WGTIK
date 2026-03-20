@@ -634,6 +634,95 @@ const JOURNALS = [
     },
   },
   {
+    id: "daily-2026-03-10",
+    type: "daily",
+    date: "",
+    dateSort: "2026-03-10",
+    daily: {
+      targets: [
+        "##########################",
+        "##########################",
+        "##########################",
+      ],
+      activities: [
+        {
+          time: "#############",
+          activity: "#############",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "#############",
+          activity: "#############",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "#############",
+          activity: "#############",
+          output: "#############",
+          status: "#############",
+        },
+      ],
+      results: "#############",
+      obstacles: {
+        teknis: "#############",
+        nonTeknis: "#############",
+        manajemenWaktu: "#############",
+      },
+      solutions: "#############",
+      reflection: {
+        learned: "#############",
+        improve: "#############",
+        score: 1,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-11",
+    type: "daily",
+    date: "11 Maret 2026",
+    dateSort: "2026-03-11",
+    daily: {
+      targets: [
+        "Mengerjakan quiz week 2 interaksi manusia dan komputer",
+        "Mengerjakan quiz week 1 brute force strategi algoritma",
+      ],
+      activities: [
+        {
+          time: "08:00-09:30",
+          activity: "Mata kuliah strategi algoritma",
+          output: "#############",
+          status: "#############",
+        },
+        {
+          time: "15:00-15:30",
+          activity: "Mengerjakan quiz week 2 interaksi manusia dan komputer",
+          output: "Mendapat nilai 8",
+          status: "✓",
+        },
+        {
+          time: "15:45-16:15",
+          activity: "Mengerjakan quiz week 1 strategi algoritma",
+          output: "Mendapaat nilai 85.42",
+          status: "✓",
+        },
+      ],
+      results: "#############",
+      obstacles: {
+        teknis: "#############",
+        nonTeknis: "#############",
+        manajemenWaktu: "#############",
+      },
+      solutions: "#############",
+      reflection: {
+        learned: "#############",
+        improve: "#############",
+        score: 1,
+      },
+    },
+  },
+  {
     id: "daily-2026-03-19",
     type: "daily",
     date: "19 Maret 2026",
@@ -677,7 +766,7 @@ const JOURNALS = [
           "Mengetahui bagaimana cara kerja wireshark mengnakap protokol seperti HTTP dan DNS, serta perkembangan AI terkini.",
         improve:
           "Jangan terlalu lama dan perfeksionis di 1 nomor agar waktunya lebih efisien.",
-        score: 8.2,
+        score: 8,
       },
     },
   },
@@ -721,7 +810,7 @@ const JOURNALS = [
       reflection: {
         learned: "#############",
         improve: "#############",
-        score: 0,
+        score: 1,
       },
     },
   },

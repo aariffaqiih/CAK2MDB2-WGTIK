@@ -1,4 +1,6 @@
+/* ==================== global.css (dengan tambahan class print) ==================== */
 @import url("https://fonts.googleapis.com/css2?family=Literata:ital,opsz,wght@0,7..72,300;0,7..72,400;0,7..72,500;1,7..72,300;1,7..72,400&display=swap");
+
 :root {
   --color-primary: #2a2a2a;
   --color-secondary: #555;
@@ -11,6 +13,20 @@
   --color-green-light: #cee8c3;
   --color-green-pale: #edf6e9;
   --color-surface: #f5f5f5;
+
+  /* Warna tambahan untuk konsistensi (dipindahkan dari JS) */
+  --color-weekly-accent: #3b5bdb;
+  --color-weekly-bg: #f0f4ff;
+  --color-weekly-border: #c5d0fc;
+
+  --color-error-bg: #fee;
+  --color-error-border: #e00;
+  --color-error-text: #900;
+
+  --color-validation-bg: #fffbeb;
+  --color-validation-border: #f59e0b;
+  --color-validation-text: #92400e;
+
   --size-3-02: calc(-3vh * 0.2);
   --size-1x01: calc(1vh * 0.1);
   --size-1x06: calc(1vh * 0.6);
@@ -33,10 +49,12 @@
   --size-3x22: calc(3vh * 22);
   --size-3x28: calc(3vh * 28);
   --size-3x30: calc(3vh * 30);
+
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
   --transition-slow: 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
+
 *,
 *::before,
 *::after {
@@ -44,6 +62,7 @@
   padding: 0;
   box-sizing: border-box;
 }
+
 * {
   font-family: "Literata", serif;
   font-optical-sizing: auto;
@@ -52,14 +71,17 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
 html {
   scroll-behavior: smooth;
 }
+
 body {
   background: var(--color-bg);
   color: var(--color-primary);
   overflow-x: hidden;
 }
+
 h1,
 h2,
 h3,
@@ -70,26 +92,32 @@ h6 {
   color: var(--color-primary);
   line-height: 1.1;
 }
+
 h1 {
   font-size: var(--size-3x05);
   letter-spacing: var(--size-3-02);
 }
+
 h2 {
   font-size: var(--size-3x04);
   letter-spacing: var(--size-3-02);
 }
+
 h3 {
   font-size: var(--size-3x02);
   line-height: var(--size-3x_7);
 }
+
 h4,
 i {
   font-size: var(--size-3x01);
 }
+
 h5 {
   font-size: var(--size-3x-6);
   font-weight: 500;
 }
+
 p,
 b,
 li {
@@ -97,19 +125,23 @@ li {
   line-height: var(--size-3x01);
   text-align: justify;
 }
+
 p {
   color: var(--color-secondary);
   font-weight: 400;
 }
+
 b {
   color: var(--color-primary);
   font-weight: 500;
 }
+
 a {
   color: inherit;
   text-decoration: none;
   cursor: pointer;
 }
+
 .hero,
 .about,
 .social-links,
@@ -118,6 +150,7 @@ a {
   justify-content: center;
   align-items: center;
 }
+
 .hero,
 .about {
   position: sticky;
@@ -125,9 +158,11 @@ a {
   height: 100vh;
   width: 100%;
 }
+
 .about {
   background: var(--color-white);
 }
+
 .social-links {
   position: fixed;
   bottom: var(--size-3x02);
@@ -142,14 +177,17 @@ a {
   border: var(--size-1x01) solid var(--color-quaternary);
   background: rgba(255, 255, 255, 0.7);
 }
+
 .social-links i {
   color: var(--color-tertiary);
   cursor: pointer;
   transition: color var(--transition-fast);
 }
+
 .social-links i:hover {
   color: var(--color-primary);
 }
+
 @media screen and (orientation: portrait) {
   h1 {
     font-size: var(--size-3x03);
@@ -159,6 +197,126 @@ a {
     font-size: var(--size-3x02);
   }
 }
+
+/* ==================== ERROR BANNER ==================== */
+.error-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 10000;
+  background: var(--color-error-bg);
+  border-bottom: 2px solid var(--color-error-border);
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 14px;
+  color: var(--color-error-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.validation-banner {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: var(--color-validation-bg);
+  border-bottom: 2px solid var(--color-validation-border);
+  padding: 10px 20px;
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-family: Arial, sans-serif;
+  font-size: 13px;
+  color: var(--color-validation-text);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.banner-icon {
+  font-size: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.banner-text {
+  flex: 1;
+}
+
+.banner-text strong {
+  display: block;
+}
+
+.banner-text ul {
+  margin: 4px 0 0 16px;
+  padding: 0;
+}
+
+.banner-text li {
+  margin: 2px 0;
+}
+
+.banner-close {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 16px;
+  color: inherit;
+  flex-shrink: 0;
+  padding: 0 4px;
+  line-height: 1;
+  align-self: flex-start;
+}
+
+/* ==================== ELEMEN KHUSUS MINGGUAN ==================== */
+.weekly-num {
+  background: var(--color-weekly-bg) !important;
+  color: var(--color-weekly-accent) !important;
+}
+
+.weekly-bullet {
+  color: var(--color-weekly-accent) !important;
+}
+
+.detail-progress-fill {
+  background: var(--color-weekly-accent) !important;
+}
+
+.card-progress-fill {
+  background: linear-gradient(
+    90deg,
+    #748ffc,
+    var(--color-weekly-accent)
+  ) !important;
+}
+
+.card-progress-num {
+  color: var(--color-weekly-accent) !important;
+}
+
+.weekly-identity {
+  border-left-color: var(--color-weekly-accent) !important;
+}
+
+.weekly-note {
+  background: #e7f5ff;
+  border-left-color: var(--color-weekly-accent) !important;
+}
+/* ==================== TAMBAHAN UNTUK MENGGANTI INLINE STYLE ==================== */
+.detail-table-total-row td {
+  font-weight: 500;
+}
+.detail-table-total-label {
+  text-align: right;
+  color: var(--color-primary);
+}
+.detail-table-total-value {
+  font-weight: 500;
+  color: var(--color-weekly-accent);
+}
+/* ==================== PRINT ==================== */
 @media print {
   * {
     -webkit-print-color-adjust: exact;
@@ -264,6 +422,11 @@ a {
   .print-score {
     font-size: 12pt;
     font-weight: bold;
+  }
+  /* Baris total tabel dengan gaya khusus */
+  .print-total-row {
+    font-weight: 500;
+    background: #f0f0f0;
   }
   @page {
     size: A4;
