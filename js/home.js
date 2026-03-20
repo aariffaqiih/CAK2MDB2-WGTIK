@@ -1,6 +1,4 @@
-// ==================== home.js (revisi dengan perbaikan) ====================
 const JournalApp = (() => {
-  // ==================== DEPENDENCY & KONFIGURASI ====================
   const assertDependencies = () => {
     if (typeof JOURNALS === "undefined")
       throw new Error("JOURNALS tidak di-load dari data.js");
@@ -9,20 +7,8 @@ const JournalApp = (() => {
     if (typeof IDENTITY === "undefined")
       throw new Error("IDENTITY tidak di-load dari data.js");
   };
-
-  // ==================== KONSTANTA ====================
-  const PADDING = {
-    TARGETS: 3,
-    ACHIEVEMENTS: 3,
-    NEXT_WEEK_PLAN: 3,
-  };
-
-  const INTERPOLATION = {
-    THRESHOLD1: 0.4,
-    THRESHOLD2: 0.8,
-  };
-
-  // ==================== STATE ====================
+  const PADDING = { TARGETS: 3, ACHIEVEMENTS: 3, NEXT_WEEK_PLAN: 3 };
+  const INTERPOLATION = { THRESHOLD1: 0.4, THRESHOLD2: 0.8 };
   let state = {
     currentDailyJournal: null,
     currentWeeklyJournal: null,
@@ -38,7 +24,6 @@ const JournalApp = (() => {
     pxPerVh: window.innerHeight / 100,
     greetingIndex: 0,
     scrollTicking: false,
-    // Cache DOM elements
     dom: {
       hero: null,
       about: null,
@@ -61,14 +46,10 @@ const JournalApp = (() => {
       weeklyDocxBtn: null,
       printArea: null,
     },
-    // Untuk focus trap
     focusTrapHandler: null,
     previouslyFocused: null,
-    // Untuk greeting
     greetingIntervalId: null,
   };
-
-  // ==================== FUNGSI PEMBANTU ====================
   const clamp = (v, min, max) => Math.min(Math.max(v, min), max);
   const htmlEsc = (s) => {
     if (s == null) return "";
@@ -113,7 +94,9 @@ const JournalApp = (() => {
       g = a[1] + (b[1] - a[1]) * t;
       bb = a[2] + (b[2] - a[2]) * t;
     } else if (p <= INTERPOLATION.THRESHOLD2) {
-      const t = (p - INTERPOLATION.THRESHOLD1) / (INTERPOLATION.THRESHOLD2 - INTERPOLATION.THRESHOLD1);
+      const t =
+        (p - INTERPOLATION.THRESHOLD1) /
+        (INTERPOLATION.THRESHOLD2 - INTERPOLATION.THRESHOLD1);
       r = b[0] + (c[0] - b[0]) * t;
       g = b[1] + (c[1] - b[1]) * t;
       bb = b[2] + (c[2] - b[2]) * t;
@@ -140,8 +123,6 @@ const JournalApp = (() => {
     );
     el.style.boxShadow = `0 0 100vh ${col}`;
   };
-
-  // ==================== GREETING ROTATION ====================
   const greetings = [
     "Halo",
     "Bonjour",
@@ -168,7 +149,6 @@ const JournalApp = (() => {
     "Xin chào",
     "Hello",
   ];
-
   const startGreetingRotation = () => {
     const greetingEl = document.getElementById("greeting");
     if (!greetingEl) return;
@@ -176,7 +156,10 @@ const JournalApp = (() => {
       clearInterval(state.greetingIntervalId);
       state.greetingIntervalId = null;
     }
-    const ANIM = TEMPLATE_SCHEMA.animation || { greetingInterval: 2000, greetingFadeTime: 500 };
+    const ANIM = TEMPLATE_SCHEMA.animation || {
+      greetingInterval: 2000,
+      greetingFadeTime: 500,
+    };
     state.greetingIntervalId = setInterval(() => {
       greetingEl.classList.add("fade-out");
       setTimeout(() => {
@@ -186,8 +169,6 @@ const JournalApp = (() => {
       }, ANIM.greetingFadeTime);
     }, ANIM.greetingInterval);
   };
-
-  // ==================== PARTICLE SYSTEM ====================
   class Particle {
     constructor(canvasWidth, canvasHeight, pxPerVh, sizeVh) {
       this.pxPerVh = pxPerVh;
@@ -220,7 +201,6 @@ const JournalApp = (() => {
       ctx.fill();
     }
   }
-
   const initParticles = (canvas) => {
     if (!canvas) return;
     state.canvas = canvas;
@@ -230,7 +210,6 @@ const JournalApp = (() => {
     state.pxPerVh = state.vh / 100;
     canvas.width = state.vw;
     canvas.height = state.vh;
-
     const ANIM = TEMPLATE_SCHEMA.animation || {
       particleCount: 90,
       particleSizeVh: 0.3,
@@ -242,7 +221,6 @@ const JournalApp = (() => {
       );
     }
   };
-
   const resizeCanvas = () => {
     if (!state.canvas) return;
     state.vw = window.innerWidth;
@@ -256,7 +234,6 @@ const JournalApp = (() => {
         (TEMPLATE_SCHEMA.animation?.particleSizeVh || 0.3) * state.pxPerVh;
     });
   };
-
   const drawConnections = (ctx, particles, maxDist) => {
     for (let i = 0; i < particles.length; i++) {
       for (let j = i + 1; j < particles.length; j++) {
@@ -275,10 +252,8 @@ const JournalApp = (() => {
       }
     }
   };
-
   const animateParticles = () => {
     if (!state.ctx || !state.canvas) return;
-
     if (document.hidden || state.isWeeklyDetailVisible) {
       if (state.particleAnimationFrame) {
         cancelAnimationFrame(state.particleAnimationFrame);
@@ -286,7 +261,6 @@ const JournalApp = (() => {
       }
       return;
     }
-
     state.ctx.clearRect(0, 0, state.vw, state.vh);
     for (const p of state.particles) {
       p.update(state.vw, state.vh);
@@ -297,8 +271,6 @@ const JournalApp = (() => {
     drawConnections(state.ctx, state.particles, maxDist);
     state.particleAnimationFrame = requestAnimationFrame(animateParticles);
   };
-
-  // ==================== SCROLL EFFECTS ====================
   const handleScroll = () => {
     if (!state.scrollTicking) {
       window.requestAnimationFrame(() => {
@@ -318,8 +290,6 @@ const JournalApp = (() => {
       state.scrollTicking = true;
     }
   };
-
-  // ==================== RENDER JURNAL ====================
   const renderJournals = (filter) => {
     const grid = state.dom.journalGrid;
     if (!grid) return;
@@ -347,7 +317,6 @@ const JournalApp = (() => {
       grid.innerHTML = `<p style="grid-column:1/-1;text-align:center;color:red;">Terjadi kesalahan saat memuat jurnal.</p>`;
     }
   };
-
   const buildCard = (journal, index) => {
     const card = document.createElement("div");
     card.className = "journal-card";
@@ -356,7 +325,6 @@ const JournalApp = (() => {
     card.setAttribute("tabindex", "0");
     card.setAttribute("aria-label", `Buka jurnal ${journal.date}`);
     card.setAttribute("aria-haspopup", "dialog");
-
     const meta = document.createElement("div");
     meta.className = "card-meta";
     const dateSpan = document.createElement("span");
@@ -369,12 +337,10 @@ const JournalApp = (() => {
     badgeSpan.textContent = journal.type === "daily" ? "Harian" : "Mingguan";
     meta.appendChild(dateSpan);
     meta.appendChild(badgeSpan);
-
     const divider = document.createElement("div");
     divider.className = "card-divider";
     card.appendChild(meta);
     card.appendChild(divider);
-
     if (journal.type === "daily") {
       const d = journal.daily || {};
       const targets = d.targets || [];
@@ -460,7 +426,6 @@ const JournalApp = (() => {
       progRow.appendChild(progNum);
       card.appendChild(progRow);
     }
-
     const readMore = document.createElement("div");
     readMore.className = "card-read-more";
     readMore.textContent = TEMPLATE_SCHEMA.ui?.readMore || "Baca selengkapnya";
@@ -469,7 +434,6 @@ const JournalApp = (() => {
     arrow.setAttribute("aria-hidden", "true");
     readMore.appendChild(arrow);
     card.appendChild(readMore);
-
     const openHandler = (e) => {
       if (journal.type === "weekly") {
         showWeeklyDetail(journal);
@@ -477,7 +441,6 @@ const JournalApp = (() => {
         openModal(journal);
       }
     };
-
     card.addEventListener("click", openHandler);
     card.addEventListener("keydown", (e) => {
       if (e.key === "Enter" || e.key === " ") {
@@ -485,28 +448,22 @@ const JournalApp = (() => {
         openHandler(e);
       }
     });
-
     return card;
   };
-
-  // ==================== MODAL (DAILY) ====================
   const openModal = (journal) => {
     try {
       state.currentDailyJournal = journal;
       const { modal, modalBody, modalBadge, modalDate, modalClose } = state.dom;
       if (!modal || !modalBody) return;
-
       modalBadge.className = "card-badge daily";
       modalBadge.textContent = "Harian";
       modalDate.textContent = journal.date;
       modalBody.innerHTML = "";
       const sections = buildDailyDetailDOM(journal);
       sections.forEach((sec) => modalBody.appendChild(sec));
-
       modal.classList.add("open");
       document.body.style.overflow = "hidden";
       modalBody.scrollTop = 0;
-
       state.previouslyFocused = document.activeElement;
       trapFocus(modal);
       modalClose.focus();
@@ -515,36 +472,30 @@ const JournalApp = (() => {
       showErrorBanner("Terjadi kesalahan saat membuka jurnal.");
     }
   };
-
   const closeModal = () => {
     const modal = state.dom.modal;
     if (!modal) return;
     modal.classList.remove("open");
     document.body.style.overflow = "";
     state.currentDailyJournal = null;
-
     if (state.focusTrapHandler) {
       modal.removeEventListener("keydown", state.focusTrapHandler);
       state.focusTrapHandler = null;
     }
-
     if (state.previouslyFocused && state.previouslyFocused.focus) {
       state.previouslyFocused.focus();
     }
   };
-
   const trapFocus = (modal) => {
     if (state.focusTrapHandler) {
       modal.removeEventListener("keydown", state.focusTrapHandler);
       state.focusTrapHandler = null;
     }
-
     const focusableSelector =
       'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])';
     const focusable = modal.querySelectorAll(focusableSelector);
     const firstFocusable = focusable[0];
     const lastFocusable = focusable[focusable.length - 1];
-
     const handleKeyDown = (e) => {
       if (e.key === "Escape") {
         closeModal();
@@ -563,16 +514,12 @@ const JournalApp = (() => {
         }
       }
     };
-
     modal.addEventListener("keydown", handleKeyDown);
     state.focusTrapHandler = handleKeyDown;
   };
-
-  // Fungsi untuk mencari section berdasarkan field
   const findSection = (sections, field) => {
-    return sections.find(s => s.field === field);
+    return sections.find((s) => s.field === field);
   };
-
   const buildDailyDetailDOM = (journal) => {
     const d = journal.daily || {};
     const allSections = TEMPLATE_SCHEMA.daily.sections;
@@ -586,7 +533,6 @@ const JournalApp = (() => {
       throw new Error("Schema daily tidak lengkap");
     }
     const sections = [];
-
     const createTitle = (num, title, isWeekly = false) => {
       const div = document.createElement("div");
       div.className = "detail-section-title";
@@ -597,8 +543,6 @@ const JournalApp = (() => {
       div.appendChild(document.createTextNode(" " + title));
       return div;
     };
-
-    // 1️⃣ Rencana (dengan tanggal)
     const sec0 = document.createElement("div");
     sec0.className = "detail-section";
     sec0.appendChild(createTitle(s0.num, s0.title + " (" + journal.date + ")"));
@@ -618,8 +562,6 @@ const JournalApp = (() => {
     });
     sec0.appendChild(list0);
     sections.push(sec0);
-
-    // 2️⃣ Aktivitas
     const sec1 = document.createElement("div");
     sec1.className = "detail-section";
     sec1.appendChild(createTitle(s1.num, s1.title));
@@ -655,8 +597,6 @@ const JournalApp = (() => {
     table.appendChild(tbody);
     sec1.appendChild(table);
     sections.push(sec1);
-
-    // 3️⃣ Hasil
     const sec2 = document.createElement("div");
     sec2.className = "detail-section";
     sec2.appendChild(createTitle(s2.num, s2.title));
@@ -665,8 +605,6 @@ const JournalApp = (() => {
     pResults.textContent = d.results || "";
     sec2.appendChild(pResults);
     sections.push(sec2);
-
-    // 4️⃣ Kendala
     const sec3 = document.createElement("div");
     sec3.className = "detail-section";
     sec3.appendChild(createTitle(s3.num, s3.title));
@@ -687,8 +625,6 @@ const JournalApp = (() => {
     });
     sec3.appendChild(sub3);
     sections.push(sec3);
-
-    // 5️⃣ Solusi
     const sec4 = document.createElement("div");
     sec4.className = "detail-section";
     sec4.appendChild(createTitle(s4.num, s4.title));
@@ -697,8 +633,6 @@ const JournalApp = (() => {
     pSol.textContent = d.solutions || "";
     sec4.appendChild(pSol);
     sections.push(sec4);
-
-    // 6️⃣ Refleksi
     const sec5 = document.createElement("div");
     sec5.className = "detail-section";
     sec5.appendChild(createTitle(s5.num, s5.title));
@@ -740,17 +674,13 @@ const JournalApp = (() => {
     scoreDiv.appendChild(scoreInfo);
     sec5.appendChild(scoreDiv);
     sections.push(sec5);
-
     return sections;
   };
-
-  // ==================== DETAIL MINGGUAN ====================
   const showWeeklyDetail = (journal) => {
     try {
       state.lastScrollPosition = window.scrollY;
       state.currentWeeklyJournal = journal;
       state.isWeeklyDetailVisible = true;
-
       const {
         journalHeader,
         journalGrid,
@@ -759,11 +689,9 @@ const JournalApp = (() => {
         weeklyIdentity,
       } = state.dom;
       if (!weeklyDetailContainer || !weeklyContent) return;
-
       if (journalHeader) journalHeader.style.display = "none";
       if (journalGrid) journalGrid.style.display = "none";
       weeklyDetailContainer.style.display = "block";
-
       let noteEl = weeklyDetailContainer.querySelector(".weekly-note");
       if (!noteEl) {
         noteEl = document.createElement("div");
@@ -773,15 +701,12 @@ const JournalApp = (() => {
       }
       noteEl.textContent =
         "Untuk info lebih detail per hari, bisa klik tombol kembali dan baca jurnal harian yang ada.";
-
       weeklyContent.innerHTML = "";
       const sections = buildWeeklyDetailDOM(journal);
       sections.forEach((sec) => weeklyContent.appendChild(sec));
-
       weeklyIdentity.innerHTML = "";
       const identityElements = buildIdentityElements();
-      identityElements.forEach(el => weeklyIdentity.appendChild(el));
-
+      identityElements.forEach((el) => weeklyIdentity.appendChild(el));
       const url = new URL(window.location.href);
       const weekParam = url.searchParams.get("week");
       const newWeek = journal.weekly.weekNumber.toString();
@@ -790,7 +715,6 @@ const JournalApp = (() => {
         history.pushState({}, "", url);
       }
       document.title = `Jurnal Mingguan - ${journal.date}`;
-
       toggleFaceMe(false);
       if (state.particleAnimationFrame) {
         cancelAnimationFrame(state.particleAnimationFrame);
@@ -801,16 +725,14 @@ const JournalApp = (() => {
       showErrorBanner("Terjadi kesalahan saat membuka jurnal mingguan.");
     }
   };
-
   const buildIdentityElements = () => {
     const id = getIdentity();
     const elements = [];
-
     const header = document.createElement("div");
     header.className = "identity-header";
-    header.textContent = TEMPLATE_SCHEMA.ui?.identityHeader || "Identitas Mahasiswa";
+    header.textContent =
+      TEMPLATE_SCHEMA.ui?.identityHeader || "Identitas Mahasiswa";
     elements.push(header);
-
     const addRow = (label, value) => {
       const row = document.createElement("div");
       row.className = "identity-row";
@@ -823,7 +745,6 @@ const JournalApp = (() => {
       row.appendChild(val);
       elements.push(row);
     };
-
     addRow("Nama:", id.nama);
     addRow("NIM:", id.nim);
     addRow("Kelas:", id.kelas ?? "—");
@@ -836,10 +757,8 @@ const JournalApp = (() => {
       TEMPLATE_SCHEMA.ui?.tujuan ||
         "Web untuk memenuhi tugas Weekly Journal WGTIK."
     );
-
     return elements;
   };
-
   const hideWeeklyDetail = () => {
     const { weeklyDetailContainer, journalHeader, journalGrid } = state.dom;
     if (weeklyDetailContainer) weeklyDetailContainer.style.display = "none";
@@ -848,21 +767,17 @@ const JournalApp = (() => {
     toggleFaceMe(true);
     state.isWeeklyDetailVisible = false;
     state.currentWeeklyJournal = null;
-
     const url = new URL(window.location.href);
     url.searchParams.delete("week");
     history.replaceState({}, "", url);
     document.title = "'Aarif Faqiih - Journal";
-
     setTimeout(() => {
       window.scrollTo(0, state.lastScrollPosition);
     }, 0);
-
     if (!document.hidden) {
       animateParticles();
     }
   };
-
   const buildWeeklyDetailDOM = (journal) => {
     const w = journal.weekly || {};
     const allSections = TEMPLATE_SCHEMA.weekly.sections;
@@ -876,7 +791,6 @@ const JournalApp = (() => {
       throw new Error("Schema weekly tidak lengkap");
     }
     const sections = [];
-
     const createTitle = (num, title, isWeekly = true) => {
       const div = document.createElement("div");
       div.className = "detail-section-title";
@@ -887,11 +801,11 @@ const JournalApp = (() => {
       div.appendChild(document.createTextNode(" " + title));
       return div;
     };
-
-    // 1️⃣ Ringkasan Aktivitas (dengan tanggal/minggu)
     const sec0 = document.createElement("div");
     sec0.className = "detail-section";
-    sec0.appendChild(createTitle(s0.num, s0.title + " (" + journal.date + ")", true));
+    sec0.appendChild(
+      createTitle(s0.num, s0.title + " (" + journal.date + ")", true)
+    );
     const table = document.createElement("table");
     table.className = "detail-table";
     const thead = document.createElement("thead");
@@ -923,7 +837,6 @@ const JournalApp = (() => {
       tbody.appendChild(tr);
       totalHours += dur;
     });
-    // Baris total dengan class CSS
     const trTotal = document.createElement("tr");
     trTotal.className = "detail-table-total-row";
     const tdTotalLabel = document.createElement("td");
@@ -939,8 +852,6 @@ const JournalApp = (() => {
     table.appendChild(tbody);
     sec0.appendChild(table);
     sections.push(sec0);
-
-    // 2️⃣ Capaian
     const sec1 = document.createElement("div");
     sec1.className = "detail-section";
     sec1.appendChild(createTitle(s1.num, s1.title, true));
@@ -960,8 +871,6 @@ const JournalApp = (() => {
     });
     sec1.appendChild(list1);
     sections.push(sec1);
-
-    // 3️⃣ Progress Semester
     const sec2 = document.createElement("div");
     sec2.className = "detail-section";
     sec2.appendChild(createTitle(s2.num, s2.title, true));
@@ -997,8 +906,6 @@ const JournalApp = (() => {
     progRow.appendChild(progNum);
     sec2.appendChild(progRow);
     sections.push(sec2);
-
-    // 4️⃣ Kendala Mingguan
     const sec3 = document.createElement("div");
     sec3.className = "detail-section";
     sec3.appendChild(createTitle(s3.num, s3.title, true));
@@ -1019,8 +926,6 @@ const JournalApp = (() => {
     });
     sec3.appendChild(sub3);
     sections.push(sec3);
-
-    // 5️⃣ Evaluasi Diri
     const sec4 = document.createElement("div");
     sec4.className = "detail-section";
     sec4.appendChild(createTitle(s4.num, s4.title, true));
@@ -1041,8 +946,6 @@ const JournalApp = (() => {
     });
     sec4.appendChild(sub4);
     sections.push(sec4);
-
-    // 6️⃣ Rencana Minggu Depan
     const sec5 = document.createElement("div");
     sec5.className = "detail-section";
     sec5.appendChild(createTitle(s5.num, s5.title, true));
@@ -1062,16 +965,12 @@ const JournalApp = (() => {
     });
     sec5.appendChild(list5);
     sections.push(sec5);
-
     return sections;
   };
-
   const toggleFaceMe = (show) => {
     if (state.dom.hero) state.dom.hero.style.display = show ? "" : "none";
     if (state.dom.about) state.dom.about.style.display = show ? "" : "none";
   };
-
-  // ==================== PRINT & DOCX ====================
   const handlePrintClick = () => {
     try {
       if (!state.currentDailyJournal)
@@ -1085,7 +984,6 @@ const JournalApp = (() => {
       showErrorBanner("Gagal membuka preview cetak: " + err.message);
     }
   };
-
   const handleWeeklyPrintClick = () => {
     try {
       if (!state.currentWeeklyJournal)
@@ -1099,96 +997,212 @@ const JournalApp = (() => {
       showErrorBanner("Gagal membuka preview cetak: " + err.message);
     }
   };
-
   const afterPrintHandler = () => {
     if (state.dom.printArea) {
       state.dom.printArea.innerHTML = "";
     }
   };
-
-  // Fungsi pembantu untuk print HTML (refaktor)
   const printSection = (num, title, content) => {
-    return `<div class="print-section">
-      <div class="print-section-header">${num} ${htmlEsc(title)}</div>
-      ${content}
-    </div>`;
+    return `<div class="print-section"> <div class="print-section-header">${num} ${htmlEsc(
+      title
+    )}</div> ${content} </div>`;
   };
-
   const printIdentityBlock = () => {
     const id = getIdentity();
     const idf = TEMPLATE_SCHEMA.identity;
-    return `<div class="print-identitas print-section">
-      <p><strong>${htmlEsc(idf.label)}</strong> <em>${htmlEsc(idf.note)}</em></p>
-      ${idf.fields.map((f) => `<p>${htmlEsc(f.label)}: ${htmlEsc(id[f.key] ?? "—")}</p>`).join("")}
-    </div>`;
+    return `<div class="print-identitas print-section"> <p><strong>${htmlEsc(
+      idf.label
+    )}</strong> <em>${htmlEsc(idf.note)}</em></p> ${idf.fields
+      .map((f) => `<p>${htmlEsc(f.label)}: ${htmlEsc(id[f.key] ?? "—")}</p>`)
+      .join("")} </div>`;
   };
-
   const buildPrintDaily = (journal) => {
     const d = journal.daily || {};
     const sc = TEMPLATE_SCHEMA.daily.sections;
-    // Gunakan find, tapi untuk print kita masih bisa pakai array karena tidak berubah
-    const [s0, s1, s2, s3, s4, s5] = sc; // tidak masalah karena print hanya dipanggil saat render
-    const colHeaders = s1.columns.map((col) => `<th style="width:${col.printWidth}">${htmlEsc(col.label)}</th>`).join("");
-    const actRows = (d.activities || []).map((a) => `<tr><td>${htmlEsc(a.time)}</td><td>${htmlEsc(a.activity)}</td><td>${htmlEsc(a.output)}</td><td>${htmlEsc(a.status)}</td></tr>`).join("");
-    const hintRow = d.activities?.length === 0 ? "<tr><td>08.00-09.30</td><td></td><td></td><td></td></tr>" : "";
-    const emptyRows = '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
+    const [s0, s1, s2, s3, s4, s5] = sc;
+    const colHeaders = s1.columns
+      .map(
+        (col) =>
+          `<th style="width:${col.printWidth}">${htmlEsc(col.label)}</th>`
+      )
+      .join("");
+    const actRows = (d.activities || [])
+      .map(
+        (a) =>
+          `<tr><td>${htmlEsc(a.time)}</td><td>${htmlEsc(
+            a.activity
+          )}</td><td>${htmlEsc(a.output)}</td><td>${htmlEsc(
+            a.status
+          )}</td></tr>`
+      )
+      .join("");
+    const hintRow =
+      d.activities?.length === 0
+        ? "<tr><td>08.00-09.30</td><td></td><td></td><td></td></tr>"
+        : "";
+    const emptyRows =
+      '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
     const targets = d.targets || [];
-    const targetItems = targets.map((t, i) => `<li>${s0.itemPrefix} ${i + 1}: ${htmlEsc(t)}</li>`).join("");
-    const padTargets = Array.from({ length: Math.max(0, PADDING.TARGETS - targets.length) })
-      .map((_, i) => `<li>${s0.itemPrefix} ${targets.length + i + 1}: —</li>`).join("");
-
-    return `<div class="print-page">
-      <div class="print-title">${htmlEsc(TEMPLATE_SCHEMA.daily.docTitle)}</div>
-      ${printIdentityBlock()}
-    </div>
-    <div class="print-page">
-      ${printSection(s0.num, s0.title + " (" + journal.date + ")", `<p class="print-note">${htmlEsc(s0.note)}</p><ul>${targetItems}${padTargets}</ul>`)}
-      ${printSection(s1.num, s1.title, `<table class="print-table"><thead><tr>${colHeaders}</tr></thead><tbody>${hintRow}${actRows}${emptyRows}</tbody></table>`)}
-      ${printSection(s2.num, s2.title, `<p class="print-note">${htmlEsc(s2.note)}</p><p>${htmlEsc(d.results || "")}</p>`)}
-      ${printSection(s3.num, s3.title, `<ul>${s3.subFields.map((sf) => `<li>${htmlEsc(sf.label)}: ${htmlEsc(d.obstacles?.[sf.key] ?? "—")}</li>`).join("")}</ul>`)}
-      ${printSection(s4.num, s4.title, `<p>${htmlEsc(d.solutions || "")}</p>`)}
-      ${printSection(s5.num, s5.title, `<p class="print-note">${htmlEsc(s5.note)}</p>
-        <ul>${s5.subFields.map((sf) => `<li>${htmlEsc(sf.label)}: ${htmlEsc(d.reflection?.[sf.key] ?? "")}</li>`).join("")}
-        <li>${htmlEsc(s5.scoreLabel)}: <span class="print-score">${htmlEsc(d.reflection?.score)}</span></li></ul>`)}
-    </div>`;
+    const targetItems = targets
+      .map((t, i) => `<li>${s0.itemPrefix} ${i + 1}: ${htmlEsc(t)}</li>`)
+      .join("");
+    const padTargets = Array.from({
+      length: Math.max(0, PADDING.TARGETS - targets.length),
+    })
+      .map((_, i) => `<li>${s0.itemPrefix} ${targets.length + i + 1}: —</li>`)
+      .join("");
+    return `<div class="print-page"> <div class="print-title">${htmlEsc(
+      TEMPLATE_SCHEMA.daily.docTitle
+    )}</div> ${printIdentityBlock()} </div> <div class="print-page"> ${printSection(
+      s0.num,
+      s0.title + " (" + journal.date + ")",
+      `<p class="print-note">${htmlEsc(
+        s0.note
+      )}</p><ul>${targetItems}${padTargets}</ul>`
+    )} ${printSection(
+      s1.num,
+      s1.title,
+      `<table class="print-table"><thead><tr>${colHeaders}</tr></thead><tbody>${hintRow}${actRows}${emptyRows}</tbody></table>`
+    )} ${printSection(
+      s2.num,
+      s2.title,
+      `<p class="print-note">${htmlEsc(s2.note)}</p><p>${htmlEsc(
+        d.results || ""
+      )}</p>`
+    )} ${printSection(
+      s3.num,
+      s3.title,
+      `<ul>${s3.subFields
+        .map(
+          (sf) =>
+            `<li>${htmlEsc(sf.label)}: ${htmlEsc(
+              d.obstacles?.[sf.key] ?? "—"
+            )}</li>`
+        )
+        .join("")}</ul>`
+    )} ${printSection(
+      s4.num,
+      s4.title,
+      `<p>${htmlEsc(d.solutions || "")}</p>`
+    )} ${printSection(
+      s5.num,
+      s5.title,
+      `<p class="print-note">${htmlEsc(s5.note)}</p> <ul>${s5.subFields
+        .map(
+          (sf) =>
+            `<li>${htmlEsc(sf.label)}: ${htmlEsc(
+              d.reflection?.[sf.key] ?? ""
+            )}</li>`
+        )
+        .join("")} <li>${htmlEsc(
+        s5.scoreLabel
+      )}: <span class="print-score">${htmlEsc(
+        d.reflection?.score
+      )}</span></li></ul>`
+    )} </div>`;
   };
-
   const buildPrintWeekly = (journal) => {
     const w = journal.weekly || {};
     const sc = TEMPLATE_SCHEMA.weekly.sections;
     const [s0, s1, s2, s3, s4, s5] = sc;
-    const colHeaders = s0.columns.map((col) => `<th style="width:${col.printWidth}">${htmlEsc(col.label)}</th>`).join("");
+    const colHeaders = s0.columns
+      .map(
+        (col) =>
+          `<th style="width:${col.printWidth}">${htmlEsc(col.label)}</th>`
+      )
+      .join("");
     const activities = w.activities || [];
     let totalHours = 0;
-    const actRows = activities.map((a) => {
-      const dur = parseFloat(a.duration) || 0;
-      totalHours += dur;
-      return `<tr><td>${htmlEsc(a.day)}</td><td>${htmlEsc(a.focus)}</td><td>${htmlEsc(a.output)}</td><td>${htmlEsc(dur + " jam")}</td></tr>`;
-    }).join("");
-    const totalRow = `<tr class="print-total-row"><td colspan="3" style="text-align:right;">Total</td><td>${totalHours.toFixed(1)} jam</td></tr>`;
-    const emptyRows = '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
-    const achItems = (w.achievements || []).map((a) => `<li>✔ ${htmlEsc(a)}</li>`).join("");
-    const padAch = Array.from({ length: Math.max(0, PADDING.ACHIEVEMENTS - (w.achievements || []).length) })
-      .map(() => "<li>✔ —</li>").join("");
-    const planItems = (w.nextWeekPlan || []).map((t, i) => `<li>${s5.itemPrefix} ${i + 1}: ${htmlEsc(t)}</li>`).join("");
-    const padPlan = Array.from({ length: Math.max(0, PADDING.NEXT_WEEK_PLAN - (w.nextWeekPlan || []).length) })
-      .map((_, i) => `<li>${s5.itemPrefix} ${(w.nextWeekPlan || []).length + i + 1}: —</li>`).join("");
-
-    return `<div class="print-page">
-      <div class="print-title">${htmlEsc(TEMPLATE_SCHEMA.weekly.docTitle)}</div>
-      ${printIdentityBlock()}
-    </div>
-    <div class="print-page">
-      ${printSection(s0.num, s0.title + " (" + journal.date + ")", `<table class="print-table"><thead><tr>${colHeaders}</tr></thead><tbody>${actRows}${totalRow}${emptyRows}</tbody></table>`)}
-      ${printSection(s1.num, s1.title, `<p class="print-note">${htmlEsc(s1.note)}</p><ul>${achItems}${padAch}</ul>`)}
-      ${printSection(s2.num, s2.title, `<ul><li>${htmlEsc(s2.subFields[0].label)}: ${htmlEsc(w.semesterTarget?.target || "")}</li><li>${htmlEsc(s2.progressLabel)}: ${htmlEsc(w.semesterTarget?.progress || 0)}%</li><li>${htmlEsc(s2.subFields[1].label)}: ${htmlEsc(w.semesterTarget?.note || "")}</li></ul>`)}
-      ${printSection(s3.num, s3.title, `<ul>${s3.subFields.map((sf) => `<li>${htmlEsc(sf.label)}: ${htmlEsc(w.obstacles?.[sf.key] ?? "—")}</li>`).join("")}</ul>`)}
-      ${printSection(s4.num, s4.title, `<p class="print-note">${htmlEsc(s4.note)}</p><ul>${s4.subFields.map((sf) => `<li>${htmlEsc(sf.label)}: ${htmlEsc(w.evaluation?.[sf.key] ?? "")}</li>`).join("")}</ul>`)}
-      ${printSection(s5.num, s5.title, `<ul>${planItems}${padPlan}</ul>`)}
-    </div>`;
+    const actRows = activities
+      .map((a) => {
+        const dur = parseFloat(a.duration) || 0;
+        totalHours += dur;
+        return `<tr><td>${htmlEsc(a.day)}</td><td>${htmlEsc(
+          a.focus
+        )}</td><td>${htmlEsc(a.output)}</td><td>${htmlEsc(
+          dur + " jam"
+        )}</td></tr>`;
+      })
+      .join("");
+    const totalRow = `<tr class="print-total-row"><td colspan="3" style="text-align:right;">Total</td><td>${totalHours.toFixed(
+      1
+    )} jam</td></tr>`;
+    const emptyRows =
+      '<tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr><tr class="print-blank-row"><td></td><td></td><td></td><td></td></tr>';
+    const achItems = (w.achievements || [])
+      .map((a) => `<li>✔ ${htmlEsc(a)}</li>`)
+      .join("");
+    const padAch = Array.from({
+      length: Math.max(0, PADDING.ACHIEVEMENTS - (w.achievements || []).length),
+    })
+      .map(() => "<li>✔ —</li>")
+      .join("");
+    const planItems = (w.nextWeekPlan || [])
+      .map((t, i) => `<li>${s5.itemPrefix} ${i + 1}: ${htmlEsc(t)}</li>`)
+      .join("");
+    const padPlan = Array.from({
+      length: Math.max(
+        0,
+        PADDING.NEXT_WEEK_PLAN - (w.nextWeekPlan || []).length
+      ),
+    })
+      .map(
+        (_, i) =>
+          `<li>${s5.itemPrefix} ${
+            (w.nextWeekPlan || []).length + i + 1
+          }: —</li>`
+      )
+      .join("");
+    return `<div class="print-page"> <div class="print-title">${htmlEsc(
+      TEMPLATE_SCHEMA.weekly.docTitle
+    )}</div> ${printIdentityBlock()} </div> <div class="print-page"> ${printSection(
+      s0.num,
+      s0.title + " (" + journal.date + ")",
+      `<table class="print-table"><thead><tr>${colHeaders}</tr></thead><tbody>${actRows}${totalRow}${emptyRows}</tbody></table>`
+    )} ${printSection(
+      s1.num,
+      s1.title,
+      `<p class="print-note">${htmlEsc(
+        s1.note
+      )}</p><ul>${achItems}${padAch}</ul>`
+    )} ${printSection(
+      s2.num,
+      s2.title,
+      `<ul><li>${htmlEsc(s2.subFields[0].label)}: ${htmlEsc(
+        w.semesterTarget?.target || ""
+      )}</li><li>${htmlEsc(s2.progressLabel)}: ${htmlEsc(
+        w.semesterTarget?.progress || 0
+      )}%</li><li>${htmlEsc(s2.subFields[1].label)}: ${htmlEsc(
+        w.semesterTarget?.note || ""
+      )}</li></ul>`
+    )} ${printSection(
+      s3.num,
+      s3.title,
+      `<ul>${s3.subFields
+        .map(
+          (sf) =>
+            `<li>${htmlEsc(sf.label)}: ${htmlEsc(
+              w.obstacles?.[sf.key] ?? "—"
+            )}</li>`
+        )
+        .join("")}</ul>`
+    )} ${printSection(
+      s4.num,
+      s4.title,
+      `<p class="print-note">${htmlEsc(s4.note)}</p><ul>${s4.subFields
+        .map(
+          (sf) =>
+            `<li>${htmlEsc(sf.label)}: ${htmlEsc(
+              w.evaluation?.[sf.key] ?? ""
+            )}</li>`
+        )
+        .join("")}</ul>`
+    )} ${printSection(
+      s5.num,
+      s5.title,
+      `<ul>${planItems}${padPlan}</ul>`
+    )} </div>`;
   };
-
-  // ==================== DOCX GENERATION ====================
   const wr = (text, opts = {}) => {
     const rpr = [
       opts.bold ? "<w:b/>" : "",
@@ -1199,20 +1213,29 @@ const JournalApp = (() => {
       opts.color ? `<w:color w:val="${opts.color}"/>` : "",
       '<w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/>',
     ].join("");
-    return `<w:r><w:rPr>${rpr}</w:rPr><w:t xml:space="preserve">${xmlEsc(text)}</w:t></w:r>`;
+    return `<w:r><w:rPr>${rpr}</w:rPr><w:t xml:space="preserve">${xmlEsc(
+      text
+    )}</w:t></w:r>`;
   };
-
   const wp = (runs, opts = {}) => {
     const ppr = [];
     if (opts.numId)
-      ppr.push(`<w:numPr><w:ilvl w:val="0"/><w:numId w:val="${opts.numId}"/></w:numPr>`);
+      ppr.push(
+        `<w:numPr><w:ilvl w:val="0"/><w:numId w:val="${opts.numId}"/></w:numPr>`
+      );
     const bdr = [];
     if (opts.borderBottom)
-      bdr.push('<w:bottom w:val="single" w:sz="8" w:space="2" w:color="999999"/>');
+      bdr.push(
+        '<w:bottom w:val="single" w:sz="8" w:space="2" w:color="999999"/>'
+      );
     if (opts.borderLeft)
-      bdr.push('<w:left w:val="single" w:sz="18" w:space="8" w:color="000000"/>');
+      bdr.push(
+        '<w:left w:val="single" w:sz="18" w:space="8" w:color="000000"/>'
+      );
     if (opts.titleBorder)
-      bdr.push('<w:bottom w:val="single" w:sz="12" w:space="4" w:color="000000"/>');
+      bdr.push(
+        '<w:bottom w:val="single" w:sz="12" w:space="4" w:color="000000"/>'
+      );
     if (bdr.length) ppr.push(`<w:pBdr>${bdr.join("")}</w:pBdr>`);
     const before = opts.before != null ? opts.before : 0;
     const after = opts.after != null ? opts.after : 120;
@@ -1223,52 +1246,61 @@ const JournalApp = (() => {
     const pprStr = ppr.length > 0 ? `<w:pPr>${ppr.join("")}</w:pPr>` : "";
     return `<w:p>${pprStr}${runs}</w:p>`;
   };
-
-  // wtc dengan dukungan colspan
   const wtc = (text, width, isHeader = false, colspan = 1) => {
-    const shading = isHeader ? '<w:shd w:val="clear" w:color="auto" w:fill="E8E8E8"/>' : "";
+    const shading = isHeader
+      ? '<w:shd w:val="clear" w:color="auto" w:fill="E8E8E8"/>'
+      : "";
     const gridSpan = colspan > 1 ? `<w:gridSpan w:val="${colspan}"/>` : "";
-    return `<w:tc><w:tcPr><w:tcW w:w="${width * colspan}" w:type="dxa"/>${gridSpan}${shading}<w:tcMar><w:top w:w="72" w:type="dxa"/><w:bottom w:w="72" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tcMar></w:tcPr><w:p><w:pPr><w:spacing w:before="0" w:after="0"/></w:pPr>${wr(text || "", { bold: isHeader, sz: 20 })}</w:p></w:tc>`;
+    return `<w:tc><w:tcPr><w:tcW w:w="${
+      width * colspan
+    }" w:type="dxa"/>${gridSpan}${shading}<w:tcMar><w:top w:w="72" w:type="dxa"/><w:bottom w:w="72" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tcMar></w:tcPr><w:p><w:pPr><w:spacing w:before="0" w:after="0"/></w:pPr>${wr(
+      text || "",
+      { bold: isHeader, sz: 20 }
+    )}</w:p></w:tc>`;
   };
-
   const wtr = (cells) => `<w:tr>${cells}</w:tr>`;
   const wtable = (colWidths, rows) => {
     const total = colWidths.reduce((a, b) => a + b, 0);
     const grid = colWidths.map((w) => `<w:gridCol w:w="${w}"/>`).join("");
     return `<w:tbl><w:tblPr><w:tblW w:w="${total}" w:type="dxa"/><w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:left w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:right w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="444444"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="444444"/></w:tblBorders><w:tblCellMar><w:top w:w="72" w:type="dxa"/><w:bottom w:w="72" w:type="dxa"/><w:left w:w="100" w:type="dxa"/><w:right w:w="100" w:type="dxa"/></w:tblCellMar></w:tblPr><w:tblGrid>${grid}</w:tblGrid>${rows}</w:tbl>`;
   };
-
   const emptyTr = (colWidths) => {
     const cells = colWidths
-      .map((w) => `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/></w:tcPr><w:p><w:pPr><w:spacing w:before="0" w:after="0"/></w:pPr><w:r><w:t></w:t></w:r></w:p></w:tc>`)
+      .map(
+        (w) =>
+          `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/></w:tcPr><w:p><w:pPr><w:spacing w:before="0" w:after="0"/></w:pPr><w:r><w:t></w:t></w:r></w:p></w:tc>`
+      )
       .join("");
     return `<w:tr><w:trPr><w:trHeight w:val="400" w:hRule="atLeast"/></w:trPr>${cells}</w:tr>`;
   };
-
-  const wsh = (text) => wp(wr(text, { bold: true, sz: 22 }), { before: 180, after: 80, borderBottom: true });
-  const wnote = (text) => wp(wr(text, { italic: true, sz: 20, color: "777777" }), { before: 40, after: 40 });
-  const wbp = (text) => wp(wr(text, { sz: 22 }), { numId: 1, before: 40, after: 40 });
-  const widp = (text) => wp(wr(text, { sz: 22 }), { borderLeft: true, before: 40, after: 40 });
+  const wsh = (text) =>
+    wp(wr(text, { bold: true, sz: 22 }), {
+      before: 180,
+      after: 80,
+      borderBottom: true,
+    });
+  const wnote = (text) =>
+    wp(wr(text, { italic: true, sz: 20, color: "777777" }), {
+      before: 40,
+      after: 40,
+    });
+  const wbp = (text) =>
+    wp(wr(text, { sz: 22 }), { numId: 1, before: 40, after: 40 });
+  const widp = (text) =>
+    wp(wr(text, { sz: 22 }), { borderLeft: true, before: 40, after: 40 });
   const wnp = (text) => wp(wr(text, { sz: 22 }), { before: 40, after: 80 });
-
   const makeDocumentXml = (bodyContent) =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:document xmlns:wpc="http://schemas.microsoft.com/office/word/2010/wordprocessingCanvas" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships" xmlns:m="http://schemas.openxmlformats.org/officeDocument/2006/math" xmlns:v="urn:schemas-microsoft-com:vml" xmlns:wp14="http://schemas.microsoft.com/office/word/2010/wordprocessingDrawing" xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" xmlns:w10="urn:schemas-microsoft-com:office:word" xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:w14="http://schemas.microsoft.com/office/word/2010/wordml" xmlns:wpg="http://schemas.microsoft.com/office/word/2010/wordprocessingGroup" xmlns:wpi="http://schemas.microsoft.com/office/word/2010/wordprocessingInk" xmlns:wne="http://schemas.microsoft.com/office/word/2006/wordml" xmlns:wps="http://schemas.microsoft.com/office/word/2010/wordprocessingShape" mc:Ignorable="w14 wp14"><w:body>${bodyContent}<w:sectPr><w:pgSz w:w="11906" w:h="16838"/><w:pgMar w:top="1134" w:right="1418" w:bottom="1134" w:left="1418"/></w:sectPr></w:body></w:document>`;
-
   const makeNumberingXml = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:numbering xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main"><w:abstractNum w:abstractNumId="0"><w:lvl w:ilvl="0"><w:start w:val="1"/><w:numFmt w:val="bullet"/><w:lvlText w:val="•"/><w:lvlJc w:val="left"/><w:pPr><w:ind w:left="720" w:hanging="360"/></w:pPr><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/></w:rPr></w:lvl></w:abstractNum><w:num w:numId="1"><w:abstractNumId w:val="0"/></w:num></w:numbering>`;
-
   const makeStylesXml = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><w:styles xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"><w:docDefaults><w:rPrDefault><w:rPr><w:rFonts w:ascii="Arial" w:hAnsi="Arial" w:cs="Arial"/><w:sz w:val="22"/><w:szCs w:val="22"/></w:rPr></w:rPrDefault><w:pPrDefault><w:pPr><w:spacing w:after="120"/></w:pPr></w:pPrDefault></w:docDefaults><w:style w:type="paragraph" w:styleId="Normal" w:default="1"><w:name w:val="Normal"/></w:style></w:styles>`;
-
   const makeContentTypes = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Types xmlns="http://schemas.openxmlformats.org/package/2006/content-types"><Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/><Default Extension="xml" ContentType="application/xml"/><Override PartName="/word/document.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/><Override PartName="/word/numbering.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.numbering+xml"/><Override PartName="/word/styles.xml" ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.styles+xml"/></Types>`;
-
   const makeRels = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/officeDocument" Target="word/document.xml"/></Relationships>`;
-
   const makeWordRels = () =>
     `<?xml version="1.0" encoding="UTF-8" standalone="yes"?><Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships"><Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/><Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/numbering" Target="numbering.xml"/></Relationships>`;
-
   const buildDocxDaily = async (journal) => {
     const d = journal.daily || {};
     const id = getIdentity();
@@ -1276,37 +1308,67 @@ const JournalApp = (() => {
     const [s0, s1, s2, s3, s4, s5] = sc;
     const idf = TEMPLATE_SCHEMA.identity;
     const cw = s1.columns.map((col) => col.docxWidth);
-    const headerRow = wtr(s1.columns.map((col, i) => wtc(col.label, cw[i], true)).join(""));
+    const headerRow = wtr(
+      s1.columns.map((col, i) => wtc(col.label, cw[i], true)).join("")
+    );
     const activities = d.activities || [];
     const dataRows = activities
-      .map((a) => wtr(wtc(a.time, cw[0]) + wtc(a.activity, cw[1]) + wtc(a.output, cw[2]) + wtc(a.status, cw[3])))
+      .map((a) =>
+        wtr(
+          wtc(a.time, cw[0]) +
+            wtc(a.activity, cw[1]) +
+            wtc(a.output, cw[2]) +
+            wtc(a.status, cw[3])
+        )
+      )
       .join("");
-    const hintRow = activities.length === 0 ? wtr(wtc("08.00-09.30", cw[0]) + wtc("", cw[1]) + wtc("", cw[2]) + wtc("", cw[3])) : "";
+    const hintRow =
+      activities.length === 0
+        ? wtr(
+            wtc("08.00-09.30", cw[0]) +
+              wtc("", cw[1]) +
+              wtc("", cw[2]) +
+              wtc("", cw[3])
+          )
+        : "";
     const emptyRows = emptyTr(cw) + emptyTr(cw);
-    const titlePara = wp(wr(TEMPLATE_SCHEMA.daily.docTitle, { bold: true, sz: 28 }), { align: "center", before: 0, after: 200, titleBorder: true });
+    const titlePara = wp(
+      wr(TEMPLATE_SCHEMA.daily.docTitle, { bold: true, sz: 28 }),
+      { align: "center", before: 0, after: 200, titleBorder: true }
+    );
     const targets = d.targets || [];
     const paddedTargets = [...targets];
     while (paddedTargets.length < PADDING.TARGETS) paddedTargets.push("—");
     const body = [
       titlePara,
-      wp(wr(idf.label, { bold: true, sz: 22 }) + wr(" " + idf.note, { italic: true, sz: 22 }), { borderLeft: true, before: 120, after: 40 }),
+      wp(
+        wr(idf.label, { bold: true, sz: 22 }) +
+          wr(" " + idf.note, { italic: true, sz: 22 }),
+        { borderLeft: true, before: 120, after: 40 }
+      ),
       ...idf.fields.map((f) => widp(f.label + ": " + (id[f.key] ?? "—"))),
       wp('<w:r><w:br w:type="page"/></w:r>', { before: 0, after: 0 }),
       wsh(s0.num + " " + s0.title + " (" + journal.date + ")"),
       wnote(s0.note),
-      ...paddedTargets.map((t, i) => wbp(s0.itemPrefix + " " + (i + 1) + ": " + t)),
+      ...paddedTargets.map((t, i) =>
+        wbp(s0.itemPrefix + " " + (i + 1) + ": " + t)
+      ),
       wsh(s1.num + " " + s1.title),
       wtable(cw, headerRow + hintRow + dataRows + emptyRows),
       wsh(s2.num + " " + s2.title),
       wnote(s2.note),
       wnp(d.results || ""),
       wsh(s3.num + " " + s3.title),
-      ...s3.subFields.map((sf) => wbp(sf.label + ": " + (d.obstacles?.[sf.key] ?? "—"))),
+      ...s3.subFields.map((sf) =>
+        wbp(sf.label + ": " + (d.obstacles?.[sf.key] ?? "—"))
+      ),
       wsh(s4.num + " " + s4.title),
       wnp(d.solutions || ""),
       wsh(s5.num + " " + s5.title),
       wnote(s5.note),
-      ...s5.subFields.map((sf) => wbp(sf.label + ": " + (d.reflection?.[sf.key] ?? ""))),
+      ...s5.subFields.map((sf) =>
+        wbp(sf.label + ": " + (d.reflection?.[sf.key] ?? ""))
+      ),
       wbp(s5.scoreLabel + ": " + (d.reflection?.score ?? "")),
     ].join("\n");
     const zip = new JSZip();
@@ -1318,7 +1380,6 @@ const JournalApp = (() => {
     zip.file("word/document.xml", makeDocumentXml(body));
     return await zip.generateAsync({ type: "blob" });
   };
-
   const buildDocxWeekly = async (journal) => {
     const w = journal.weekly || {};
     const sc = TEMPLATE_SCHEMA.weekly.sections;
@@ -1326,23 +1387,32 @@ const JournalApp = (() => {
     const id = getIdentity();
     const idf = TEMPLATE_SCHEMA.identity;
     const cw = s0.columns.map((col) => col.docxWidth);
-    const headerRow = wtr(s0.columns.map((col, i) => wtc(col.label, cw[i], true)).join(""));
+    const headerRow = wtr(
+      s0.columns.map((col, i) => wtc(col.label, cw[i], true)).join("")
+    );
     const activities = w.activities || [];
     let totalHours = 0;
     const dataRows = activities
       .map((a) => {
         const dur = parseFloat(a.duration) || 0;
         totalHours += dur;
-        return wtr(wtc(a.day, cw[0]) + wtc(a.focus, cw[1]) + wtc(a.output, cw[2]) + wtc(dur + " jam", cw[3]));
+        return wtr(
+          wtc(a.day, cw[0]) +
+            wtc(a.focus, cw[1]) +
+            wtc(a.output, cw[2]) +
+            wtc(dur + " jam", cw[3])
+        );
       })
       .join("");
-    // Baris total dengan colspan 3 untuk kolom pertama
     const totalRow = wtr(
-      wtc("Total", cw[0] + cw[1] + cw[2], true, 3) +  // colspan 3
-      wtc(totalHours.toFixed(1) + " jam", cw[3], true)
+      wtc("Total", cw[0] + cw[1] + cw[2], true, 3) +
+        wtc(totalHours.toFixed(1) + " jam", cw[3], true)
     );
     const emptyRows = emptyTr(cw) + emptyTr(cw);
-    const titlePara = wp(wr(TEMPLATE_SCHEMA.weekly.docTitle, { bold: true, sz: 28 }), { align: "center", before: 0, after: 200, titleBorder: true });
+    const titlePara = wp(
+      wr(TEMPLATE_SCHEMA.weekly.docTitle, { bold: true, sz: 28 }),
+      { align: "center", before: 0, after: 200, titleBorder: true }
+    );
     const achievements = w.achievements || [];
     const paddedAch = [...achievements];
     while (paddedAch.length < PADDING.ACHIEVEMENTS) paddedAch.push("—");
@@ -1351,7 +1421,11 @@ const JournalApp = (() => {
     while (paddedPlan.length < PADDING.NEXT_WEEK_PLAN) paddedPlan.push("—");
     const identitasParts = [
       titlePara,
-      wp(wr(idf.label, { bold: true, sz: 22 }) + wr(" " + idf.note, { italic: true, sz: 22 }), { borderLeft: true, before: 120, after: 40 }),
+      wp(
+        wr(idf.label, { bold: true, sz: 22 }) +
+          wr(" " + idf.note, { italic: true, sz: 22 }),
+        { borderLeft: true, before: 120, after: 40 }
+      ),
       ...idf.fields.map((f) => widp(f.label + ": " + (id[f.key] ?? "—"))),
       wp('<w:r><w:br w:type="page"/></w:r>', { before: 0, after: 0 }),
     ];
@@ -1360,18 +1434,24 @@ const JournalApp = (() => {
       wtable(cw, headerRow + dataRows + totalRow + emptyRows),
       wsh(s1.num + " " + s1.title),
       wnote(s1.note),
-      ...paddedAch.map((a) => wbp(a)),  // gunakan wbp untuk bullet list, tanpa tambahan "✔"
+      ...paddedAch.map((a) => wbp(a)),
       wsh(s2.num + " " + s2.title),
       wbp(s2.subFields[0].label + ": " + (w.semesterTarget?.target || "")),
       wbp(s2.progressLabel + ": " + (w.semesterTarget?.progress || 0) + "%"),
       wbp(s2.subFields[1].label + ": " + (w.semesterTarget?.note || "")),
       wsh(s3.num + " " + s3.title),
-      ...s3.subFields.map((sf) => wbp(sf.label + ": " + (w.obstacles?.[sf.key] ?? "—"))),
+      ...s3.subFields.map((sf) =>
+        wbp(sf.label + ": " + (w.obstacles?.[sf.key] ?? "—"))
+      ),
       wsh(s4.num + " " + s4.title),
       wnote(s4.note),
-      ...s4.subFields.map((sf) => wbp(sf.label + ": " + (w.evaluation?.[sf.key] ?? ""))),
+      ...s4.subFields.map((sf) =>
+        wbp(sf.label + ": " + (w.evaluation?.[sf.key] ?? ""))
+      ),
       wsh(s5.num + " " + s5.title),
-      ...paddedPlan.map((t, i) => wbp(s5.itemPrefix + " " + (i + 1) + ": " + t)),
+      ...paddedPlan.map((t, i) =>
+        wbp(s5.itemPrefix + " " + (i + 1) + ": " + t)
+      ),
     ];
     const body = identitasParts.concat(mainParts).join("\n");
     const zip = new JSZip();
@@ -1383,22 +1463,33 @@ const JournalApp = (() => {
     zip.file("word/document.xml", makeDocumentXml(body));
     return await zip.generateAsync({ type: "blob" });
   };
-
   const downloadDocx = async (journal, type) => {
-    const btn = type === "daily" ? document.getElementById("btnDocx") : document.getElementById("weeklyDocxBtn");
+    const btn =
+      type === "daily"
+        ? document.getElementById("btnDocx")
+        : document.getElementById("weeklyDocxBtn");
     if (!btn) return;
     btn.disabled = true;
     btn.innerHTML = '<i class="ph ph-spinner"></i> Memproses...';
     try {
       if (typeof JSZip === "undefined") {
-        throw new Error("Pustaka JSZip tidak tersedia. Unduhan DOCX tidak dapat dilakukan.");
+        throw new Error(
+          "Pustaka JSZip tidak tersedia. Unduhan DOCX tidak dapat dilakukan."
+        );
       }
-      const blob = type === "daily" ? await buildDocxDaily(journal) : await buildDocxWeekly(journal);
+      const blob =
+        type === "daily"
+          ? await buildDocxDaily(journal)
+          : await buildDocxWeekly(journal);
       const url = URL.createObjectURL(blob);
       const a = document.createElement("a");
       a.href = url;
-      a.download = `Jurnal_${type === "daily" ? "Harian" : "Mingguan"}_${journal.dateSort}.docx`;
-      a.addEventListener("click", () => setTimeout(() => URL.revokeObjectURL(url), 1000));
+      a.download = `Jurnal_${type === "daily" ? "Harian" : "Mingguan"}_${
+        journal.dateSort
+      }.docx`;
+      a.addEventListener("click", () =>
+        setTimeout(() => URL.revokeObjectURL(url), 1000)
+      );
       document.body.appendChild(a);
       a.click();
       document.body.removeChild(a);
@@ -1410,19 +1501,17 @@ const JournalApp = (() => {
       btn.innerHTML = '<i class="ph ph-file-doc"></i> Unduh .docx';
     }
   };
-
   const handleDocxClick = () => {
-    if (state.currentDailyJournal) downloadDocx(state.currentDailyJournal, "daily");
+    if (state.currentDailyJournal)
+      downloadDocx(state.currentDailyJournal, "daily");
   };
   const handleWeeklyDocxClick = () => {
-    if (state.currentWeeklyJournal) downloadDocx(state.currentWeeklyJournal, "weekly");
+    if (state.currentWeeklyJournal)
+      downloadDocx(state.currentWeeklyJournal, "weekly");
   };
-
-  // ==================== ERROR BANNER ====================
   const showErrorBanner = (message) => {
     const existing = document.getElementById("errorBanner");
     if (existing) existing.remove();
-
     const banner = document.createElement("div");
     banner.id = "errorBanner";
     banner.setAttribute("role", "alert");
@@ -1442,73 +1531,138 @@ const JournalApp = (() => {
     banner.appendChild(text);
     banner.appendChild(closeBtn);
     document.body.prepend(banner);
-
     setTimeout(() => {
       if (banner.parentNode) banner.remove();
     }, 5000);
   };
-
-  // ==================== VALIDASI DATA ====================
   const validateData = () => {
     const violations = [];
     const dateRegex = /^\d{4}-\d{2}-\d{2}$/;
     const idSet = new Set();
     JOURNALS.forEach((journal) => {
       if (!dateRegex.test(journal.dateSort)) {
-        violations.push({ id: journal.id, date: journal.date, field: "dateSort", err: "Format harus YYYY-MM-DD" });
+        violations.push({
+          id: journal.id,
+          date: journal.date,
+          field: "dateSort",
+          err: "Format harus YYYY-MM-DD",
+        });
       }
       if (idSet.has(journal.id)) {
-        violations.push({ id: journal.id, date: journal.date, field: "ID", err: "Duplikat ID" });
+        violations.push({
+          id: journal.id,
+          date: journal.date,
+          field: "ID",
+          err: "Duplikat ID",
+        });
       }
       idSet.add(journal.id);
       if (journal.type === "daily") {
         if (!journal.daily) {
-          violations.push({ id: journal.id, date: journal.date, field: "Schema", err: "Objek daily tidak ditemukan" });
+          violations.push({
+            id: journal.id,
+            date: journal.date,
+            field: "Schema",
+            err: "Objek daily tidak ditemukan",
+          });
         } else {
           TEMPLATE_SCHEMA.daily.requiredFields.forEach((field) => {
-            if (journal.daily[field] === undefined || journal.daily[field] === null) {
-              violations.push({ id: journal.id, date: journal.date, field, err: "Field wajib tidak ditemukan" });
+            if (
+              journal.daily[field] === undefined ||
+              journal.daily[field] === null
+            ) {
+              violations.push({
+                id: journal.id,
+                date: journal.date,
+                field,
+                err: "Field wajib tidak ditemukan",
+              });
             }
           });
           const score = journal.daily?.reflection?.score;
           if (score !== undefined && score !== null) {
             if (typeof score !== "number" || isNaN(score)) {
-              violations.push({ id: journal.id, date: journal.date, field: "reflection.score", err: "Skor harus berupa angka" });
+              violations.push({
+                id: journal.id,
+                date: journal.date,
+                field: "reflection.score",
+                err: "Skor harus berupa angka",
+              });
             } else if (score < 1 || score > 10) {
-              violations.push({ id: journal.id, date: journal.date, field: "reflection.score", err: "Skor harus antara 1 dan 10" });
+              violations.push({
+                id: journal.id,
+                date: journal.date,
+                field: "reflection.score",
+                err: "Skor harus antara 1 dan 10",
+              });
             } else if (!Number.isInteger(score)) {
-              violations.push({ id: journal.id, date: journal.date, field: "reflection.score", err: "Skor harus bilangan bulat" });
+              violations.push({
+                id: journal.id,
+                date: journal.date,
+                field: "reflection.score",
+                err: "Skor harus bilangan bulat",
+              });
             }
           }
         }
       }
       if (journal.type === "weekly") {
         if (!journal.weekly) {
-          violations.push({ id: journal.id, date: journal.date, field: "Schema", err: "Objek weekly tidak ditemukan" });
+          violations.push({
+            id: journal.id,
+            date: journal.date,
+            field: "Schema",
+            err: "Objek weekly tidak ditemukan",
+          });
         } else {
           TEMPLATE_SCHEMA.weekly.requiredFields.forEach((field) => {
-            if (journal.weekly[field] === undefined || journal.weekly[field] === null) {
-              violations.push({ id: journal.id, date: journal.date, field, err: "Field wajib tidak ditemukan" });
+            if (
+              journal.weekly[field] === undefined ||
+              journal.weekly[field] === null
+            ) {
+              violations.push({
+                id: journal.id,
+                date: journal.date,
+                field,
+                err: "Field wajib tidak ditemukan",
+              });
             }
           });
           if (journal.weekly.activities) {
             journal.weekly.activities.forEach((act, idx) => {
               if (act.duration && isNaN(parseFloat(act.duration))) {
-                violations.push({ id: journal.id, date: journal.date, field: `activities[${idx}].duration`, err: "Durasi harus berupa angka" });
+                violations.push({
+                  id: journal.id,
+                  date: journal.date,
+                  field: `activities[${idx}].duration`,
+                  err: "Durasi harus berupa angka",
+                });
               }
             });
           }
-          if (journal.weekly.semesterTarget && typeof journal.weekly.semesterTarget.progress !== "number") {
-            violations.push({ id: journal.id, date: journal.date, field: "semesterTarget.progress", err: "Progress harus berupa angka" });
+          if (
+            journal.weekly.semesterTarget &&
+            typeof journal.weekly.semesterTarget.progress !== "number"
+          ) {
+            violations.push({
+              id: journal.id,
+              date: journal.date,
+              field: "semesterTarget.progress",
+              err: "Progress harus berupa angka",
+            });
           }
         }
       }
     });
     if (violations.length) {
-      console.group("%c⚠️ data.js — Peringatan Integritas Data", "color:#b45309;font-weight:bold");
-      violations.forEach((v) => console.warn(`[${v.id}] "${v.date}" → ${v.field}: ${v.err}`));
+      console.group(
+        "%c⚠️ data.js — Peringatan Integritas Data",
+        "color:#b45309;font-weight:bold"
+      );
+      violations.forEach((v) =>
+        console.warn(`[${v.id}] "${v.date}" → ${v.field}: ${v.err}`)
+      );
       console.groupEnd();
-
       const banner = document.createElement("div");
       banner.id = "dataValidationBanner";
       banner.setAttribute("role", "alert");
@@ -1541,8 +1695,6 @@ const JournalApp = (() => {
     }
     return true;
   };
-
-  // ==================== URL HANDLING ====================
   const loadFromURL = () => {
     const url = new URL(window.location.href);
     const weekParam = url.searchParams.get("week");
@@ -1550,7 +1702,9 @@ const JournalApp = (() => {
     if (weekParam) {
       const weekNumber = parseInt(weekParam, 10);
       if (!isNaN(weekNumber)) {
-        const journal = JOURNALS.find((j) => j.type === "weekly" && j.weekly.weekNumber === weekNumber);
+        const journal = JOURNALS.find(
+          (j) => j.type === "weekly" && j.weekly.weekNumber === weekNumber
+        );
         if (journal) {
           if (!isDetailVisible) showWeeklyDetail(journal);
         } else {
@@ -1571,33 +1725,40 @@ const JournalApp = (() => {
       if (isDetailVisible) hideWeeklyDetail();
     }
   };
-
-  // ==================== SETUP EVENT LISTENERS ====================
   const setupEventListeners = () => {
     document.addEventListener("click", (e) => {
       const btn = e.target.closest(".filter-btn");
       if (btn) {
-        document.querySelectorAll(".filter-btn").forEach((b) => b.classList.remove("active"));
+        document
+          .querySelectorAll(".filter-btn")
+          .forEach((b) => b.classList.remove("active"));
         btn.classList.add("active");
         state.activeFilter = btn.dataset.filter;
         renderJournals(state.activeFilter);
       }
     });
-
-    const { modalBackdrop, modalClose, btnPrint, btnDocx, weeklyPrintBtn, weeklyDocxBtn, backBtn } = state.dom;
+    const {
+      modalBackdrop,
+      modalClose,
+      btnPrint,
+      btnDocx,
+      weeklyPrintBtn,
+      weeklyDocxBtn,
+      backBtn,
+    } = state.dom;
     if (modalBackdrop) modalBackdrop.addEventListener("click", closeModal);
     if (modalClose) modalClose.addEventListener("click", closeModal);
     if (btnPrint) btnPrint.addEventListener("click", handlePrintClick);
     if (btnDocx) btnDocx.addEventListener("click", handleDocxClick);
-    if (weeklyPrintBtn) weeklyPrintBtn.addEventListener("click", handleWeeklyPrintClick);
-    if (weeklyDocxBtn) weeklyDocxBtn.addEventListener("click", handleWeeklyDocxClick);
+    if (weeklyPrintBtn)
+      weeklyPrintBtn.addEventListener("click", handleWeeklyPrintClick);
+    if (weeklyDocxBtn)
+      weeklyDocxBtn.addEventListener("click", handleWeeklyDocxClick);
     if (backBtn) backBtn.addEventListener("click", hideWeeklyDetail);
-
     window.addEventListener("scroll", handleScroll);
     window.addEventListener("popstate", loadFromURL);
     window.addEventListener("resize", resizeCanvas);
     window.addEventListener("afterprint", afterPrintHandler);
-
     document.addEventListener("visibilitychange", () => {
       if (document.hidden) {
         if (state.particleAnimationFrame) {
@@ -1610,14 +1771,12 @@ const JournalApp = (() => {
         }
       }
     });
-
-    window.addEventListener('beforeunload', () => {
+    window.addEventListener("beforeunload", () => {
       if (state.greetingIntervalId) clearInterval(state.greetingIntervalId);
-      if (state.particleAnimationFrame) cancelAnimationFrame(state.particleAnimationFrame);
+      if (state.particleAnimationFrame)
+        cancelAnimationFrame(state.particleAnimationFrame);
     });
   };
-
-  // ==================== CACHE DOM ====================
   const cacheDom = () => {
     state.dom.hero = document.getElementById("hero");
     state.dom.about = document.getElementById("about");
@@ -1630,7 +1789,9 @@ const JournalApp = (() => {
     state.dom.modalDate = document.getElementById("modalDate");
     state.dom.modalClose = document.getElementById("modalClose");
     state.dom.modalBackdrop = document.getElementById("modalBackdrop");
-    state.dom.weeklyDetailContainer = document.getElementById("weeklyDetailContainer");
+    state.dom.weeklyDetailContainer = document.getElementById(
+      "weeklyDetailContainer"
+    );
     state.dom.weeklyContent = document.getElementById("weeklyDetailContent");
     state.dom.weeklyIdentity = document.getElementById("weeklyIdentity");
     state.dom.backBtn = document.getElementById("backToGridBtn");
@@ -1640,13 +1801,10 @@ const JournalApp = (() => {
     state.dom.weeklyDocxBtn = document.getElementById("weeklyDocxBtn");
     state.dom.printArea = document.getElementById("printArea");
   };
-
-  // ==================== INIT ====================
   const init = () => {
     try {
       assertDependencies();
       cacheDom();
-
       const id = getIdentity();
       const bioEl = document.getElementById("bio");
       if (bioEl) bioEl.textContent = id.bio || "";
@@ -1659,7 +1817,8 @@ const JournalApp = (() => {
           img.alt = `Foto ${id.nama}`;
           img.onerror = () => {
             img.style.display = "none";
-            photoEl.innerHTML = '<span class="photo-placeholder" aria-hidden="true">📁</span>';
+            photoEl.innerHTML =
+              '<span class="photo-placeholder" aria-hidden="true">📁</span>';
           };
           photoEl.appendChild(img);
         } else {
@@ -1670,35 +1829,32 @@ const JournalApp = (() => {
           photoEl.appendChild(placeholder);
         }
       }
-
       const canvas = document.getElementById("dataParticles");
       if (canvas) {
         initParticles(canvas);
         animateParticles();
       }
-
       const dataValid = validateData();
       if (dataValid) {
         renderJournals(state.activeFilter);
         loadFromURL();
       } else {
         if (state.dom.journalGrid) {
-          state.dom.journalGrid.innerHTML = '<p style="grid-column:1/-1;text-align:center;color:red;padding:var(--size-3x04) 0;">Data jurnal tidak valid. Periksa konsol untuk detail.</p>';
+          state.dom.journalGrid.innerHTML =
+            '<p style="grid-column:1/-1;text-align:center;color:red;padding:var(--size-3x04) 0;">Data jurnal tidak valid. Periksa konsol untuk detail.</p>';
         }
       }
-
       startGreetingRotation();
       setupEventListeners();
     } catch (err) {
       console.error("Init error:", err);
       const errorDiv = document.createElement("div");
-      errorDiv.style.cssText = "color:red; padding:20px; background:#ffeeee; border:1px solid red; margin:20px;";
+      errorDiv.style.cssText =
+        "color:red; padding:20px; background:#ffeeee; border:1px solid red; margin:20px;";
       errorDiv.textContent = `⚠️ ${err.message}`;
       document.body.prepend(errorDiv);
     }
   };
-
   return { init };
 })();
-
 JournalApp.init();
