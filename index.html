@@ -41,6 +41,27 @@
           <button class="filter-btn" data-filter="daily">Harian</button>
           <button class="filter-btn" data-filter="weekly">Mingguan</button>
         </div>
+        <div class="date-range-filter" id="dateRangeFilter">
+          <span class="date-range-label">Rentang:</span>
+          <input type="date" id="dateFrom" aria-label="Dari tanggal" />
+          <span class="date-range-sep">—</span>
+          <input type="date" id="dateTo" aria-label="Sampai tanggal" />
+          <button
+            class="reset-date-btn"
+            id="resetDateBtn"
+            aria-label="Reset filter tanggal"
+          >
+            <i class="ph ph-x-circle" aria-hidden="true"></i>
+          </button>
+        </div>
+        <p
+          class="date-range-warning"
+          id="dateRangeWarning"
+          aria-live="polite"
+          style="display: none"
+        >
+          ⚠️ Tanggal "dari" tidak boleh melebihi tanggal "sampai".
+        </p>
       </div>
       <div class="journal-grid" id="journalGrid" aria-live="polite"></div>
       <div
@@ -124,5 +145,30 @@
     <script src="./js/data.js"></script>
     <script src="./js/template-schema.js"></script>
     <script src="./js/home.js"></script>
+    <button class="chatbot-toggle" id="chatbotToggle" aria-label="Buka chatbot">
+      <i class="ph ph-chat-circle-dots"></i>
+    </button>
+    <div class="chatbot-window" id="chatbotWindow" style="display: none">
+      <div class="chatbot-header">
+        <span>Tanya Jurnal 'Aarif</span>
+        <button id="chatbotClose" aria-label="Tutup">
+          <i class="ph ph-x"></i>
+        </button>
+      </div>
+      <div class="chatbot-messages" id="chatbotMessages"></div>
+      <div class="chatbot-input-row">
+        <input
+          type="text"
+          id="chatbotInput"
+          placeholder="Contoh: tanggal 23 Feb ngapain?"
+          autocomplete="off"
+        />
+        <button id="chatbotSend">
+          <i class="ph ph-paper-plane-right"></i>
+        </button>
+      </div>
+    </div>
+    <script src="./js/chatbot-context.js"></script>
+    <script src="./js/chatbot.js"></script>
   </body>
 </html>

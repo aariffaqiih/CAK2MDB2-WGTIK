@@ -15,6 +15,8 @@ const JournalApp = (() => {
     activeFilter: "all",
     lastScrollPosition: 0,
     isWeeklyDetailVisible: false,
+    dateFrom: null,
+    dateTo: null,
     particleAnimationFrame: null,
     particles: [],
     canvas: null,
@@ -45,6 +47,10 @@ const JournalApp = (() => {
       weeklyPrintBtn: null,
       weeklyDocxBtn: null,
       printArea: null,
+      dateFrom: null,
+      dateTo: null,
+      resetDateBtn: null,
+      dateRangeWarning: null,
     },
     focusTrapHandler: null,
     previouslyFocused: null,
@@ -297,13 +303,18 @@ const JournalApp = (() => {
       const sorted = [...JOURNALS].sort((a, b) =>
         b.dateSort.localeCompare(a.dateSort)
       );
-      const filtered =
+      const byType =
         filter === "all" ? sorted : sorted.filter((j) => j.type === filter);
+      const filtered = byType.filter((j) => {
+        if (state.dateFrom && j.dateSort < state.dateFrom) return false;
+        if (state.dateTo && j.dateSort > state.dateTo) return false;
+        return true;
+      });
       grid.innerHTML = "";
       if (filtered.length === 0) {
         const msg = document.createElement("p");
         msg.style.cssText =
-          "grid-column:1/-1;text-align:center;font-style:italic;color:var(--color-tertiary);padding:var(--size-3x04) 0;";
+          "grid-column:1/-1;text-align:center;color:var(--color-tertiary);padding:var(--size-3x04) 0;";
         msg.textContent = TEMPLATE_SCHEMA.ui?.noEntries || "Belum ada entri.";
         grid.appendChild(msg);
         return;
@@ -1771,6 +1782,45 @@ const JournalApp = (() => {
         }
       }
     });
+    const {
+      dateFrom: inputFrom,
+      dateTo: inputTo,
+      resetDateBtn,
+      dateRangeWarning,
+    } = state.dom;
+    const validateAndApplyRange = () => {
+      const from = inputFrom?.value || null;
+      const to = inputTo?.value || null;
+      const isInvalid = from && to && from > to;
+      if (dateRangeWarning) {
+        dateRangeWarning.style.display = isInvalid ? "block" : "none";
+      }
+      if (inputFrom) inputFrom.classList.toggle("invalid-range", !!isInvalid);
+      if (inputTo) inputTo.classList.toggle("invalid-range", !!isInvalid);
+      if (!isInvalid) {
+        state.dateFrom = from;
+        state.dateTo = to;
+        renderJournals(state.activeFilter);
+      }
+    };
+    if (inputFrom) inputFrom.addEventListener("change", validateAndApplyRange);
+    if (inputTo) inputTo.addEventListener("change", validateAndApplyRange);
+    if (resetDateBtn) {
+      resetDateBtn.addEventListener("click", () => {
+        state.dateFrom = null;
+        state.dateTo = null;
+        if (inputFrom) {
+          inputFrom.value = "";
+          inputFrom.classList.remove("invalid-range");
+        }
+        if (inputTo) {
+          inputTo.value = "";
+          inputTo.classList.remove("invalid-range");
+        }
+        if (dateRangeWarning) dateRangeWarning.style.display = "none";
+        renderJournals(state.activeFilter);
+      });
+    }
     window.addEventListener("beforeunload", () => {
       if (state.greetingIntervalId) clearInterval(state.greetingIntervalId);
       if (state.particleAnimationFrame)
@@ -1800,6 +1850,10 @@ const JournalApp = (() => {
     state.dom.weeklyPrintBtn = document.getElementById("weeklyPrintBtn");
     state.dom.weeklyDocxBtn = document.getElementById("weeklyDocxBtn");
     state.dom.printArea = document.getElementById("printArea");
+    state.dom.dateFrom = document.getElementById("dateFrom");
+    state.dom.dateTo = document.getElementById("dateTo");
+    state.dom.resetDateBtn = document.getElementById("resetDateBtn");
+    state.dom.dateRangeWarning = document.getElementById("dateRangeWarning");
   };
   const init = () => {
     try {
