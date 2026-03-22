@@ -56,9 +56,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-02-24",
     type: "daily",
@@ -109,9 +106,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-02-25",
     type: "daily",
@@ -163,9 +157,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-02-26",
     type: "daily",
@@ -212,9 +203,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-02-27",
     type: "daily",
@@ -271,9 +259,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "weekly-2026-02-27",
     type: "weekly",
@@ -347,15 +332,6 @@ const JOURNALS = [
       ],
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ##############################################################                   ###############################################################
-  // ##############################################################   W E E K   0 2   ###############################################################
-  // ##############################################################                   ###############################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-03-02",
     type: "daily",
@@ -399,9 +375,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-03-03",
     type: "daily",
@@ -452,9 +425,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-03-04",
     type: "daily",
@@ -496,9 +466,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-03-05",
     type: "daily",
@@ -547,9 +514,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-03-06",
     type: "daily",
@@ -600,9 +564,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "weekly-2026-03-06",
     type: "weekly",
@@ -672,63 +633,90 @@ const JOURNALS = [
       ],
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ##############################################################                   ###############################################################
-  // ##############################################################   W E E K   0 3   ###############################################################
-  // ##############################################################                   ###############################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
-    id: "daily-2026-03-10",
+    id: "daily-2026-03-09",
     type: "daily",
-    date: "",
-    dateSort: "2026-03-10",
+    date: "9 Maret 2026",
+    dateSort: "2026-03-09",
     daily: {
-      targets: [
-        "##########################",
-        "##########################",
-        "##########################",
-      ],
+      targets: ["Mengikuti kelas teori DKA"],
       activities: [
         {
-          time: "#############",
-          activity: "#############",
-          output: "#############",
-          status: "#############",
-        },
-        {
-          time: "#############",
-          activity: "#############",
-          output: "#############",
-          status: "#############",
-        },
-        {
-          time: "#############",
-          activity: "#############",
-          output: "#############",
-          status: "#############",
+          time: "10:30 - 12:30",
+          activity: "Kelas teori Dasar Kecerdasan Artifisial",
+          output: "Mengetahui algoritma greedy",
+          status: "✓",
         },
       ],
-      results: "#############",
+      results:
+        "Target terpenuhi. Mengikuti kelas DKA dan memahami konsep dasar algoritma greedy.",
       obstacles: {
-        teknis: "#############",
-        nonTeknis: "#############",
-        manajemenWaktu: "#############",
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
       },
-      solutions: "#############",
+      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
       reflection: {
-        learned: "#############",
-        improve: "#############",
-        score: 1,
+        learned:
+          "Algoritma greedy membuat keputusan optimal lokal di setiap langkah dengan harapan menghasilkan solusi optimal global.",
+        improve:
+          "Perlu mencari contoh kasus nyata penerapan greedy agar pemahaman lebih konkret.",
+        score: 7,
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
+  {
+    id: "daily-2026-03-10",
+    type: "daily",
+    date: "10 Maret 2026",
+    dateSort: "2026-03-10",
+    daily: {
+      targets: [
+        "Membuat kelompok matkul IMK",
+        "Mengikuti praktikum PBO",
+        "Mengikuti webinar matkul WGTIK",
+      ],
+      activities: [
+        {
+          time: "07:30 - 09:30",
+          activity: "Mata kuliah Interaksi Manusia Komputer",
+          output:
+            "Mengetahui proses pembuatan aplikasi dari memahami masalah yang dialami user sampai proses pembuatan dan iterasi",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:30",
+          activity: "Kelas praktikum Pemrograman Berorientasi Objek",
+          output:
+            "Mengulas kembali syntax dasar seperti if-else, switch case, dan for",
+          status: "✓",
+        },
+        {
+          time: "15:00 - 17:30",
+          activity:
+            "Webinar Integrasi Pengembangan Software dan Big Data dalam Mendorong Transformasi Digital",
+          output:
+            "Mengetahui rintangan, dampak, dan hasil dari implementasi big data ke aplikasi. Misalnya seperti integritas data, perlindungan terhadap hacking dan spam, serta arsitektur software",
+          status: "✓",
+        },
+      ],
+      results:
+        "Semua target tercapai. Hari yang padat namun produktif dengan tiga kegiatan akademik berbeda.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
+      reflection: {
+        learned:
+          "Proses desain aplikasi berpusat pada pengguna (user-centered design) dan pentingnya iterasi. Big data membawa peluang sekaligus tantangan keamanan dan integritas data.",
+        improve:
+          "Perlu mencatat poin-poin webinar lebih terstruktur agar mudah direview ulang.",
+        score: 8,
+      },
+    },
+  },
   {
     id: "daily-2026-03-11",
     type: "daily",
@@ -743,8 +731,9 @@ const JOURNALS = [
         {
           time: "08:00-09:30",
           activity: "Mata kuliah strategi algoritma",
-          output: "#############",
-          status: "#############",
+          output:
+            "Mempelajari pendekatan brute force dan penerapannya pada berbagai persoalan komputasi",
+          status: "✓",
         },
         {
           time: "15:00-15:30",
@@ -755,27 +744,201 @@ const JOURNALS = [
         {
           time: "15:45-16:15",
           activity: "Mengerjakan quiz week 1 strategi algoritma",
-          output: "Mendapaat nilai 85.42",
+          output: "Mendapat nilai 85.42",
           status: "✓",
         },
       ],
-      results: "#############",
+      results:
+        "Kedua quiz berhasil diselesaikan dengan hasil memuaskan. Nilai IMK 8/10 dan Strategi Algoritma 85.42.",
       obstacles: {
-        teknis: "#############",
-        nonTeknis: "#############",
-        manajemenWaktu: "#############",
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
       },
-      solutions: "#############",
+      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
       reflection: {
-        learned: "#############",
-        improve: "#############",
-        score: 1,
+        learned:
+          "Brute force menjamin solusi dengan mencoba semua kemungkinan, namun tidak efisien untuk input besar. Perlu memahami kapan brute force cukup dan kapan harus diganti pendekatan lain.",
+        improve:
+          "Perlu belajar lebih teliti untuk soal IMK agar nilai bisa mencapai 10.",
+        score: 8,
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
+  {
+    id: "daily-2026-03-12",
+    type: "daily",
+    date: "12 Maret 2026",
+    dateSort: "2026-03-12",
+    daily: {
+      targets: [
+        "Menyelesaikan tugas kelompok Dasar Kecerdasan Artifisial week 2 searching",
+        "Mengikuti kelas praktikum dan teori Jaringan Komputer",
+      ],
+      activities: [
+        {
+          time: "06:00 - 08:00",
+          activity: "Mengerjakan tugas kelompok Dasar Kecerdasan Artifisial",
+          output: "Hasil pengerjaan dikirim ke teman untuk dilanjutkan",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:30",
+          activity: "Kelas praktikum Jaringan Komputer",
+          output: "Mengikuti meet praktikum modul 1 - 4",
+          status: "✓",
+        },
+        {
+          time: "19:15 - 23:00",
+          activity: "Merancang web untuk jurnal WGTIK tahap 1",
+          output:
+            "Menentukan informasi apa saja yang akan ditampilkan, Mencari ide design, Membuat gambaran kasar untuk layout web",
+          status: "✓",
+        },
+      ],
+      results:
+        "Target sebagian tercapai. Praktikum Jaringan Komputer diikuti namun kelas teori terlewat karena tidur siang.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis:
+          "Tidak ikut kelas teori Jaringan Komputer karena tidur siang",
+        manajemenWaktu:
+          "Perlu diperbaiki — tidur siang tidak terjadwal menyebabkan kelas terlewat",
+      },
+      solutions: "Jangan begadang agar siang tidak ngantuk",
+      reflection: {
+        learned:
+          "Merancang web memerlukan perencanaan informasi sebelum coding. Konsistensi jadwal tidur sangat mempengaruhi produktivitas siang hari.",
+        improve:
+          "Harus lebih disiplin manajemen waktu istirahat dan menghindari begadang tanpa keperluan jelas.",
+        score: 6,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-13",
+    type: "daily",
+    date: "13 Maret 2026",
+    dateSort: "2026-03-13",
+    daily: {
+      targets: [
+        "Merancang skema JSON, sorting, dan filtering, serta pilihan design seperti color palette dan font",
+        "Menyelesaikan belajar mandiri PBO dan mengerjakan quiz week 3",
+      ],
+      activities: [
+        {
+          time: "13:00 - 14:30",
+          activity:
+            "Belajar mandiri Pemrograman Berorientasi Objek, karena kelas teori asynchronous",
+          output:
+            "Mengetahui diagram UML, relasi, agregasi, komposisi, dan contohnya",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 14:50",
+          activity: "Mengerjakan quiz PBO week 3",
+          output: "Mendapat nilai 100",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 23:50",
+          activity: "Merancang web untuk jurnal WGTIK tahap 2",
+          output:
+            "Skema awal data.js, Wireframe kasar untuk 3 section, List variabel CSS",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hari yang sangat produktif. Quiz PBO mendapat nilai sempurna dan rancangan web tahap 2 berhasil diselesaikan.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
+      reflection: {
+        learned:
+          "Diagram UML membantu memvisualisasikan relasi antar kelas sebelum implementasi. Perencanaan skema data di awal membuat proses coding lebih terarah.",
+        improve:
+          "Sesi malam terlalu panjang (>4 jam). Perlu dibatasi agar tidak berdampak ke hari berikutnya.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-03-w3",
+    type: "weekly",
+    date: "9 - 13 Maret 2026",
+    dateSort: "2026-03-09",
+    weekly: {
+      weekNumber: 3,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Kelas teori Dasar Kecerdasan Artifisial — Algoritma Greedy",
+          output: "Memahami konsep dan cara kerja algoritma greedy",
+          duration: "2 jam",
+        },
+        {
+          day: "Selasa",
+          focus: "IMK, Praktikum PBO, Webinar Big Data & Software Development",
+          output:
+            "User-centered design, review syntax dasar Java, wawasan big data",
+          duration: "7 jam",
+        },
+        {
+          day: "Rabu",
+          focus: "Kelas Strategi Algoritma, Quiz IMK & Quiz Algoritma",
+          output: "Nilai quiz IMK 8, nilai quiz Algoritma 85.42",
+          duration: "3.5 jam",
+        },
+        {
+          day: "Kamis",
+          focus:
+            "Tugas kelompok DKA searching, Praktikum Jarkom, Desain web WGTIK tahap 1",
+          output:
+            "Tugas kelompok diteruskan, praktikum modul 1-4 selesai, layout web dirancang",
+          duration: "8 jam",
+        },
+        {
+          day: "Jumat",
+          focus:
+            "Belajar mandiri PBO, Quiz PBO week 3, Desain web WGTIK tahap 2",
+          output: "Nilai quiz PBO 100, skema data.js & wireframe web selesai",
+          duration: "6 jam",
+        },
+      ],
+      achievements: [
+        "Mendapat nilai sempurna 100 di quiz PBO week 3",
+        "Berhasil memulai dan menyelesaikan rancangan awal web jurnal WGTIK hingga tahap 2 dalam 2 hari",
+      ],
+      semesterTarget: {
+        target:
+          "Menguasai materi inti 6 mata kuliah dan menyelesaikan proyek web WGTIK tepat waktu",
+        progress: 30,
+        note: "Progress baik di PBO dan DKA, namun perlu perhatian lebih pada Jaringan Komputer karena satu kelas teori terlewat",
+      },
+      obstacles: {
+        akademik:
+          "Materi searching DKA cukup kompleks, pengerjaan tugas kelompok belum selesai penuh",
+        teknis: "Tidak ada hambatan teknis berarti selama minggu ini",
+        pribadi:
+          "Kebiasaan begadang menyebabkan ngantuk siang dan kelas teori Jarkom terlewat",
+      },
+      evaluation: {
+        bestSuccess:
+          "Quiz PBO nilai 100 dan penyelesaian rancangan web WGTIK tahap 2 dalam satu sesi malam yang fokus",
+        biggestMistake:
+          "Melewatkan kelas teori Jaringan Komputer karena tidak menjaga pola tidur",
+        nextStrategy:
+          "Tetapkan jam tidur maksimal pukul 23.00 dan buat checklist harian malam sebelumnya agar tidak ada kelas yang terlewat",
+      },
+      nextWeekPlan: [
+        "Menyelesaikan implementasi web jurnal WGTIK dan memastikan fitur sorting & filtering berjalan",
+        "Mengulang materi Jaringan Komputer yang terlewat dan memperdalam konsep searching untuk DKA",
+      ],
+    },
+  },
   {
     id: "daily-2026-03-19",
     type: "daily",
@@ -824,9 +987,6 @@ const JOURNALS = [
       },
     },
   },
-  // ################################################################################################################################################
-  // ################################################################################################################################################
-  // ################################################################################################################################################
   {
     id: "daily-2026-03-20",
     type: "daily",
