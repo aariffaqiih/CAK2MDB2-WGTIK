@@ -40,15 +40,40 @@ const Chatbot = (() => {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ messages }),
       });
-      if (!res.ok) throw new Error(`HTTP ${res.status}`);
       const data = await res.json();
-      const reply =
-        data.choices?.[0]?.message?.content ?? "Maaf, tidak ada respons.";
+      if (data.error) {
+        console.error("Groq error:", data.error);
+        appendMessage(
+          "assistant",
+          "Maaf, ada masalah dengan AI-nya. Coba lagi nanti ya."
+        );
+        return;
+      }
+      if (!res.ok) {
+        console.error("Worker error, status:", res.status, data);
+        appendMessage(
+          "assistant",
+          "Maaf, terjadi kesalahan server. Coba lagi ya."
+        );
+        return;
+      }
+      const reply = data.choices?.[0]?.message?.content;
+      if (!reply) {
+        console.error("Unexpected response shape:", data);
+        appendMessage(
+          "assistant",
+          "Maaf, respons tidak terbaca. Coba lagi ya."
+        );
+        return;
+      }
       conversationHistory.push({ role: "assistant", content: reply });
       appendMessage("assistant", reply);
     } catch (err) {
-      appendMessage("assistant", "Maaf, terjadi kesalahan. Coba lagi ya.");
-      console.error("Chatbot error:", err);
+      console.error("Chatbot fetch error:", err);
+      appendMessage(
+        "assistant",
+        "Maaf, tidak bisa terhubung. Periksa koneksi internet kamu."
+      );
     } finally {
       setLoading(false);
       dom.input.focus();

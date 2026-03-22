@@ -1,2 +1,3 @@
-util/draft.js
 util/copy.js
+util/draft.js
+util/worker.js
