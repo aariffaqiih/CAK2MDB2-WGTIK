@@ -1,18 +1,17 @@
 const CHATBOT_SYSTEM_PROMPT = (() => {
+  const truncate = (str, max = 60) =>
+    str && str.length > max ? str.slice(0, max) + "…" : str ?? "";
   const serializeDaily = (d) => {
     if (!d) return "";
     const parts = [];
     if (d.targets?.length)
-      parts.push(
-        `Target: ${d.targets.map((t, i) => `${i + 1}) ${t}`).join(" | ")}`
-      );
+      parts.push(`Target: ${d.targets.map((t) => truncate(t)).join("; ")}`);
     if (d.activities?.length)
       parts.push(
         `Aktivitas: ${d.activities
-          .map((a) => `[${a.time}] ${a.activity} (${a.status})`)
+          .map((a) => `${a.activity} (${a.status})`)
           .join("; ")}`
       );
-    if (d.results) parts.push(`Hasil: ${d.results}`);
     if (d.reflection?.score != null)
       parts.push(`Skor: ${d.reflection.score}/10`);
     return parts.join(" | ");
@@ -22,13 +21,15 @@ const CHATBOT_SYSTEM_PROMPT = (() => {
     const parts = [];
     if (w.weekNumber != null) parts.push(`Minggu ke-${w.weekNumber}`);
     if (w.achievements?.length)
-      parts.push(`Capaian: ${w.achievements.join("; ")}`);
+      parts.push(
+        `Capaian: ${w.achievements.map((a) => truncate(a)).join("; ")}`
+      );
     if (w.semesterTarget?.progress != null)
-      parts.push(`Progress semester: ${w.semesterTarget.progress}%`);
-    if (w.evaluation?.bestSuccess)
-      parts.push(`Keberhasilan: ${w.evaluation.bestSuccess}`);
+      parts.push(`Progress: ${w.semesterTarget.progress}%`);
     if (w.nextWeekPlan?.length)
-      parts.push(`Rencana: ${w.nextWeekPlan.join("; ")}`);
+      parts.push(
+        `Rencana: ${w.nextWeekPlan.map((p) => truncate(p)).join("; ")}`
+      );
     return parts.join(" | ");
   };
   const journalText = [...JOURNALS]
@@ -44,5 +45,5 @@ const CHATBOT_SYSTEM_PROMPT = (() => {
       return `${label} ${body}`;
     })
     .join("\n");
-  return `Kamu adalah asisten jurnal milik 'Aarif Rahmaan, NIM 103112430182, mahasiswa Teknik Informatika semester 4. Jawab singkat, ramah, bahasa Indonesia. Jika tidak ada di jurnal, katakan tidak tahu. Jangan gunakan markdown bold. JURNAL: ${journalText}`;
+  return `Kamu asisten jurnal 'Aarif Rahmaan, mahasiswa Teknik Informatika semester 4. Jawab singkat dan ramah dalam bahasa Indonesia. Jika tidak ada di data, katakan tidak tahu. JURNAL: ${journalText}`;
 })();

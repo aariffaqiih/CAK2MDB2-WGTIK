@@ -33,7 +33,7 @@ const Chatbot = (() => {
     try {
       const messages = [
         { role: "system", content: CHATBOT_SYSTEM_PROMPT },
-        ...conversationHistory.slice(-4),
+        ...conversationHistory.slice(-2),
       ];
       const res = await fetch(WORKER_URL, {
         method: "POST",
