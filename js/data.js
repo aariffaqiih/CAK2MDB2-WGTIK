@@ -940,6 +940,152 @@ const JOURNALS = [
     },
   },
   {
+    id: "daily-2026-03-16",
+    type: "daily",
+    date: "16 Maret 2026",
+    dateSort: "2026-03-16",
+    daily: {
+      targets: [
+        "Menyelesaikan makalah UCD dan proses desain UI mata kuliah IMK",
+        "Merancang section hero, about, dan jurnal untuk HTML, kemudian membuat variabel size, typography, dll. untuk CSS",
+      ],
+      activities: [
+        {
+          time: "07:00 - 11:00",
+          activity: "Mengerjakan makalah mata kuliah IMK",
+          output: "Dokumen makalah UCD dan proses desain UI",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 23:00",
+          activity: "Merancang web untuk jurnal WGTIK tahap 3",
+          output: "Struktur index.html dan desain global.css",
+          status: "✓",
+        },
+      ],
+      results:
+        "Target harian tercapai dengan menyelesaikan makalah IMK dan merancang struktur awal web jurnal WGTIK.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Mempertahankan fokus kerja dan membagi waktu antara akademik dan pengembangan web.",
+      reflection: {
+        learned:
+          "Memahami alur UCD serta pentingnya konsistensi desain dari HTML ke CSS.",
+        improve:
+          "Meningkatkan kecepatan dalam implementasi desain agar lebih efisien.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-17",
+    type: "daily",
+    date: "17 Maret 2026",
+    dateSort: "2026-03-17",
+    daily: {
+      targets: [
+        "Menyelesaikan modul 1 & 2 praktikum Jaringan Komputer",
+        "Membuat animasi partikel dan sapaan multi bahasa serta scroll parallax untuk web jurnal WGTIK",
+      ],
+      activities: [
+        {
+          time: "07:15 - 08:00",
+          activity: "Mengerjakan modul 1 praktikum Jaringan Komputer",
+          output:
+            "PDF laporan hasil praktikum dan sudah dikumpulkan di Classroom",
+          status: "✓",
+        },
+        {
+          time: "08:00 - 12:00",
+          activity: "Mengerjakan modul 2 praktikum Jaringan Komputer",
+          output:
+            "PDF laporan hasil praktikum dan sudah dikumpulkan di Classroom",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 22:30",
+          activity:
+            "Mengembangkan animasi partikel, greeting multi bahasa, dan efek scroll parallax",
+          output:
+            "Script JS dan CSS untuk animasi partikel di section hero, animasi greeting multi bahasa, dan scroll parallax",
+          status: "✓",
+        },
+      ],
+      results:
+        "Seluruh target tercapai, baik praktikum Jaringan Komputer maupun pengembangan fitur interaktif pada web jurnal.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Menggunakan pembagian waktu yang jelas antara praktikum dan pengembangan web.",
+      reflection: {
+        learned:
+          "Memahami implementasi animasi berbasis JavaScript dan CSS serta pengelolaan waktu yang efektif.",
+        improve:
+          "Merapikan struktur kode agar lebih modular dan mudah dikembangkan.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-18",
+    type: "daily",
+    date: "18 Maret 2026",
+    dateSort: "2026-03-18",
+    daily: {
+      targets: [
+        "Membuat card component untuk jurnal",
+        "Mengisi jurnal dengan 5–7 data asli",
+        "Validasi skema agar field konsisten",
+        "Menambahkan sorting tanggal YYYY-MM-DD",
+        "Menambahkan filter kategori semua / harian / mingguan",
+      ],
+      activities: [
+        {
+          time: "08:00 - 12:30",
+          activity: "Membuat card component",
+          output: "Grid jurnal berisi data asli",
+          status: "✓",
+        },
+        {
+          time: "15:00 - 17:00",
+          activity: "Memberikan validasi/constraint ke field",
+          output:
+            "Web menampilkan error ketika data tidak sesuai tipe atau tidak konsisten",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:15",
+          activity: "Menambahkan sorting dan filter kategori jurnal",
+          output: "Filter kategori dan date range",
+          status: "✓",
+        },
+      ],
+      results:
+        "Fitur utama jurnal seperti card, validasi data, sorting, dan filter berhasil diimplementasikan.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Menjaga konsistensi skema data dan melakukan pengujian setiap fitur setelah dibuat.",
+      reflection: {
+        learned:
+          "Pentingnya validasi data dan struktur yang konsisten dalam pengembangan aplikasi.",
+        improve:
+          "Mengoptimalkan performa saat filtering dan sorting data dalam jumlah besar.",
+        score: 9,
+      },
+    },
+  },
+  {
     id: "daily-2026-03-19",
     type: "daily",
     date: "19 Maret 2026",
@@ -950,39 +1096,37 @@ const JOURNALS = [
         {
           time: "06:00 - 07:30",
           activity:
-            "Membaca berita perkembangan AI terkini dari blog hugging face",
+            "Membaca berita perkembangan AI terkini dari blog Hugging Face",
           output:
-            "Mengetahui info bahwa China mendominasi, semakin banyak developer independen, dataset semakin melimpah, dan ternyata sekarang robotik sedang sangat ramai, serta perbandingan statistik dibanding tahun sebelumnya cukup signifikan.",
-          status: "selesai",
+            "Mengetahui tren AI global, peningkatan developer independen, serta perkembangan robotika",
+          status: "✓",
         },
         {
           time: "07:30 - 11:30",
           activity: "Mengerjakan modul 3 praktikum Jaringan Komputer",
-          output:
-            "PDF laporan modul 3 praktikum Jaringan Komputer dikumpulkan ke classroom",
-          status: "selesai",
+          output: "PDF laporan modul 3 dikumpulkan ke Classroom",
+          status: "✓",
         },
         {
           time: "18:30 - 23:30",
           activity: "Mengerjakan modul 4 praktikum Jaringan Komputer",
-          output:
-            "PDF laporan modul 4 praktikum Jaringan Komputer dikumpulkan ke classroom",
-          status: "selesai",
+          output: "PDF laporan modul 4 dikumpulkan ke Classroom",
+          status: "✓",
         },
       ],
       results:
-        "Modul 3 dan 4 praktikum Jaringan Komputer berhasil diselesaikan dan dikumpulkan tepat waktu serta mendapatkan wawasan baru tentang perkembangan AI.",
+        "Modul 3 dan 4 selesai tepat waktu serta mendapatkan wawasan tambahan tentang perkembangan AI.",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Rasa kantuk di siang hari",
-        manajemenWaktu: "Sedikit terganggu karena tidur siang terlalu lama.",
+        manajemenWaktu: "Sedikit terganggu karena tidur siang terlalu lama",
       },
-      solutions: "Pasang alarm untuk tidur siang agar tidak terlalu lama.",
+      solutions:
+        "Mengatur durasi tidur siang dengan alarm agar tidak mengganggu produktivitas.",
       reflection: {
         learned:
-          "Mengetahui bagaimana cara kerja wireshark mengnakap protokol seperti HTTP dan DNS, serta perkembangan AI terkini.",
-        improve:
-          "Jangan terlalu lama dan perfeksionis di 1 nomor agar waktunya lebih efisien.",
+          "Memahami penggunaan Wireshark untuk analisis protokol serta tren perkembangan AI.",
+        improve: "Mengurangi perfeksionisme agar pengerjaan lebih efisien.",
         score: 8,
       },
     },
@@ -994,41 +1138,127 @@ const JOURNALS = [
     dateSort: "2026-03-20",
     daily: {
       targets: [
-        "Menyelesaikan weekly journal 3 WGTIK",
-        "Mengulas kembali materi Pemrograman Berorientasi Objek dari week 1 sampai 3",
+        "Membuat modal/popup untuk detail jurnal harian",
+        "Membuat halaman khusus jurnal mingguan dengan URL unik",
+        "Menambahkan fitur print PDF dan download DOCX",
+        "Menambahkan chatbot pada web jurnal",
+        "Tes responsivitas mobile",
+        "Deploy web jurnal WGTIK",
       ],
       activities: [
         {
-          time: "#############",
-          activity: "#############",
-          output: "#############",
-          status: "#############",
+          time: "07:00 - 10:00",
+          activity: "Membuat modal untuk jurnal harian",
+          output: "Modal sesuai template",
+          status: "✓",
         },
         {
-          time: "#############",
-          activity: "#############",
-          output: "#############",
-          status: "#############",
+          time: "13:00 - 16:00",
+          activity: "Membuat section jurnal mingguan",
+          output: "Section dengan URL unik",
+          status: "✓",
         },
         {
-          time: "#############",
-          activity: "#############",
-          output: "#############",
-          status: "#############",
+          time: "18:30 - 21:20",
+          activity: "Menambahkan fitur export PDF dan DOCX",
+          output: "Fitur export berjalan sesuai skema",
+          status: "✓",
+        },
+        {
+          time: "21:20 - 21:30",
+          activity: "Deploy ke GitHub Pages",
+          output: "Web dapat diakses publik",
+          status: "✓",
+        },
+        {
+          time: "21:30 - 23:50",
+          activity: "Integrasi chatbot ke web",
+          output: "Chatbot dapat menjawab pertanyaan dasar jurnal",
+          status: "✓",
         },
       ],
-      results: "#############",
+      results:
+        "Seluruh fitur utama web jurnal berhasil diselesaikan dan aplikasi berhasil di-deploy.",
       obstacles: {
-        teknis: "#############",
-        nonTeknis: "#############",
-        manajemenWaktu: "#############",
+        teknis: "Tidak ada",
+        nonTeknis: "Kelelahan di akhir hari",
+        manajemenWaktu: "Sangat baik",
       },
-      solutions: "#############",
+      solutions: "Istirahat sejenak di sela pekerjaan untuk menjaga stamina.",
       reflection: {
-        learned: "#############",
-        improve: "#############",
-        score: 1,
+        learned:
+          "Memahami integrasi fitur kompleks seperti export file dan chatbot dalam web.",
+        improve: "Mengoptimalkan performa chatbot dan UX agar lebih responsif.",
+        score: 9,
       },
+    },
+  },
+  {
+    id: "weekly-2026-03-w4",
+    type: "weekly",
+    date: "16–20 Maret 2026",
+    dateSort: "2026-03-16",
+    weekly: {
+      weekNumber: 4,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Makalah IMK dan struktur web jurnal",
+          output: "Makalah selesai dan desain awal web",
+          duration: "8",
+        },
+        {
+          day: "Selasa",
+          focus: "Praktikum JarKom & animasi web",
+          output: "Modul 1 & 2 + animasi interaktif",
+          duration: "9",
+        },
+        {
+          day: "Rabu",
+          focus: "Pengembangan fitur jurnal",
+          output: "Card, validasi, filter, sorting",
+          duration: "8",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktikum JarKom lanjutan",
+          output: "Modul 3 & 4 selesai",
+          duration: "9",
+        },
+        {
+          day: "Jumat",
+          focus: "Finalisasi dan deployment web",
+          output: "Web lengkap + deploy + chatbot",
+          duration: "10",
+        },
+      ],
+      achievements: [
+        "Web jurnal WGTIK berhasil dibuat end-to-end hingga deployment",
+        "Seluruh modul praktikum Jaringan Komputer selesai tepat waktu",
+      ],
+      semesterTarget: {
+        target:
+          "Menyelesaikan seluruh tugas mata kuliah dengan kualitas tinggi dan membangun portofolio web",
+        progress: 65,
+        note: "Progres signifikan pada pengembangan web dan penyelesaian praktikum",
+      },
+      obstacles: {
+        akademik: "Beban tugas cukup padat",
+        teknis: "Tidak ada kendala signifikan",
+        pribadi: "Kelelahan dan manajemen energi",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil menyelesaikan dan deploy web jurnal lengkap dengan fitur lanjutan",
+        biggestMistake:
+          "Kurang mengatur waktu istirahat sehingga sempat kelelahan",
+        nextStrategy:
+          "Menjaga keseimbangan kerja dan istirahat serta meningkatkan efisiensi coding",
+      },
+      nextWeekPlan: [
+        "Refactor kode dan optimasi performa web",
+        "Menambahkan fitur tambahan atau UI improvement",
+      ],
     },
   },
 ];
