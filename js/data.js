@@ -14,25 +14,25 @@ const JOURNALS = [
     dateSort: "2026-02-23",
     daily: {
       targets: [
-        "Di mata kuliah Dasar Kecerdasan Artificial, memahami teori dasar kecerdasan buatan, mulai dari pengenalan, hingga konsep Searching dan Reasoning.",
+        "Di mata kuliah Dasar Kecerdasan Artifisial, memahami teori dasar kecerdasan buatan, mulai dari pengenalan, hingga konsep Searching dan Reasoning.",
         "Mengerjakan project based data scientist, memahami keseluruhan data dan melakukan EDA agar paham konteks bisnisnya serta mendapatkan insight awal.",
       ],
       activities: [
         {
-          time: "10:30-12:00",
-          activity: "Kuliah Dasar Kecerdasan Artificial",
+          time: "10:30 - 12:00",
+          activity: "Kuliah Dasar Kecerdasan Artifisial",
           output: "Memahami materi pengenalan AI dan konsep searching",
           status: "✓",
         },
         {
-          time: "13:00-15:00",
+          time: "13:00 - 15:00",
           activity: "Eksplorasi dataset Home Credit",
           output:
             "Memahami struktur data, identifikasi missing values, insight awal",
           status: "✓",
         },
         {
-          time: "15:30-17:00",
+          time: "15:30 - 17:00",
           activity: "Membaca dokumentasi pandas dan matplotlib",
           output: "Catatan ringkas",
           status: "Proses",
@@ -68,21 +68,21 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08:00-09:30",
+          time: "08:00 - 09:30",
           activity: "Kuliah Interaksi Manusia dan Komputer",
           output:
             "Memahami prinsip dasar IMK, konsep usability, dan user-centered design",
           status: "✓",
         },
         {
-          time: "10:00-12:00",
+          time: "10:00 - 12:00",
           activity:
             "Data cleaning: menangani missing values pada dataset aplikasi",
           output: "Imputasi sederhana pada kolom numerik dan kategorik",
           status: "✓",
         },
         {
-          time: "13:00-15:00",
+          time: "13:00 - 15:00",
           activity: "Mengerjakan tugas IMK",
           output: "Membuat makalah singkat tentang prinsip IMK",
           status: "Proses",
@@ -113,26 +113,26 @@ const JOURNALS = [
     dateSort: "2026-02-25",
     daily: {
       targets: [
-        "Bertemu dengan pak Affan (dosen mata kuliah dasar kecerdasan artificial) untuk konsultasi masalah karir. Pak Affan menyarankan maksimalkan EDA dan belajar data analysis dulu sebelum ke data scientist.",
+        "Bertemu dengan pak Affan (dosen mata kuliah dasar kecerdasan artifisial) untuk konsultasi masalah karir. Pak Affan menyarankan maksimalkan EDA dan belajar data analysis dulu sebelum ke data scientist.",
         "Mengerjakan project based data scientist, melanjutkan data cleaning untuk penanganan missing values dan feature engineering dasar.",
         "Memahami dasar strategi algoritma, mengulas kembali apa itu notasi big O, teta, dan omega.",
       ],
       activities: [
         {
-          time: "08:00-09:30",
+          time: "08:00 - 09:30",
           activity: "Kuliah Strategi Algoritma",
           output: "Memahami notasi Big O, Theta, Omega beserta contoh",
           status: "✓",
         },
         {
-          time: "10:00-11:00",
+          time: "10:00 - 11:00",
           activity: "Konsultasi dengan Pak Affan",
           output:
             "Mendapat saran untuk fokus pada EDA dan analisis data terlebih dahulu",
           status: "✓",
         },
         {
-          time: "13:00-16:00",
+          time: "13:00 - 16:00",
           activity:
             "Project: feature engineering dasar (membuat agregat dari tabel lain)",
           output:
@@ -168,19 +168,19 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "09:00-11:00",
+          time: "09:00 - 11:00",
           activity: "Encoding variabel kategorik pada dataset",
           output: "Menggunakan one-hot encoding untuk beberapa fitur",
           status: "✓",
         },
         {
-          time: "13:00-16:00",
+          time: "13:00 - 16:00",
           activity: "Membangun model baseline dengan Logistic Regression",
           output: "Model selesai dengan ROC-AUC 0,72",
           status: "✓",
         },
         {
-          time: "16:30-17:30",
+          time: "16:30 - 17:30",
           activity: "Evaluasi model dan mencatat hasil",
           output: "Confusion matrix, classification report",
           status: "Proses",
@@ -216,26 +216,26 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "14:30-16:30",
+          time: "14:30 - 16:30",
           activity: "Kuliah Pemrograman Berorientasi Objek",
           output: "Memahami kelas, objek, inheritance, polymorphism",
           status: "✓",
         },
         {
-          time: "10:00-12:00",
+          time: "10:00 - 12:00",
           activity: "Project: join data subsidiary dan encoding ulang",
           output:
             "Berhasil menambahkan fitur baru dari tabel subsidiary, encoding ulang",
           status: "✓",
         },
         {
-          time: "13:00-14:00",
+          time: "13:00 - 14:00",
           activity: "Training ulang model dengan fitur baru",
           output: "ROC-AUC meningkat menjadi 0,74",
           status: "✓",
         },
         {
-          time: "18:00-20:00",
+          time: "18:00 - 20:00",
           activity: "Buka bersama komunitas literasi",
           output: "Diskusi buku dan berbagi pengalaman",
           status: "✓",
@@ -260,10 +260,10 @@ const JOURNALS = [
     },
   },
   {
-    id: "weekly-2026-02-27",
+    id: "weekly-2026-02-23",
     type: "weekly",
     date: "Minggu ke-1 · 23-27 Februari 2026",
-    dateSort: "2026-02-27",
+    dateSort: "2026-02-23",
     weekly: {
       weekNumber: 1,
       activities: [
@@ -340,12 +340,12 @@ const JOURNALS = [
     daily: {
       targets: [
         "Menyelesaikan project based internship data scientist, membuat PPT penjelasan pengerjaan dan upload hasil pengerjaan ke github.",
-        "Di mata kuliah dasar kecerdasan artificial, saya ingin memahami konsep pencarian/searching sebagai cara AI menyelesaikan masalah di representasi ruang yang tersedia.",
+        "Di mata kuliah dasar kecerdasan artifisial, saya ingin memahami konsep pencarian/searching sebagai cara AI menyelesaikan masalah di representasi ruang yang tersedia.",
       ],
       activities: [
         {
           time: "10:30 - 12:00",
-          activity: "Mata kuliah dasar kecerdasan artificial",
+          activity: "Mata kuliah dasar kecerdasan artifisial",
           output: "Memahami konsep searching (BFS, DFS) dan catatan kuliah",
           status: "✓",
         },
@@ -382,13 +382,13 @@ const JOURNALS = [
     dateSort: "2026-03-03",
     daily: {
       targets: [
-        "di mata kuliah interaksi manusia dan komputer, saya ingin memahami proses desain interface menggunakan metode user-centered design beserta tahapannya.",
-        "mengerjakan quiz week 1 mata kuliah interaksi manusia komputer.",
-        "mengikuti praktikum pemrograman berorientasi objek.",
+        "Di mata kuliah interaksi manusia dan komputer, saya ingin memahami proses desain interface menggunakan metode user-centered design beserta tahapannya.",
+        "Mengerjakan quiz week 1 mata kuliah interaksi manusia komputer.",
+        "Mengikuti praktikum pemrograman berorientasi objek.",
       ],
       activities: [
         {
-          time: "08.00-09.30",
+          time: "08:00 - 09:30",
           activity: "Mata kuliah interaksi manusia dan komputer.",
           output: "Memahami konsep user-centered design (UCD) dan tahapannya",
           status: "✓",
@@ -398,7 +398,7 @@ const JOURNALS = [
           activity:
             "Mata kuliah pemrograman berorientasi objek. Praktikum install java dan apache netbeans.",
           output: "Selesai",
-          status: "Selesai",
+          status: "✓",
         },
         {
           time: "11:00 - 12:00",
@@ -436,7 +436,7 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08.00-09.30",
+          time: "08:00 - 09:30",
           activity: "Mata kuliah strategi algoritma.",
           output: "Memahami konsep brute force, contoh-contoh algoritma",
           status: "✓",
@@ -478,13 +478,13 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "09:30-12:30",
+          time: "09:30 - 12:30",
           activity: "Praktikum jaringan kompuer",
           output: "Membuat kabel LAN straight dan cross.",
-          status: "selesai",
+          status: "✓",
         },
         {
-          time: "13:00-15:00",
+          time: "13:00 - 15:00",
           activity: "Kelas teori jaringan komputer.",
           output: "Memahami materi teori jaringan (OSI layer, TCP/IP)",
           status: "✓",
@@ -565,10 +565,10 @@ const JOURNALS = [
     },
   },
   {
-    id: "weekly-2026-03-06",
+    id: "weekly-2026-03-02",
     type: "weekly",
     date: "Minggu ke-2 · 2-6 Maret 2026",
-    dateSort: "2026-03-06",
+    dateSort: "2026-03-02",
     weekly: {
       weekNumber: 2,
       activities: [
@@ -729,20 +729,20 @@ const JOURNALS = [
       ],
       activities: [
         {
-          time: "08:00-09:30",
+          time: "08:00 - 09:30",
           activity: "Mata kuliah strategi algoritma",
           output:
             "Mempelajari pendekatan brute force dan penerapannya pada berbagai persoalan komputasi",
           status: "✓",
         },
         {
-          time: "15:00-15:30",
+          time: "15:00 - 15:30",
           activity: "Mengerjakan quiz week 2 interaksi manusia dan komputer",
           output: "Mendapat nilai 8",
           status: "✓",
         },
         {
-          time: "15:45-16:15",
+          time: "15:45 - 16:15",
           activity: "Mengerjakan quiz week 1 strategi algoritma",
           output: "Mendapat nilai 85.42",
           status: "✓",
@@ -866,9 +866,9 @@ const JOURNALS = [
     },
   },
   {
-    id: "weekly-2026-03-w3",
+    id: "weekly-2026-03-09",
     type: "weekly",
-    date: "9 - 13 Maret 2026",
+    date: "Minggu ke-3 · 9-13 Maret 2026",
     dateSort: "2026-03-09",
     weekly: {
       weekNumber: 3,
@@ -877,20 +877,20 @@ const JOURNALS = [
           day: "Senin",
           focus: "Kelas teori Dasar Kecerdasan Artifisial — Algoritma Greedy",
           output: "Memahami konsep dan cara kerja algoritma greedy",
-          duration: "2 jam",
+          duration: "2",
         },
         {
           day: "Selasa",
           focus: "IMK, Praktikum PBO, Webinar Big Data & Software Development",
           output:
             "User-centered design, review syntax dasar Java, wawasan big data",
-          duration: "7 jam",
+          duration: "7",
         },
         {
           day: "Rabu",
           focus: "Kelas Strategi Algoritma, Quiz IMK & Quiz Algoritma",
           output: "Nilai quiz IMK 8, nilai quiz Algoritma 85.42",
-          duration: "3.5 jam",
+          duration: "3.5",
         },
         {
           day: "Kamis",
@@ -898,14 +898,14 @@ const JOURNALS = [
             "Tugas kelompok DKA searching, Praktikum Jarkom, Desain web WGTIK tahap 1",
           output:
             "Tugas kelompok diteruskan, praktikum modul 1-4 selesai, layout web dirancang",
-          duration: "8 jam",
+          duration: "8",
         },
         {
           day: "Jumat",
           focus:
             "Belajar mandiri PBO, Quiz PBO week 3, Desain web WGTIK tahap 2",
           output: "Nilai quiz PBO 100, skema data.js & wireframe web selesai",
-          duration: "6 jam",
+          duration: "6",
         },
       ],
       achievements: [
@@ -1194,9 +1194,9 @@ const JOURNALS = [
     },
   },
   {
-    id: "weekly-2026-03-w4",
+    id: "weekly-2026-03-16",
     type: "weekly",
-    date: "16–20 Maret 2026",
+    date: "Minggu ke-4 · 16-20 Maret 2026",
     dateSort: "2026-03-16",
     weekly: {
       weekNumber: 4,
