@@ -2,7 +2,7 @@ const IDENTITY = {
   nama: "'Aarif Rahmaan Jalaluddin Faqiih",
   nim: "103112430182",
   kelas: "PS1IF-12-REG06",
-  bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi.",
+  bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi",
   photo:
     "https://media.licdn.com/dms/image/v2/D5603AQF_6_AR3OXybA/profile-displayphoto-scale_400_400/B56ZlSzn1HH8Ag-/0/1758030924397?e=1775692800&v=beta&t=mGwxVLsPyAj2A7UjrMRNRu1q5Ig5NxDz7zyhNIp7H4A",
 };
@@ -14,13 +14,13 @@ const JOURNALS = [
     dateSort: "2026-02-23",
     daily: {
       targets: [
-        "Di mata kuliah Dasar Kecerdasan Artifisial, memahami teori dasar kecerdasan buatan, mulai dari pengenalan, hingga konsep Searching dan Reasoning.",
-        "Mengerjakan project based data scientist, memahami keseluruhan data dan melakukan EDA agar paham konteks bisnisnya serta mendapatkan insight awal.",
+        "Di matkul DKA, memahami teori dasar kecerdasan buatan, mulai dari pengenalan, hingga konsep Searching dan Reasoning",
+        "Mengerjakan project based data scientist, memahami keseluruhan data dan melakukan EDA agar paham konteks bisnisnya serta mendapatkan insight awal",
       ],
       activities: [
         {
           time: "10:30 - 12:00",
-          activity: "Kuliah Dasar Kecerdasan Artifisial",
+          activity: "Kuliah DKA",
           output: "Memahami materi pengenalan AI dan konsep searching",
           status: "✓",
         },
@@ -39,20 +39,20 @@ const JOURNALS = [
         },
       ],
       results:
-        "Hari ini berhasil mengikuti kuliah Dasar AI dengan pemahaman yang baik. Pada project, saya mulai mengeksplorasi dataset Home Credit, memahami kolom-kolom utama, dan mengidentifikasi banyak missing values. Saya juga membaca dokumentasi untuk persiapan visualisasi besok.",
+        "Berhasil mengikuti kuliah DKA dan memahami pengenalan AI serta konsep searching. EDA dataset Home Credit selesai dengan pemahaman struktur data dan identifikasi missing values. Pembacaan dokumentasi pandas dan matplotlib masih dalam proses",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
       solutions:
-        "Besok fokus pada visualisasi EDA dan menyusun laporan insight awal.",
+        "Tidak ada hambatan berarti. Dokumentasi pandas dan matplotlib akan dilanjutkan di sesi berikutnya",
       reflection: {
         learned:
-          "Konsep searching dalam AI (uninformed search) dan pentingnya EDA sebelum membangun model.",
+          "Memahami dasar-dasar kecerdasan buatan dan konsep searching sebagai cara AI menyelesaikan masalah. Dari EDA, mendapat gambaran struktur dataset Home Credit beserta distribusi missing values dan insight awal konteks bisnis kredit",
         improve:
-          "Manajemen waktu antara kuliah dan project perlu disesuaikan agar tidak kelelahan.",
-        score: 8,
+          "Lebih disiplin menyelesaikan sesi baca dokumentasi agar tidak tertunda ke hari berikutnya",
+        score: 7,
       },
     },
   },
@@ -63,13 +63,13 @@ const JOURNALS = [
     dateSort: "2026-02-24",
     daily: {
       targets: [
-        "Di mata kuliah interaksi manusia dan komputer, memahami prinsip dasar dan pengertian interaksi manusia dan komputer.",
-        "Mengerjakan project based data scientist, melakukan data cleaning.",
+        "Di matkul IMK, memahami prinsip dasar dan pengertian IMK",
+        "Mengerjakan project based data scientist, melakukan data cleaning",
       ],
       activities: [
         {
           time: "08:00 - 09:30",
-          activity: "Kuliah Interaksi Manusia dan Komputer",
+          activity: "Kuliah IMK",
           output:
             "Memahami prinsip dasar IMK, konsep usability, dan user-centered design",
           status: "✓",
@@ -89,20 +89,20 @@ const JOURNALS = [
         },
       ],
       results:
-        "Kuliah IMK memberikan pemahaman baru tentang interaksi manusia dan komputer. Pada project, saya melakukan data cleaning dasar pada dataset aplikasi, termasuk imputasi missing values. Tugas IMK masih setengah jadi.",
+        "Berhasil memahami prinsip dasar IMK termasuk usability dan user-centered design. Data cleaning dataset Home Credit selesai dengan imputasi pada kolom numerik dan kategorik. Tugas makalah IMK masih dalam proses penyelesaian",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
       solutions:
-        "Besok lanjutkan tugas IMK dan fokus pada feature engineering di project.",
+        "Tidak ada hambatan berarti. Makalah IMK akan diselesaikan di sesi berikutnya",
       reflection: {
         learned:
-          "Prinsip desain antarmuka yang baik dan pentingnya konsistensi data.",
+          "Memahami prinsip-prinsip IMK seperti usability, efisiensi, dan user-centered design. Dari data cleaning, belajar cara menangani missing values dengan imputasi sederhana pada berbagai tipe kolom",
         improve:
-          "Konsentrasi setelah makan siang menurun, perlu istirahat cukup.",
-        score: 6,
+          "Manajemen waktu lebih baik agar tugas akademik tidak tersisa dan bisa diselesaikan di hari yang sama",
+        score: 7,
       },
     },
   },
@@ -113,9 +113,9 @@ const JOURNALS = [
     dateSort: "2026-02-25",
     daily: {
       targets: [
-        "Bertemu dengan pak Affan (dosen mata kuliah dasar kecerdasan artifisial) untuk konsultasi masalah karir. Pak Affan menyarankan maksimalkan EDA dan belajar data analysis dulu sebelum ke data scientist.",
-        "Mengerjakan project based data scientist, melanjutkan data cleaning untuk penanganan missing values dan feature engineering dasar.",
-        "Memahami dasar strategi algoritma, mengulas kembali apa itu notasi big O, teta, dan omega.",
+        "Bertemu dengan pak Affan (dosen matkul DKA) untuk konsultasi masalah karir. Pak Affan menyarankan maksimalkan EDA dan belajar data analysis dulu sebelum ke data scientist",
+        "Mengerjakan project based data scientist, melanjutkan data cleaning untuk penanganan missing values dan feature engineering dasar",
+        "Memahami dasar strategi algoritma, mengulas kembali apa itu notasi big O, teta, dan omega",
       ],
       activities: [
         {
@@ -141,18 +141,19 @@ const JOURNALS = [
         },
       ],
       results:
-        "Konsultasi dengan Pak Affan sangat bermanfaat, memberikan arahan karir. Kuliah strategi algoritma memperdalam pemahaman kompleksitas. Pada project, saya mulai melakukan feature engineering dengan menggabungkan data dari tabel pendukung. Masih perlu penyempurnaan.",
+        "Berhasil memahami notasi kompleksitas Big O, Theta, dan Omega di kuliah Strategi Algoritma. Konsultasi dengan Pak Affan memberikan arah karir yang lebih jelas. Feature engineering dasar berjalan namun masih dalam proses penyelesaian",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
       solutions:
-        "Besok lanjutkan feature engineering dan evaluasi fitur yang sudah dibuat.",
+        "Tidak ada hambatan berarti. Feature engineering akan dilanjutkan dan diselesaikan di sesi berikutnya",
       reflection: {
         learned:
-          "Pentingnya menguasai analisis data sebelum machine learning, dan cara menghitung kompleksitas algoritma.",
-        improve: "Lebih disiplin dalam mencatat hasil konsultasi.",
+          "Memahami notasi Big O, Theta, dan Omega sebagai cara mengukur efisiensi algoritma. Dari konsultasi, mendapat insight berharga bahwa fondasi analisis data harus kuat sebelum masuk ke data science yang lebih advanced. Mulai memahami cara membuat fitur agregat dari tabel relasional",
+        improve:
+          "Pastikan sesi pengerjaan project selesai sesuai target harian agar tidak terus tertunda",
         score: 7,
       },
     },
@@ -164,7 +165,7 @@ const JOURNALS = [
     dateSort: "2026-02-26",
     daily: {
       targets: [
-        "Mengerjakan project based data scientist, melakukan encoding dan membuat model baseline.",
+        "Mengerjakan project based data scientist, melakukan encoding dan membuat model baseline",
       ],
       activities: [
         {
@@ -187,18 +188,19 @@ const JOURNALS = [
         },
       ],
       results:
-        "Berhasil melakukan encoding dan membuat model baseline menggunakan Logistic Regression. ROC-AUC mencapai 0,72, cukup baik untuk baseline. Namun masih perlu tuning dan handling imbalance class.",
+        "Berhasil melakukan encoding variabel kategorik dengan one-hot encoding dan membangun model baseline Logistic Regression dengan ROC-AUC 0,72. Evaluasi model masih dalam proses penyelesaian",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
       solutions:
-        "Besok lakukan handling imbalance (SMOTE) dan coba model lain.",
+        "Tidak ada hambatan berarti. Evaluasi model akan diselesaikan di sesi berikutnya",
       reflection: {
         learned:
-          "Proses encoding dan evaluasi model baseline dengan Logistic Regression.",
-        improve: "Perlu memahami lebih dalam tentang imbalance class.",
+          "Memahami cara kerja one-hot encoding untuk variabel kategorik dan dampaknya terhadap dimensi data. Berhasil membangun model baseline Logistic Regression dan memahami metrik ROC-AUC sebagai ukuran performa pada dataset imbalanced",
+        improve:
+          "Selesaikan evaluasi model di hari yang sama agar analisis confusion matrix dan classification report tidak tertunda",
         score: 8,
       },
     },
@@ -210,17 +212,11 @@ const JOURNALS = [
     dateSort: "2026-02-27",
     daily: {
       targets: [
-        "Memahami konsep dasar pemrograman berorientasi objek.",
-        "Mengerjakan project based data scientist, join data subsidiary dari tabel lain ke pipeline, melakukan encoding lagi, dan training ulang.",
-        "Buka bersama dengan komunitas literasi.",
+        "Memahami konsep dasar PBO",
+        "Mengerjakan project based data scientist, join data subsidiary dari tabel lain ke pipeline, melakukan encoding lagi, dan training ulang",
+        "Buka bersama dengan komunitas literasi",
       ],
       activities: [
-        {
-          time: "14:30 - 16:30",
-          activity: "Kuliah Pemrograman Berorientasi Objek",
-          output: "Memahami kelas, objek, inheritance, polymorphism",
-          status: "✓",
-        },
         {
           time: "10:00 - 12:00",
           activity: "Project: join data subsidiary dan encoding ulang",
@@ -235,6 +231,12 @@ const JOURNALS = [
           status: "✓",
         },
         {
+          time: "14:30 - 16:30",
+          activity: "Kuliah PBO",
+          output: "Memahami kelas, objek, inheritance, polymorphism",
+          status: "✓",
+        },
+        {
           time: "18:00 - 20:00",
           activity: "Buka bersama komunitas literasi",
           output: "Diskusi buku dan berbagi pengalaman",
@@ -242,20 +244,19 @@ const JOURNALS = [
         },
       ],
       results:
-        "Hari ini produktif: memahami OOP, meningkatkan performa model dengan fitur baru, dan mengikuti acara sosial. Model sekarang mencapai ROC-AUC 0,74, lebih baik dari baseline.",
+        "Semua target hari ini tercapai. Model meningkat dari ROC-AUC 0,72 ke 0,74 setelah menambahkan fitur dari tabel subsidiary. Konsep OOP berhasil dipahami di kuliah, dan buka bersama komunitas literasi berjalan menyenangkan",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Minggu depan fokus pada tuning hyperparameter dan dokumentasi proyek.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Konsep OOP dan pentingnya feature engineering dalam meningkatkan model.",
+          "Memahami cara join data dari tabel subsidiary untuk memperkaya fitur model, dan melihat dampak langsung peningkatan ROC-AUC. Dari kuliah PBO, memahami konsep fundamental OOP: kelas, objek, inheritance, dan polymorphism",
         improve:
-          "Manajemen waktu antara kegiatan akademik dan sosial sudah baik.",
-        score: 8,
+          "Dokumentasikan setiap perubahan model secara terstruktur — catat fitur apa yang ditambahkan dan seberapa besar dampaknya terhadap performa",
+        score: 9,
       },
     },
   },
@@ -299,36 +300,33 @@ const JOURNALS = [
         },
       ],
       achievements: [
-        "Memahami konsep searching AI dan EDA pada dataset Home Credit",
-        "Berhasil membuat model baseline Logistic Regression dengan ROC-AUC 0,72",
-        "Mendapat arahan karir dari Pak Affan untuk fokus pada analisis data",
-        "Mengimplementasikan feature engineering dan meningkatkan model menjadi 0,74",
-        "Memahami dasar OOP dan strategi algoritma",
+        "Berhasil membangun pipeline data end-to-end dari EDA hingga model baseline Logistic Regression dengan ROC-AUC 0,74 dalam satu minggu",
+        "Mendapat arahan karir yang jelas dari Pak Affan: perkuat fondasi EDA dan analisis data sebelum masuk ke data science lebih lanjut",
       ],
       semesterTarget: {
         target:
-          "Menyelesaikan project-based internship Home Credit dengan model yang optimal dan laporan insight bisnis.",
-        progress: 40,
-        note: "Tahap EDA, cleaning, feature engineering, dan model baseline sudah selesai. Selanjutnya tuning dan dokumentasi.",
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu pertama berjalan baik. Pipeline data dari EDA hingga model baseline berhasil dibangun. Beberapa aktivitas masih berstatus Proses yang perlu diperhatikan ke depan",
       },
       obstacles: {
-        akademik:
-          "Materi AI cukup banyak, perlu waktu lebih untuk memahami heuristic search.",
+        akademik: "Belum ada hambatan akademik yang signifikan minggu ini",
         teknis: "Tidak ada",
         pribadi: "Tidak ada",
       },
       evaluation: {
         bestSuccess:
-          "Berhasil meningkatkan performa model dari 0,72 ke 0,74 setelah menambahkan fitur dari tabel subsidiary.",
+          "Berhasil membangun pipeline data scientist pertama dari EDA hingga model baseline yang meningkat ke ROC-AUC 0,74 dengan penambahan fitur subsidiary",
         biggestMistake:
-          "Kurang mendokumentasikan proses EDA secara rinci sejak awal.",
+          "Beberapa aktivitas harian tidak diselesaikan di hari yang sama dan tersisa berstatus Proses, menunjukkan estimasi waktu yang kurang akurat",
         nextStrategy:
-          "Alokasikan waktu lebih untuk memahami heuristic search dan lanjutkan tuning model.",
+          "Tetapkan batas waktu yang lebih realistis per aktivitas dan pastikan setiap sesi berakhir dengan output yang benar-benar selesai sebelum pindah ke hari berikutnya",
       },
       nextWeekPlan: [
-        "Menyelesaikan tuning hyperparameter model (Random Forest, XGBoost)",
-        "Dokumentasi proyek dan menyusun laporan insight bisnis",
-        "Belajar konsep heuristic search di AI",
+        "Menyelesaikan PPT dan mengupload hasil project data scientist ke GitHub",
+        "Memahami konsep searching (BFS, DFS) lebih mendalam di matkul DKA",
+        "Mengikuti kuliah IMK dan PBO secara penuh dan aktif",
+        "Mulai mencatat nilai-nilai quiz untuk memantau progres akademik secara terukur",
       ],
     },
   },
@@ -339,13 +337,13 @@ const JOURNALS = [
     dateSort: "2026-03-02",
     daily: {
       targets: [
-        "Menyelesaikan project based internship data scientist, membuat PPT penjelasan pengerjaan dan upload hasil pengerjaan ke github.",
-        "Di mata kuliah dasar kecerdasan artifisial, saya ingin memahami konsep pencarian/searching sebagai cara AI menyelesaikan masalah di representasi ruang yang tersedia.",
+        "Menyelesaikan project based internship data scientist, membuat PPT penjelasan pengerjaan dan upload hasil pengerjaan ke github",
+        "Di matkul DKA, saya ingin memahami konsep pencarian/searching sebagai cara AI menyelesaikan masalah di representasi ruang yang tersedia",
       ],
       activities: [
         {
           time: "10:30 - 12:00",
-          activity: "Mata kuliah dasar kecerdasan artifisial",
+          activity: "MatKul DKA",
           output: "Memahami konsep searching (BFS, DFS) dan catatan kuliah",
           status: "✓",
         },
@@ -358,19 +356,18 @@ const JOURNALS = [
         },
       ],
       results:
-        "Hari ini saya berhasil memahami konsep searching dalam AI melalui kuliah, serta menyelesaikan project internship dengan membuat PPT presentasi dan menguploadnya ke GitHub.",
+        "Semua target hari ini tercapai. Memahami konsep BFS dan DFS sebagai metode searching di AI, dan berhasil menyelesaikan PPT project data scientist serta menguploadnya ke GitHub",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Besok saya akan mempersiapkan materi untuk kuliah interaksi manusia dan komputer, serta memastikan instalasi Java dan Netbeans untuk praktikum.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Saya mempelajari konsep searching dalam AI, seperti BFS dan DFS, serta bagaimana representasi ruang masalah. Juga belajar membuat presentasi yang baik untuk project.",
+          "Memahami BFS (Breadth-First Search) dan DFS (Depth-First Search) sebagai dua pendekatan utama pencarian ruang dalam AI. Belajar cara menyusun presentasi yang merangkum proses data science end-to-end secara komunikatif",
         improve:
-          "Saya bisa meningkatkan manajemen waktu agar lebih fokus, dan mungkin membaca materi sebelum kuliah.",
+          "Pelajari lebih lanjut perbedaan kompleksitas waktu dan ruang antara BFS dan DFS agar bisa memilih metode yang tepat sesuai konteks masalah",
         score: 9,
       },
     },
@@ -382,21 +379,20 @@ const JOURNALS = [
     dateSort: "2026-03-03",
     daily: {
       targets: [
-        "Di mata kuliah interaksi manusia dan komputer, saya ingin memahami proses desain interface menggunakan metode user-centered design beserta tahapannya.",
-        "Mengerjakan quiz week 1 mata kuliah interaksi manusia komputer.",
-        "Mengikuti praktikum pemrograman berorientasi objek.",
+        "Di matkul IMK, saya ingin memahami proses desain interface menggunakan metode user-centered design beserta tahapannya",
+        "Mengerjakan quiz week 1 matkul IMK",
+        "Mengikuti praktikum PBO",
       ],
       activities: [
         {
           time: "08:00 - 09:30",
-          activity: "Mata kuliah interaksi manusia dan komputer.",
+          activity: "MatKul IMK",
           output: "Memahami konsep user-centered design (UCD) dan tahapannya",
           status: "✓",
         },
         {
           time: "09:30 - 11:00",
-          activity:
-            "Mata kuliah pemrograman berorientasi objek. Praktikum install java dan apache netbeans.",
+          activity: "MatKul PBO. Praktikum install java dan apache netbeans",
           output: "Selesai",
           status: "✓",
         },
@@ -408,19 +404,18 @@ const JOURNALS = [
         },
       ],
       results:
-        "Hari ini saya mengikuti kuliah IMK dan memahami user-centered design, menyelesaikan quiz week 1, serta mengikuti praktikum PBO dan berhasil menginstal Java dan Netbeans.",
+        "Semua target hari ini tercapai. Memahami UCD dan tahapannya di kuliah IMK, berhasil menginstal Java dan Apache Netbeans untuk praktikum PBO, serta menyelesaikan quiz week 1 IMK",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Besok saya akan mempersiapkan materi strategi algoritma dan mengulang kembali konsep brute force.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Saya belajar tentang user-centered design, tahapan empathize, define, ideate, prototype, test. Juga belajar instalasi Java dan Netbeans untuk praktikum.",
+          "Memahami tahapan user-centered design: mulai dari riset pengguna, pembuatan persona, prototyping, hingga pengujian iteratif. Dari praktikum PBO, berhasil mengkonfigurasi lingkungan pengembangan Java dengan Apache Netbeans",
         improve:
-          "Lebih cepat dalam mengerjakan quiz agar ada waktu untuk review.",
+          "Lebih aktif bertanya saat praktikum agar lebih familiar dengan fitur-fitur IDE Netbeans sejak awal",
         score: 9,
       },
     },
@@ -432,12 +427,12 @@ const JOURNALS = [
     dateSort: "2026-03-04",
     daily: {
       targets: [
-        "Di mata kuliah strategi algoritma, saya ingin memahami konsep algoritma brute force.",
+        "Di matkul strategi algoritma, saya ingin memahami konsep algoritma brute force",
       ],
       activities: [
         {
           time: "08:00 - 09:30",
-          activity: "Mata kuliah strategi algoritma.",
+          activity: "MatKul strategi algoritma",
           output: "Memahami konsep brute force, contoh-contoh algoritma",
           status: "✓",
         },
@@ -449,19 +444,18 @@ const JOURNALS = [
         },
       ],
       results:
-        "Hari ini saya memahami konsep brute force dalam strategi algoritma, dan mengerjakan latihan soal untuk memperdalam pemahaman.",
+        "Berhasil memahami konsep algoritma brute force beserta berbagai contohnya, dan menyelesaikan latihan soal terkait",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Besok saya akan mempersiapkan praktikum jaringan komputer dan mengerjakan quiz.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Saya belajar tentang algoritma brute force, kelebihan dan kekurangannya, serta contoh seperti linear search dan bubble sort.",
+          "Memahami prinsip brute force sebagai pendekatan exhaustive search yang mencoba semua kemungkinan solusi. Melihat contoh penerapannya seperti sequential search, selection sort, dan string matching",
         improve:
-          "Saya perlu lebih banyak berlatih soal agar bisa mengimplementasikan.",
+          "Coba kerjakan soal brute force dengan kompleksitas lebih tinggi untuk mengasah kemampuan analisis kompleksitas waktu",
         score: 8,
       },
     },
@@ -473,43 +467,42 @@ const JOURNALS = [
     dateSort: "2026-03-05",
     daily: {
       targets: [
-        "Mengikuti praktikum jaringan komputer",
-        "Mengerjakan quiz 1 mata kuliah jaringan komputer.",
+        "Mengikuti praktikum JarKom",
+        "Mengerjakan quiz 1 matkul JarKom",
       ],
       activities: [
         {
           time: "09:30 - 12:30",
-          activity: "Praktikum jaringan kompuer",
-          output: "Membuat kabel LAN straight dan cross.",
+          activity: "Praktikum JarKom",
+          output: "Membuat kabel LAN straight dan cross",
           status: "✓",
         },
         {
           time: "13:00 - 15:00",
-          activity: "Kelas teori jaringan komputer.",
+          activity: "Kelas teori JarKom",
           output: "Memahami materi teori jaringan (OSI layer, TCP/IP)",
           status: "✓",
         },
         {
           time: "15:30 - 16:30",
-          activity: "Mengerjakan quiz 1 jaringan komputer",
-          output: "Quiz 1 jaringan komputer selesai",
+          activity: "Mengerjakan quiz 1 JarKom",
+          output: "Quiz 1 JarKom selesai",
           status: "✓",
         },
       ],
       results:
-        "Hari ini saya mengikuti praktikum jaringan komputer dan berhasil membuat kabel LAN straight dan cross, kemudian mengikuti kelas teori dan mengerjakan quiz 1 dengan baik.",
+        "Semua target hari ini tercapai. Berhasil membuat kabel LAN straight dan cross, memahami model OSI layer dan TCP/IP, serta menyelesaikan quiz 1 JarKom",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Besok saya akan mempersiapkan kuliah wawasan global TIK dan PBO, serta melanjutkan project AI.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Saya belajar cara membuat kabel UTP straight dan cross, serta memahami teori jaringan seperti OSI layer dan TCP/IP.",
+          "Memahami perbedaan kabel LAN straight-through dan crossover serta kapan masing-masing digunakan. Dari kelas teori, mendapat gambaran komprehensif model OSI 7 layer dan perbandingannya dengan model TCP/IP",
         improve:
-          "Saya bisa lebih teliti dalam praktikum agar kabel yang dibuat berfungsi dengan baik.",
+          "Pelajari lebih mendalam fungsi dan protokol yang bekerja di setiap layer OSI untuk mempersiapkan ujian",
         score: 9,
       },
     },
@@ -521,45 +514,44 @@ const JOURNALS = [
     dateSort: "2026-03-06",
     daily: {
       targets: [
-        "Mengikuti 2 mata kuliah.",
-        "Mengerjakan quiz minggu 1 mata kuliah pemrograman berorientasi objek.",
-        "Membuat model AI untuk mendeteksi ekspresi wajah, datasetnya ambil dari hugging face, training menggunakan teachable machine.",
+        "Mengikuti 2 matkul",
+        "Mengerjakan quiz week 1 matkul PBO",
+        "Membuat model AI untuk mendeteksi ekspresi wajah, datasetnya ambil dari hugging face, training menggunakan teachable machine",
       ],
       activities: [
         {
           time: "09:30 - 11:00",
-          activity: "Mata kuliah wawasan global TIK",
-          output: "Memahami materi wawasan global TIK",
+          activity: "MatKul WGTIK",
+          output: "Memahami materi WGTIK",
           status: "✓",
         },
         {
           time: "14:30 - 16:00",
-          activity: "Kelas teori pemrograman berorientasi objek.",
+          activity: "Kelas teori PBO",
           output: "Memahami materi PBO (konsep class, object)",
           status: "✓",
         },
         {
           time: "16:30 - 19:00",
           activity:
-            "Mengerjakan quiz PBO minggu 1 dan membuat model AI dengan Teachable Machine",
+            "Mengerjakan quiz PBO week 1 dan membuat model AI dengan Teachable Machine",
           output: "Quiz PBO selesai, model AI deteksi ekspresi wajah terlatih",
           status: "✓",
         },
       ],
       results:
-        "Hari ini saya mengikuti dua mata kuliah, yaitu wawasan global TIK dan PBO, menyelesaikan quiz PBO minggu 1, serta berhasil membuat model AI untuk deteksi ekspresi wajah menggunakan Teachable Machine dengan dataset dari Hugging Face.",
+        "Semua target tercapai. Mengikuti 2 kuliah, menyelesaikan quiz PBO week 1, dan berhasil melatih model AI deteksi ekspresi wajah menggunakan Teachable Machine dengan dataset dari Hugging Face",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Besok saya akan merapikan jurnal mingguan dan mempersiapkan materi minggu depan.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Saya belajar tentang wawasan global TIK, konsep OOP lebih dalam, dan cara membuat model AI sederhana dengan transfer learning.",
+          "Mendapat wawasan tentang isu-isu global TIK. Memahami lebih dalam konsep class dan object di PBO. Dari project Teachable Machine, belajar cara menyiapkan dataset gambar dari Hugging Face dan proses training model klasifikasi sederhana tanpa coding",
         improve:
-          "Saya perlu mengatur waktu agar bisa mengerjakan project lebih awal.",
+          "Eksplorasi lebih lanjut cara mengekspor model Teachable Machine dan mengintegrasikannya ke dalam proyek yang lebih kompleks",
         score: 9,
       },
     },
@@ -598,38 +590,39 @@ const JOURNALS = [
         },
         {
           day: "Jumat",
-          focus: "Kuliah Wawasan Global, PBO, Quiz & Project AI",
-          output: "Memahami wawasan global, OOP, quiz, model AI",
+          focus: "Kuliah WGTIK, PBO, Quiz & Project AI",
+          output: "Memahami WGTIK, OOP, quiz, model AI",
           duration: "5.5",
         },
       ],
       achievements: [
-        "Memahami konsep searching dalam AI dan menyelesaikan project internship (PPT + GitHub).",
-        "Mengikuti praktikum PBO dan jaringan komputer, serta mengerjakan quiz IMK, PBO, dan jaringan.",
-        "Membuat model AI deteksi ekspresi wajah menggunakan Teachable Machine dengan dataset Hugging Face.",
+        "Menyelesaikan dan mempublikasikan project data scientist pertama ke GitHub, lengkap dengan presentasi PPT",
+        "Berhasil melatih model AI deteksi ekspresi wajah menggunakan Teachable Machine dengan dataset dari Hugging Face",
       ],
       semesterTarget: {
         target:
-          "Menyelesaikan semua tugas dan proyek mata kuliah dengan baik, serta mengembangkan portofolio data science.",
-        progress: 10,
-        note: "Minggu pertama berjalan lancar, semua target tercapai.",
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu kedua berjalan lancar tanpa hambatan signifikan. Semua target harian tercapai dan tidak ada aktivitas yang tertinggal berstatus Proses",
       },
       obstacles: {
-        akademik: "Tidak ada kendala berarti, materi masih dapat dipahami.",
+        akademik: "Tidak ada hambatan akademik yang signifikan minggu ini",
         teknis: "Tidak ada",
         pribadi: "Tidak ada",
       },
       evaluation: {
         bestSuccess:
-          "Berhasil menyelesaikan project internship dan membuat model AI dalam satu minggu.",
+          "Berhasil menyelesaikan dan mempublikasikan project internship data scientist ke GitHub, menandai selesainya portofolio pertama",
         biggestMistake:
-          "Kurang mempersiapkan materi sebelum kuliah sehingga perlu waktu ekstra untuk memahami.",
+          "Belum ada pengukuran nilai quiz secara kuantitatif yang tercatat, sehingga sulit memantau progres akademik secara terukur",
         nextStrategy:
-          "Membaca materi sebelum kuliah, mengatur jadwal lebih terstruktur, dan mulai mengerjakan tugas lebih awal.",
+          "Mulai mencatat semua nilai quiz dan tugas secara konsisten untuk memantau apakah target IP >= 3,7 masih realistis",
       },
       nextWeekPlan: [
-        "Memahami konsep algoritma greedy di strategi algoritma.",
-        "Mempersiapkan praktikum jaringan komputer selanjutnya.",
+        "Mengikuti semua kelas dan praktikum dengan aktif dan penuh",
+        "Mencatat semua nilai quiz yang didapat untuk pemantauan progres IP",
+        "Mulai mengerjakan tugas kelompok jika ada penugasan baru",
+        "Eksplorasi konsep greedy algorithm di matkul DKA",
       ],
     },
   },
@@ -643,24 +636,24 @@ const JOURNALS = [
       activities: [
         {
           time: "10:30 - 12:30",
-          activity: "Kelas teori Dasar Kecerdasan Artifisial",
+          activity: "Kelas teori DKA",
           output: "Mengetahui algoritma greedy",
           status: "✓",
         },
       ],
       results:
-        "Target terpenuhi. Mengikuti kelas DKA dan memahami konsep dasar algoritma greedy.",
+        "Berhasil mengikuti kelas teori DKA dan memahami konsep serta cara kerja algoritma greedy",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
+      solutions: "Tidak ada hambatan. Sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Algoritma greedy membuat keputusan optimal lokal di setiap langkah dengan harapan menghasilkan solusi optimal global.",
+          "Memahami algoritma greedy sebagai pendekatan yang membuat pilihan lokal optimal di setiap langkah dengan harapan menghasilkan solusi global optimal. Belajar bahwa greedy tidak selalu menghasilkan solusi optimal untuk semua jenis masalah",
         improve:
-          "Perlu mencari contoh kasus nyata penerapan greedy agar pemahaman lebih konkret.",
+          "Eksplorasi contoh kasus di mana greedy gagal menghasilkan solusi optimal agar memahami batasannya dengan lebih baik",
         score: 7,
       },
     },
@@ -679,14 +672,14 @@ const JOURNALS = [
       activities: [
         {
           time: "07:30 - 09:30",
-          activity: "Mata kuliah Interaksi Manusia Komputer",
+          activity: "MatKul IMK",
           output:
             "Mengetahui proses pembuatan aplikasi dari memahami masalah yang dialami user sampai proses pembuatan dan iterasi",
           status: "✓",
         },
         {
           time: "09:30 - 12:30",
-          activity: "Kelas praktikum Pemrograman Berorientasi Objek",
+          activity: "Kelas praktikum PBO",
           output:
             "Mengulas kembali syntax dasar seperti if-else, switch case, dan for",
           status: "✓",
@@ -701,18 +694,18 @@ const JOURNALS = [
         },
       ],
       results:
-        "Semua target tercapai. Hari yang padat namun produktif dengan tiga kegiatan akademik berbeda.",
+        "Semua target hari ini tercapai. Memahami proses desain aplikasi berbasis kebutuhan user di IMK, mengulas syntax dasar Java di praktikum PBO, dan mendapat wawasan baru dari webinar tentang big data dan transformasi digital",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Proses desain aplikasi berpusat pada pengguna (user-centered design) dan pentingnya iterasi. Big data membawa peluang sekaligus tantangan keamanan dan integritas data.",
+          "Memahami proses iteratif desain aplikasi dari identifikasi masalah user hingga pembuatan dan pengujian. Dari webinar, mendapat gambaran nyata tantangan integrasi big data: integritas data, keamanan, dan arsitektur sistem yang skalabel",
         improve:
-          "Perlu mencatat poin-poin webinar lebih terstruktur agar mudah direview ulang.",
+          "Catat poin-poin webinar secara lebih terstruktur dan buat ringkasan yang bisa dijadikan referensi untuk tugas WGTIK",
         score: 8,
       },
     },
@@ -724,20 +717,20 @@ const JOURNALS = [
     dateSort: "2026-03-11",
     daily: {
       targets: [
-        "Mengerjakan quiz week 2 interaksi manusia dan komputer",
+        "Mengerjakan quiz week 2 IMK",
         "Mengerjakan quiz week 1 brute force strategi algoritma",
       ],
       activities: [
         {
           time: "08:00 - 09:30",
-          activity: "Mata kuliah strategi algoritma",
+          activity: "MatKul strategi algoritma",
           output:
             "Mempelajari pendekatan brute force dan penerapannya pada berbagai persoalan komputasi",
           status: "✓",
         },
         {
           time: "15:00 - 15:30",
-          activity: "Mengerjakan quiz week 2 interaksi manusia dan komputer",
+          activity: "Mengerjakan quiz week 2 IMK",
           output: "Mendapat nilai 8",
           status: "✓",
         },
@@ -749,18 +742,18 @@ const JOURNALS = [
         },
       ],
       results:
-        "Kedua quiz berhasil diselesaikan dengan hasil memuaskan. Nilai IMK 8/10 dan Strategi Algoritma 85.42.",
+        "Berhasil mengikuti kelas strategi algoritma, mendapat nilai quiz IMK week 2 sebesar 8 dan nilai quiz Algoritma week 1 sebesar 85.42",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Brute force menjamin solusi dengan mencoba semua kemungkinan, namun tidak efisien untuk input besar. Perlu memahami kapan brute force cukup dan kapan harus diganti pendekatan lain.",
+          "Memperdalam pemahaman tentang brute force dan berbagai penerapannya pada persoalan komputasi nyata. Nilai quiz memberikan gambaran sejauh mana pemahaman materi sudah terserap",
         improve:
-          "Perlu belajar lebih teliti untuk soal IMK agar nilai bisa mencapai 10.",
+          "Tinjau kembali soal-soal yang salah di kedua quiz untuk mengidentifikasi celah pemahaman dan memperbaikinya sebelum ujian",
         score: 8,
       },
     },
@@ -772,45 +765,45 @@ const JOURNALS = [
     dateSort: "2026-03-12",
     daily: {
       targets: [
-        "Menyelesaikan tugas kelompok Dasar Kecerdasan Artifisial week 2 searching",
-        "Mengikuti kelas praktikum dan teori Jaringan Komputer",
+        "Menyelesaikan tugas kelompok DKA week 2 searching",
+        "Mengikuti kelas praktikum dan teori JarKom",
       ],
       activities: [
         {
           time: "06:00 - 08:00",
-          activity: "Mengerjakan tugas kelompok Dasar Kecerdasan Artifisial",
+          activity: "Mengerjakan tugas kelompok DKA",
           output: "Hasil pengerjaan dikirim ke teman untuk dilanjutkan",
           status: "✓",
         },
         {
           time: "09:30 - 12:30",
-          activity: "Kelas praktikum Jaringan Komputer",
+          activity: "Kelas praktikum JarKom",
           output: "Mengikuti meet praktikum modul 1 - 4",
           status: "✓",
         },
         {
           time: "19:15 - 23:00",
-          activity: "Merancang web untuk jurnal WGTIK tahap 1",
+          activity: "Merancang web untuk journal WGTIK tahap 1",
           output:
             "Menentukan informasi apa saja yang akan ditampilkan, Mencari ide design, Membuat gambaran kasar untuk layout web",
           status: "✓",
         },
       ],
       results:
-        "Target sebagian tercapai. Praktikum Jaringan Komputer diikuti namun kelas teori terlewat karena tidur siang.",
+        "Berhasil menyelesaikan bagian tugas kelompok DKA dan mengirimkannya ke anggota kelompok. Praktikum JarKom modul 1-4 selesai. Perancangan awal web journal WGTIK berhasil dimulai. Namun melewatkan kelas teori JarKom karena tidur siang",
       obstacles: {
         teknis: "Tidak ada",
-        nonTeknis:
-          "Tidak ikut kelas teori Jaringan Komputer karena tidur siang",
+        nonTeknis: "Tidak ikut kelas teori JarKom karena tidur siang",
         manajemenWaktu:
           "Perlu diperbaiki — tidur siang tidak terjadwal menyebabkan kelas terlewat",
       },
-      solutions: "Jangan begadang agar siang tidak ngantuk",
+      solutions:
+        "Jadwalkan waktu istirahat siang secara eksplisit dengan durasi maksimal 20 menit dan pasang alarm. Minta catatan atau materi kelas teori JarKom yang terlewat dari teman",
       reflection: {
         learned:
-          "Merancang web memerlukan perencanaan informasi sebelum coding. Konsistensi jadwal tidur sangat mempengaruhi produktivitas siang hari.",
+          "Memahami alur perancangan web: mulai dari menentukan konten, mencari referensi desain, hingga membuat layout kasar. Juga menyadari bahwa tidur siang tanpa batas waktu adalah risiko nyata bagi jadwal kuliah",
         improve:
-          "Harus lebih disiplin manajemen waktu istirahat dan menghindari begadang tanpa keperluan jelas.",
+          "Disiplin dalam manajemen waktu istirahat siang hari. Tetapkan alarm dan batasi durasi tidur siang agar tidak mengganggu jadwal kuliah",
         score: 6,
       },
     },
@@ -828,8 +821,7 @@ const JOURNALS = [
       activities: [
         {
           time: "13:00 - 14:30",
-          activity:
-            "Belajar mandiri Pemrograman Berorientasi Objek, karena kelas teori asynchronous",
+          activity: "Belajar mandiri PBO, karena kelas teori asynchronous",
           output:
             "Mengetahui diagram UML, relasi, agregasi, komposisi, dan contohnya",
           status: "✓",
@@ -842,25 +834,25 @@ const JOURNALS = [
         },
         {
           time: "19:30 - 23:50",
-          activity: "Merancang web untuk jurnal WGTIK tahap 2",
+          activity: "Merancang web untuk journal WGTIK tahap 2",
           output:
             "Skema awal data.js, Wireframe kasar untuk 3 section, List variabel CSS",
           status: "✓",
         },
       ],
       results:
-        "Hari yang sangat produktif. Quiz PBO mendapat nilai sempurna dan rancangan web tahap 2 berhasil diselesaikan.",
+        "Semua target hari ini tercapai. Berhasil memahami diagram UML secara mandiri, mendapat nilai quiz PBO 100, dan menyelesaikan skema data.js serta wireframe untuk web journal WGTIK",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions: "Tidak ada hambatan berarti, tidak diperlukan solusi khusus.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Diagram UML membantu memvisualisasikan relasi antar kelas sebelum implementasi. Perencanaan skema data di awal membuat proses coding lebih terarah.",
+          "Memahami diagram UML beserta jenis relasi: asosiasi, agregasi, dan komposisi. Mendapat nilai sempurna di quiz PBO menunjukkan materi sudah dipahami dengan baik. Belajar cara merancang skema data JSON yang terstruktur dan wireframe sebagai fondasi pengembangan web",
         improve:
-          "Sesi malam terlalu panjang (>4 jam). Perlu dibatasi agar tidak berdampak ke hari berikutnya.",
+          "Mulai menerapkan diagram UML saat merancang struktur kelas di proyek PBO agar terbiasa menggunakannya sebagai alat komunikasi desain",
         score: 9,
       },
     },
@@ -875,7 +867,7 @@ const JOURNALS = [
       activities: [
         {
           day: "Senin",
-          focus: "Kelas teori Dasar Kecerdasan Artifisial — Algoritma Greedy",
+          focus: "Kelas teori DKA — Algoritma Greedy",
           output: "Memahami konsep dan cara kerja algoritma greedy",
           duration: "2",
         },
@@ -895,7 +887,7 @@ const JOURNALS = [
         {
           day: "Kamis",
           focus:
-            "Tugas kelompok DKA searching, Praktikum Jarkom, Desain web WGTIK tahap 1",
+            "Tugas kelompok DKA searching, Praktikum JarKom, Desain web WGTIK tahap 1",
           output:
             "Tugas kelompok diteruskan, praktikum modul 1-4 selesai, layout web dirancang",
           duration: "8",
@@ -909,33 +901,35 @@ const JOURNALS = [
         },
       ],
       achievements: [
-        "Mendapat nilai sempurna 100 di quiz PBO week 3",
-        "Berhasil memulai dan menyelesaikan rancangan awal web jurnal WGTIK hingga tahap 2 dalam 2 hari",
+        "Mendapat nilai sempurna 100 di quiz PBO week 3, menunjukkan pemahaman mendalam terhadap materi UML dan relasi kelas",
+        "Berhasil merancang skema data JSON dan wireframe web journal WGTIK sebagai fondasi pengembangan minggu berikutnya",
       ],
       semesterTarget: {
         target:
-          "Menguasai materi inti 6 mata kuliah dan menyelesaikan proyek web WGTIK tepat waktu",
-        progress: 30,
-        note: "Progress baik di PBO dan DKA, namun perlu perhatian lebih pada Jaringan Komputer karena satu kelas teori terlewat",
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu ketiga aktif dengan quiz dan tugas kelompok. Ada satu insiden kelas terlewat yang harus dijadikan pelajaran. Fondasi web journal WGTIK sudah terbentuk",
       },
       obstacles: {
         akademik:
-          "Materi searching DKA cukup kompleks, pengerjaan tugas kelompok belum selesai penuh",
-        teknis: "Tidak ada hambatan teknis berarti selama minggu ini",
+          "Bagian tugas kelompok DKA diselesaikan namun belum final karena harus diteruskan oleh anggota lain",
+        teknis: "Tidak ada hambatan teknis yang signifikan",
         pribadi:
-          "Kebiasaan begadang menyebabkan ngantuk siang dan kelas teori Jarkom terlewat",
+          "Tidur siang tidak terkontrol pada hari Kamis menyebabkan kelas teori JarKom terlewat",
       },
       evaluation: {
         bestSuccess:
-          "Quiz PBO nilai 100 dan penyelesaian rancangan web WGTIK tahap 2 dalam satu sesi malam yang fokus",
+          "Mendapat nilai sempurna 100 di quiz PBO week 3 melalui belajar mandiri asynchronous — membuktikan bahwa belajar mandiri bisa efektif jika terstruktur",
         biggestMistake:
-          "Melewatkan kelas teori Jaringan Komputer karena tidak menjaga pola tidur",
+          "Melewatkan kelas teori JarKom karena tidur siang yang tidak terjadwal — ini adalah insiden berulang yang harus segera diatasi",
         nextStrategy:
-          "Tetapkan jam tidur maksimal pukul 23.00 dan buat checklist harian malam sebelumnya agar tidak ada kelas yang terlewat",
+          "Pasang alarm eksplisit untuk setiap jadwal kelas, batasi durasi tidur siang maksimal 20 menit, prioritaskan kelas teori yang tidak bisa diulang",
       },
       nextWeekPlan: [
-        "Menyelesaikan implementasi web jurnal WGTIK dan memastikan fitur sorting & filtering berjalan",
-        "Mengulang materi Jaringan Komputer yang terlewat dan memperdalam konsep searching untuk DKA",
+        "Mengerjakan makalah IMK tentang UCD dan proses desain UI",
+        "Menyelesaikan modul praktikum JarKom (modul 1-4)",
+        "Melanjutkan pengembangan web journal WGTIK dari wireframe ke code HTML dan CSS",
+        "Disiplin mengikuti semua jadwal kelas tanpa terkecuali",
       ],
     },
   },
@@ -946,37 +940,36 @@ const JOURNALS = [
     dateSort: "2026-03-16",
     daily: {
       targets: [
-        "Menyelesaikan makalah UCD dan proses desain UI mata kuliah IMK",
-        "Merancang section hero, about, dan jurnal untuk HTML, kemudian membuat variabel size, typography, dll. untuk CSS",
+        "Menyelesaikan makalah UCD dan proses desain UI matkul IMK",
+        "Merancang section hero, about, dan journal untuk HTML, kemudian membuat variabel size, typography, dll. untuk CSS",
       ],
       activities: [
         {
           time: "07:00 - 11:00",
-          activity: "Mengerjakan makalah mata kuliah IMK",
+          activity: "Mengerjakan makalah matkul IMK",
           output: "Dokumen makalah UCD dan proses desain UI",
           status: "✓",
         },
         {
           time: "18:30 - 23:00",
-          activity: "Merancang web untuk jurnal WGTIK tahap 3",
+          activity: "Merancang web untuk journal WGTIK tahap 3",
           output: "Struktur index.html dan desain global.css",
           status: "✓",
         },
       ],
       results:
-        "Target harian tercapai dengan menyelesaikan makalah IMK dan merancang struktur awal web jurnal WGTIK.",
+        "Berhasil menyelesaikan makalah IMK tentang UCD dan proses desain UI, serta membangun struktur HTML dan sistem variabel CSS sebagai fondasi web journal WGTIK",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Mempertahankan fokus kerja dan membagi waktu antara akademik dan pengembangan web.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Memahami alur UCD serta pentingnya konsistensi desain dari HTML ke CSS.",
+          "Mengaplikasikan pemahaman UCD dari kuliah IMK ke dalam tulisan akademik. Dari pengembangan web, belajar pentingnya sistem desain (design system) dengan mendefinisikan variabel CSS untuk ukuran, tipografi, dan warna sejak awal agar konsisten",
         improve:
-          "Meningkatkan kecepatan dalam implementasi desain agar lebih efisien.",
+          "Mulai lebih awal saat mengerjakan makalah agar ada waktu untuk revisi dan iterasi konten sebelum dikumpulkan",
         score: 8,
       },
     },
@@ -988,20 +981,20 @@ const JOURNALS = [
     dateSort: "2026-03-17",
     daily: {
       targets: [
-        "Menyelesaikan modul 1 & 2 praktikum Jaringan Komputer",
-        "Membuat animasi partikel dan sapaan multi bahasa serta scroll parallax untuk web jurnal WGTIK",
+        "Menyelesaikan modul 1 & 2 praktikum JarKom",
+        "Membuat animasi partikel dan sapaan multi bahasa serta scroll parallax untuk web journal WGTIK",
       ],
       activities: [
         {
           time: "07:15 - 08:00",
-          activity: "Mengerjakan modul 1 praktikum Jaringan Komputer",
+          activity: "Mengerjakan modul 1 praktikum JarKom",
           output:
             "PDF laporan hasil praktikum dan sudah dikumpulkan di Classroom",
           status: "✓",
         },
         {
           time: "08:00 - 12:00",
-          activity: "Mengerjakan modul 2 praktikum Jaringan Komputer",
+          activity: "Mengerjakan modul 2 praktikum JarKom",
           output:
             "PDF laporan hasil praktikum dan sudah dikumpulkan di Classroom",
           status: "✓",
@@ -1016,20 +1009,19 @@ const JOURNALS = [
         },
       ],
       results:
-        "Seluruh target tercapai, baik praktikum Jaringan Komputer maupun pengembangan fitur interaktif pada web jurnal.",
+        "Semua target hari ini tercapai. Laporan modul 1 & 2 praktikum JarKom berhasil diselesaikan dan dikumpulkan, serta fitur animasi interaktif web journal berhasil diimplementasikan",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Menggunakan pembagian waktu yang jelas antara praktikum dan pengembangan web.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Memahami implementasi animasi berbasis JavaScript dan CSS serta pengelolaan waktu yang efektif.",
+          "Menyelesaikan laporan praktikum JarKom modul 1 & 2 memperdalam pemahaman tentang konfigurasi jaringan dasar. Dari pengembangan web, belajar teknik animasi partikel berbasis Canvas/JS, implementasi sapaan dinamis multi bahasa, dan efek scroll parallax menggunakan CSS transform",
         improve:
-          "Merapikan struktur kode agar lebih modular dan mudah dikembangkan.",
-        score: 8,
+          "Optimalkan performa animasi partikel dengan membatasi jumlah partikel aktif agar tidak membebani CPU pengguna di perangkat lemah",
+        score: 9,
       },
     },
   },
@@ -1040,8 +1032,8 @@ const JOURNALS = [
     dateSort: "2026-03-18",
     daily: {
       targets: [
-        "Membuat card component untuk jurnal",
-        "Mengisi jurnal dengan 5–7 data asli",
+        "Membuat card component untuk journal",
+        "Mengisi journal dengan 5–7 data asli",
         "Validasi skema agar field konsisten",
         "Menambahkan sorting tanggal YYYY-MM-DD",
         "Menambahkan filter kategori semua / harian / mingguan",
@@ -1050,7 +1042,7 @@ const JOURNALS = [
         {
           time: "08:00 - 12:30",
           activity: "Membuat card component",
-          output: "Grid jurnal berisi data asli",
+          output: "Grid journal berisi data asli",
           status: "✓",
         },
         {
@@ -1062,25 +1054,24 @@ const JOURNALS = [
         },
         {
           time: "19:00 - 21:15",
-          activity: "Menambahkan sorting dan filter kategori jurnal",
+          activity: "Menambahkan sorting dan filter kategori journal",
           output: "Filter kategori dan date range",
           status: "✓",
         },
       ],
       results:
-        "Fitur utama jurnal seperti card, validasi data, sorting, dan filter berhasil diimplementasikan.",
+        "Semua target hari ini tercapai. Card component berhasil dibuat dan diisi dengan data asli, validasi skema berjalan dengan baik, serta fitur sorting dan filter kategori berhasil diimplementasikan",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Tidak ada",
         manajemenWaktu: "Aman",
       },
-      solutions:
-        "Menjaga konsistensi skema data dan melakukan pengujian setiap fitur setelah dibuat.",
+      solutions: "Tidak ada hambatan. Semua sesi berjalan sesuai rencana",
       reflection: {
         learned:
-          "Pentingnya validasi data dan struktur yang konsisten dalam pengembangan aplikasi.",
+          "Belajar cara membangun card component dinamis yang me-render data dari skema JSON. Memahami pentingnya validasi data di sisi frontend untuk menjaga konsistensi tampilan. Mengimplementasikan sorting berdasarkan format tanggal YYYY-MM-DD dan filter kategori berbasis tipe entry",
         improve:
-          "Mengoptimalkan performa saat filtering dan sorting data dalam jumlah besar.",
+          "Tambahkan unit test sederhana untuk memvalidasi fungsi sorting dan filtering agar lebih robust saat ada perubahan data di masa depan",
         score: 9,
       },
     },
@@ -1091,7 +1082,7 @@ const JOURNALS = [
     date: "19 Maret 2026",
     dateSort: "2026-03-19",
     daily: {
-      targets: ["Menyelesaikan modul 3 & 4 praktikum Jaringan Komputer"],
+      targets: ["Menyelesaikan modul 3 & 4 praktikum JarKom"],
       activities: [
         {
           time: "06:00 - 07:30",
@@ -1103,31 +1094,32 @@ const JOURNALS = [
         },
         {
           time: "07:30 - 11:30",
-          activity: "Mengerjakan modul 3 praktikum Jaringan Komputer",
+          activity: "Mengerjakan modul 3 praktikum JarKom",
           output: "PDF laporan modul 3 dikumpulkan ke Classroom",
           status: "✓",
         },
         {
           time: "18:30 - 23:30",
-          activity: "Mengerjakan modul 4 praktikum Jaringan Komputer",
+          activity: "Mengerjakan modul 4 praktikum JarKom",
           output: "PDF laporan modul 4 dikumpulkan ke Classroom",
           status: "✓",
         },
       ],
       results:
-        "Modul 3 dan 4 selesai tepat waktu serta mendapatkan wawasan tambahan tentang perkembangan AI.",
+        "Berhasil menyelesaikan modul 3 & 4 praktikum JarKom meskipun manajemen waktu sedikit terganggu oleh tidur siang yang terlalu lama",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Rasa kantuk di siang hari",
         manajemenWaktu: "Sedikit terganggu karena tidur siang terlalu lama",
       },
       solutions:
-        "Mengatur durasi tidur siang dengan alarm agar tidak mengganggu produktivitas.",
+        "Batasi durasi tidur siang maksimal 20-30 menit dan pasang alarm. Jadwalkan pekerjaan berat di sesi pagi saat energi masih optimal, hindari sesi kerja intensif setelah tidur siang yang panjang",
       reflection: {
         learned:
-          "Memahami penggunaan Wireshark untuk analisis protokol serta tren perkembangan AI.",
-        improve: "Mengurangi perfeksionisme agar pengerjaan lebih efisien.",
-        score: 8,
+          "Menyelesaikan laporan modul 3 & 4 JarKom memperdalam pemahaman tentang konfigurasi jaringan lanjutan. Dari membaca blog Hugging Face, mendapat gambaran tren AI global: meningkatnya developer independen yang membangun model sendiri dan perkembangan pesat di bidang robotika",
+        improve:
+          "Kelola energi harian lebih baik dengan menetapkan batas waktu tidur siang yang ketat agar tidak berulang kali mengganggu jadwal kerja sore",
+        score: 7,
       },
     },
   },
@@ -1138,23 +1130,23 @@ const JOURNALS = [
     dateSort: "2026-03-20",
     daily: {
       targets: [
-        "Membuat modal/popup untuk detail jurnal harian",
-        "Membuat halaman khusus jurnal mingguan dengan URL unik",
+        "Membuat modal/popup untuk detail journal harian",
+        "Membuat halaman khusus journal mingguan dengan URL unik",
         "Menambahkan fitur print PDF dan download DOCX",
-        "Menambahkan chatbot pada web jurnal",
+        "Menambahkan chatbot pada web journal",
         "Tes responsivitas mobile",
-        "Deploy web jurnal WGTIK",
+        "Deploy web journal WGTIK",
       ],
       activities: [
         {
           time: "07:00 - 10:00",
-          activity: "Membuat modal untuk jurnal harian",
+          activity: "Membuat modal untuk journal harian",
           output: "Modal sesuai template",
           status: "✓",
         },
         {
           time: "13:00 - 16:00",
-          activity: "Membuat section jurnal mingguan",
+          activity: "Membuat section journal mingguan",
           output: "Section dengan URL unik",
           status: "✓",
         },
@@ -1173,23 +1165,25 @@ const JOURNALS = [
         {
           time: "21:30 - 23:50",
           activity: "Integrasi chatbot ke web",
-          output: "Chatbot dapat menjawab pertanyaan dasar jurnal",
+          output: "Chatbot dapat menjawab pertanyaan dasar journal",
           status: "✓",
         },
       ],
       results:
-        "Seluruh fitur utama web jurnal berhasil diselesaikan dan aplikasi berhasil di-deploy.",
+        "Semua target hari ini tercapai penuh. Web journal WGTIK berhasil diselesaikan secara end-to-end dan dapat diakses publik melalui GitHub Pages, lengkap dengan modal journal harian, section mingguan, fitur export, dan chatbot terintegrasi",
       obstacles: {
         teknis: "Tidak ada",
         nonTeknis: "Kelelahan di akhir hari",
         manajemenWaktu: "Sangat baik",
       },
-      solutions: "Istirahat sejenak di sela pekerjaan untuk menjaga stamina.",
+      solutions:
+        "Manajemen energi lebih baik ke depannya dengan menyisipkan jeda istirahat singkat 10-15 menit di antara sesi kerja panjang agar kelelahan tidak menumpuk di penghujung hari",
       reflection: {
         learned:
-          "Memahami integrasi fitur kompleks seperti export file dan chatbot dalam web.",
-        improve: "Mengoptimalkan performa chatbot dan UX agar lebih responsif.",
-        score: 9,
+          "Belajar cara membuat modal interaktif yang merender data dinamis, implementasi routing URL unik untuk section mingguan, fitur export ke PDF dan DOCX dari konten web, proses deploy ke GitHub Pages, serta integrasi chatbot berbasis AI ke dalam antarmuka web",
+        improve:
+          "Tambahkan fitur pencarian teks pada journal dan optimalkan performa loading web di iterasi berikutnya. Dokumentasikan code dengan komentar yang lebih baik",
+        score: 10,
       },
     },
   },
@@ -1203,7 +1197,7 @@ const JOURNALS = [
       activities: [
         {
           day: "Senin",
-          focus: "Makalah IMK dan struktur web jurnal",
+          focus: "Makalah IMK dan struktur web journal",
           output: "Makalah selesai dan desain awal web",
           duration: "8",
         },
@@ -1215,7 +1209,7 @@ const JOURNALS = [
         },
         {
           day: "Rabu",
-          focus: "Pengembangan fitur jurnal",
+          focus: "Pengembangan fitur journal",
           output: "Card, validasi, filter, sorting",
           duration: "8",
         },
@@ -1233,31 +1227,385 @@ const JOURNALS = [
         },
       ],
       achievements: [
-        "Web jurnal WGTIK berhasil dibuat end-to-end hingga deployment",
-        "Seluruh modul praktikum Jaringan Komputer selesai tepat waktu",
+        "Berhasil membangun dan men-deploy web journal WGTIK secara penuh ke GitHub Pages dengan fitur modal, animasi, export PDF/DOCX, dan chatbot terintegrasi",
+        "Menyelesaikan seluruh modul praktikum JarKom (modul 1-4) dan mengumpulkan semua laporan tepat waktu",
       ],
       semesterTarget: {
         target:
-          "Menyelesaikan seluruh tugas mata kuliah dengan kualitas tinggi dan membangun portofolio web",
-        progress: 65,
-        note: "Progres signifikan pada pengembangan web dan penyelesaian praktikum",
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu keempat adalah minggu paling produktif sejauh ini. Web journal WGTIK selesai end-to-end dalam satu minggu. Momentum ini harus dipertahankan",
       },
       obstacles: {
-        akademik: "Beban tugas cukup padat",
-        teknis: "Tidak ada kendala signifikan",
-        pribadi: "Kelelahan dan manajemen energi",
+        akademik: "Tidak ada hambatan akademik yang signifikan minggu ini",
+        teknis:
+          "Tidak ada hambatan teknis yang signifikan dalam pengembangan web",
+        pribadi:
+          "Rasa kantuk di siang hari pada hari Kamis sedikit mengganggu manajemen waktu, namun tidak sampai melewatkan kelas",
       },
       evaluation: {
         bestSuccess:
-          "Berhasil menyelesaikan dan deploy web jurnal lengkap dengan fitur lanjutan",
+          "Berhasil membangun dan men-deploy web journal lengkap berfitur tinggi dalam satu minggu — dari wireframe hingga chatbot terintegrasi — ini adalah capaian teknis terbesar semester ini sejauh ini",
         biggestMistake:
-          "Kurang mengatur waktu istirahat sehingga sempat kelelahan",
+          "Tidur siang yang tidak terkontrol pada hari Kamis kembali terjadi meski sudah diidentifikasi sebagai masalah minggu lalu, menunjukkan bahwa solusi belum benar-benar diimplementasikan",
         nextStrategy:
-          "Menjaga keseimbangan kerja dan istirahat serta meningkatkan efisiensi coding",
+          "Implementasikan jadwal tidur siang yang ketat (maksimal 20 menit dengan alarm) sebagai kebiasaan harian. Pertahankan momentum produktivitas tinggi dengan merencanakan target mingguan yang spesifik dan terukur",
       },
       nextWeekPlan: [
-        "Refactor kode dan optimasi performa web",
-        "Menambahkan fitur tambahan atau UI improvement",
+        "Mulai mengisi data journal yang lengkap dan konsisten pada web yang sudah di-deploy",
+        "Melanjutkan perkuliahan dan praktikum dengan penuh dan aktif",
+        "Mulai merencanakan portofolio data science berikutnya setelah project Home Credit",
+        "Implementasikan jadwal tidur siang beralarma untuk mengatasi masalah manajemen waktu yang berulang",
+      ],
+    },
+  },
+  {
+    id: "daily-2026-03-23",
+    type: "daily",
+    date: "23 Maret 2026",
+    dateSort: "2026-03-23",
+    daily: {
+      targets: [
+        "Melanjutkan project GDGoC untuk membangun REST API menggunakan Flask untuk melayani prediksi individu dan batch",
+        "Melanjutkan project GDGoC untuk membangun class Predictor untuk mengelola loading model dan logika prediksi",
+        "Melanjutkan project GDGoC untuk membangun struktur halaman web dengan desain responsif dan modern",
+      ],
+      activities: [
+        {
+          time: "07:00 - 12:00",
+          activity:
+            "Membuat file app.py yang mencakup endpoint untuk prediksi individu, batch melalui CSV, data acak, dan template CSV",
+          output:
+            "Flask app dengan 5 endpoint API dan rate limiting untuk keamanan serta validasi input",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 17:00",
+          activity:
+            "Membuat file predictor.py untuk meload model, mengelola konversi dan validasi data, menangani prediksi individu dan batch, menyediakan data acak, serta dilengkapi fungsi analisis faktor, klasifikasi risiko, dan rekomendasi",
+          output:
+            "Predictor class dengan semua method selesai dan fungsi analisis faktor menghasilkan rekomendasi",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 23:30",
+          activity:
+            "Membuat template dasar base.html, index.html untuk prediksi individu, batch.html untuk prediksi massal, 404.html, dan 500.html untuk error pages, serta main.css",
+          output:
+            "5 halaman HTML dan CSS serta dan gauge meter untuk visualisasi prediksi",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan implementasi backend dan frontend utama project GDGoC, termasuk endpoint Flask, class Predictor, template HTML, CSS, dan visualisasi gauge meter, sehingga fondasi aplikasi siap untuk tahap integrasi dan pengujian",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lanjutkan tahap integrasi dengan frontend, lakukan pengujian alur prediksi individu dan batch, serta perbaiki bug kecil sebelum presentasi",
+      reflection: {
+        learned:
+          "Belajar menyusun arsitektur aplikasi prediksi end-to-end: dari API Flask, class untuk inference, hingga template UI dan visualisasi hasil. Juga memahami pentingnya validasi input, rate limiting, dan pemisahan logika backend-frontend",
+        improve:
+          "Dokumentasikan struktur endpoint, alur data, dan dependency antar file agar debugging dan presentasi lebih mudah",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-24",
+    type: "daily",
+    date: "24 Maret 2026",
+    dateSort: "2026-03-24",
+    daily: {
+      targets: ["Melanjutkan project GDGoC untuk implementasi frontend"],
+      activities: [
+        {
+          time: "07:00 - 13:30",
+          activity:
+            "Membuat file main.js untuk prediksi individu dan file batch.js untuk prediksi massal dengan upload CSV",
+          output:
+            "Halaman prediksi individu fungsional dengan semua fitur dan batch dengan upload dan export CSV",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:30",
+          activity: "Membuat banner acara halal bihalal tahap 1",
+          output: "Banner dengan isi yang lengkap",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 20:00",
+          activity: "Membuat banner acara halal bihalal tahap 2",
+          output: "Revisi minor dan finalisasi banner",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menghubungkan frontend prediksi individu dan batch ke alur kerja yang utuh, serta menyelesaikan banner halal bihalal tahap 1 dan finalisasi tahap 2",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lakukan pengecekan ulang integrasi upload CSV, pastikan format output konsisten, dan simpan aset banner final untuk penggunaan berikutnya",
+      reflection: {
+        learned:
+          "Belajar menghubungkan JavaScript frontend dengan alur prediksi massal, serta memahami pentingnya penyesuaian UX saat pengguna mengunggah file. Dari pengerjaan banner, belajar menata elemen visual dan melakukan revisi kecil dengan cepat",
+        improve:
+          "Periksa ulang edge case pada upload file dan siapkan validasi error yang lebih informatif di frontend",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-25",
+    type: "daily",
+    date: "25 Maret 2026",
+    dateSort: "2026-03-25",
+    daily: {
+      targets: [
+        "Memahami algoritma greedy dari matkul Strategi Algoritma",
+        "Belajar mendiri PBO materi week 2 & 3",
+        "Memahami modul 5 & 6 praktikum JarKom sebelum praktikum besok",
+        "Melanjutkan project GDGoC untuk mengintegrasikan komponen dan melakukan pengujian",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output:
+            "Memahami apa itu algoritma greedy, cara kerjanya, dan contoh kasus, serta keterbatasan",
+          status: "✓",
+        },
+        {
+          time: "09:45 - 10:30",
+          activity: "Melengkapi journal week 5 WGTIK",
+          output: "Journal week 5 WGTIK yang sudah lengkap",
+          status: "✓",
+        },
+        {
+          time: "10:30 - 13:30",
+          activity:
+            "Menghubungkan frontend ke backend API untuk project GDGoC kemudian rate limiting, error handling seperti file kosong atau format salah, serta caching untuk prediksi individu",
+          output:
+            "Semua endpoint berfungsi dengan baik dan Rate limiting berjalan sesuai konfigurasi",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 20:30",
+          activity: "Mempelajari modul 5 & 6 JarKom",
+          output:
+            "Memahami apa perbedaan TCP dan UDP serta cara kerjanya dan karakteristiknya",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil memahami greedy, menyelesaikan journal week 5, mengintegrasikan frontend-backend project GDGoC hingga rate limiting, error handling, dan caching berjalan, serta mempelajari modul 5 & 6 JarKom tentang TCP/UDP",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu:
+          "Tidak jadi belajar PBO karena harus memprioritaskan belajar JarKom dan project GDGoC terlebih dahulu",
+      },
+      solutions:
+        "Tindak lanjuti dengan belajar PBO sesuai rencana, lalu siapkan catatan ringkas perbedaan TCP dan UDP untuk praktikum dan ujian",
+      reflection: {
+        learned:
+          "Memahami greedy beserta keterbatasannya, melihat proses integrasi aplikasi secara lebih lengkap dari sisi performa dan keandalan, dan memahami karakteristik dasar TCP vs UDP",
+        improve:
+          "Jangan terlalu mudah menggeser prioritas belajar PBO, alokasikan slot waktu yang jelas agar target tidak tertunda terus",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-26",
+    type: "daily",
+    date: "26 Maret 2026",
+    dateSort: "2026-03-26",
+    daily: {
+      targets: [
+        "Aktif dalam praktikum JarKom",
+        "Menyelesaikan project GDGoC untuk presentasi di tanggal 28",
+        "Input TAK",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum Jaringan Komputer",
+          output:
+            "Memahami cara praktikum TCP dan UDP serta mendemonstrasikan program python UDP server dan client",
+          status: "✓",
+        },
+        {
+          time: "12:00 - 12:30",
+          activity: "Mengerjakan quiz 2 JarKom",
+          output: "Mendapat nilai 100",
+          status: "✓",
+        },
+        {
+          time: "12:30 - 13:00",
+          activity: "Mengerjakan quiz 3 JarKom",
+          output: "Mendapat nilai 100",
+          status: "✓",
+        },
+        {
+          time: "14:00 - 15:30",
+          activity: "Input TAK",
+          output: "11 sertifikat sudah diupload",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:30",
+          activity: "Menyelesaikan project GDGoC untuk presentasi di tanggal 2",
+          output:
+            "Bug loading di batch.js sudah diperbaiki, fitur prediksi di predictor.py sudah dilengkapi, validasi input sudah diperbaiki, dan memperbaiki bug minor lainnya sampai selesai",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil aktif di praktikum JarKom, memperoleh nilai sempurna di quiz 2 dan 3, menyelesaikan input TAK, serta menuntaskan project GDGoC untuk presentasi dengan perbaikan bug dan validasi final",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu:
+          "Sebenarnya aman, tapi tadi pagi perlu pergi ke tempat percetakan banner terlebih dahulu",
+      },
+      solutions:
+        "Lakukan pengecekan akhir terhadap materi presentasi dan siapkan versi cadangan agar demo besok berjalan lancar",
+      reflection: {
+        learned:
+          "Memahami praktik TCP/UDP secara langsung melalui demonstrasi server-client Python, sekaligus belajar bahwa penyelesaian bug minor dan validasi input adalah bagian penting dari finalisasi produk",
+        improve:
+          "Mulai review materi presentasi lebih awal agar tidak menumpuk di malam hari sebelum presentasi",
+        score: 10,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-27",
+    type: "daily",
+    date: "27 Maret 2026",
+    dateSort: "2026-03-02",
+    daily: {
+      targets: [
+        "Menyelesaikan PPT untuk presentasi project GDGoC besok",
+        "Belajar mendiri PBO materi week 2 & 3",
+      ],
+      activities: [
+        {
+          time: "10:30 - 18:00",
+          activity:
+            "Membuat PPT untuk presentasi besok dan memastikan project bisa dijalankan",
+          output: "File PPT yang siap untuk presentasi",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 19:00",
+          activity:
+            "Membuat fitur baru di web journal WGTIK agar bisa melihat detail aktifitas per hari di weekly journal",
+          output:
+            "Tombol aksi pada setiap row hari di tabel weekly journal dan ketika di-klik maka muncul modal berisi informasi detail di hari tersebut",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 21:00",
+          activity: "Belajar PBO materi week 2 & 3",
+          output:
+            "Memahami konsep encapsulation, access modifier (public, private, protected, default), dan modularity untuk materi week 2. kemudian memahami UML, class diagram (atribut dan method), relasi antar kelas (association, aggregation, composition), dan multiplicity (one-to-one dan one-to-many)",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan PPT presentasi project GDGoC, menambahkan fitur detail aktivitas pada weekly journal, dan memperdalam PBO week 2 & 3 termasuk encapsulation, access modifier, UML, relasi antar kelas, dan multiplicity",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Masih kurang paham apa itu constructor",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Rapikan alur presentasi, pastikan demo project berjalan stabil, dan lanjutkan pemahaman constructor dengan latihan soal atau contoh code sederhana",
+      reflection: {
+        learned:
+          "Belajar menyusun materi presentasi yang ringkas, memahami interaksi komponen pada web journal melalui modal detail harian, dan memperkuat konsep PBO dasar yang sempat masih kurang paham, terutama constructor",
+        improve:
+          "Latihan constructor secara langsung dengan code kecil agar konsep tidak berhenti di definisi",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-03-23",
+    type: "weekly",
+    date: "Minggu ke-5 · 23-27 Maret 2026",
+    dateSort: "2026-03-23",
+    weekly: {
+      weekNumber: 5,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Project GDGoC backend & frontend",
+          output: "Flask API, Predictor class, template HTML/CSS siap",
+          duration: "13.5",
+        },
+        {
+          day: "Selasa",
+          focus: "Frontend integrasi & banner halal bihalal",
+          output: "main.js, batch.js, banner selesai dan final",
+          duration: "11",
+        },
+        {
+          day: "Rabu",
+          focus: "Greedy, journal WGTIK, integrasi project, JarKom",
+          output:
+            "Greedy dipahami, journal week 5 lengkap, project terintegrasi, TCP/UDP dipelajari",
+          duration: "6.25",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktikum JarKom, quiz, TAK, finalisasi project",
+          output: "Quiz 2 dan 3 nilai 100, TAK terinput, project GDGoC selesai",
+          duration: "7.5",
+        },
+        {
+          day: "Jumat",
+          focus: "Presentasi, fitur detail weekly journal, belajar PBO",
+          output:
+            "PPT siap, fitur modal detail harian ditambahkan, PBO week 2 & 3 dipahami",
+          duration: "9.5",
+        },
+      ],
+      achievements: [
+        "Project GDGoC selesai sampai tahap siap presentasi, termasuk backend, frontend, integrasi, validasi, caching, dan error handling",
+        "Web journal WGTIK ditingkatkan dengan fitur detail aktivitas harian pada weekly journal",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu ini sangat produktif. Project GDGoC hampir selesai penuh, pengembangan web journal terus bertambah, dan PBO tetap dipelajari meski ada prioritas lain. Pemahaman constructor masih perlu diperkuat",
+      },
+      obstacles: {
+        akademik:
+          "Belajar PBO sempat tertunda karena prioritas project dan JarKom",
+        teknis: "Tidak ada hambatan teknis yang signifikan",
+        pribadi:
+          "Beban tugas cukup padat menjelang presentasi, tetapi masih terkendali",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil menyelesaikan project GDGoC hingga siap presentasi dan menambahkan fitur detail harian pada web journal WGTIK",
+        biggestMistake:
+          "Belajar PBO sempat tertunda dan pemahaman tentang constructor masih belum kuat",
+        nextStrategy:
+          "Pertahankan ritme penyelesaian tugas, jadwalkan slot khusus untuk PBO, dan fokus pada latihan constructor serta review materi yang masih lemah",
+      },
+      nextWeekPlan: [
+        "Melanjutkan penguatan PBO terutama constructor dan latihan coding",
       ],
     },
   },

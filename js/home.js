@@ -1,3 +1,4 @@
+// home.js
 const JournalApp = (() => {
   const assertDependencies = () => {
     if (typeof JOURNALS === "undefined")
@@ -687,6 +688,35 @@ const JournalApp = (() => {
     sections.push(sec5);
     return sections;
   };
+  // --------------------- Helper functions for weekly-to-daily navigation ---------------------
+  const DAY_OFFSET_MAP = {
+    Senin: 0, Selasa: 1, Rabu: 2, Kamis: 3,
+    Jumat: 4, Sabtu: 5, Minggu: 6
+  };
+  const getDateFromWeekDay = (weeklyJournal, dayName) => {
+    if (!weeklyJournal?.dateSort) {
+      console.warn('getDateFromWeekDay: weeklyJournal atau dateSort tidak valid');
+      return null;
+    }
+    const offset = DAY_OFFSET_MAP[dayName];
+    if (offset === undefined) {
+      console.warn(`getDateFromWeekDay: nama hari tidak dikenal "${dayName}"`);
+      return null;
+    }
+    const [year, month, day] = weeklyJournal.dateSort.split('-').map(Number);
+    const baseDate = new Date(Date.UTC(year, month - 1, day));
+    const targetDate = new Date(baseDate);
+    targetDate.setUTCDate(baseDate.getUTCDate() + offset);
+    const yyyy = targetDate.getUTCFullYear();
+    const mm = String(targetDate.getUTCMonth() + 1).padStart(2, '0');
+    const dd = String(targetDate.getUTCDate()).padStart(2, '0');
+    return `${yyyy}-${mm}-${dd}`;
+  };
+  const findDailyJournalByDate = (dateStr) => {
+    if (!dateStr) return null;
+    return JOURNALS.find(j => j.type === 'daily' && j.dateSort === dateStr);
+  };
+  // --------------------------------------------------------------------------------------------
   const showWeeklyDetail = (journal) => {
     try {
       state.lastScrollPosition = window.scrollY;
@@ -826,6 +856,11 @@ const JournalApp = (() => {
       th.textContent = col.label;
       trHead.appendChild(th);
     });
+    // Kolom Aksi
+    const thAction = document.createElement("th");
+    thAction.textContent = "Aksi";
+    thAction.style.width = "10%";
+    trHead.appendChild(thAction);
     thead.appendChild(trHead);
     table.appendChild(thead);
     const tbody = document.createElement("tbody");
@@ -845,6 +880,28 @@ const JournalApp = (() => {
       tr.appendChild(tdFocus);
       tr.appendChild(tdOut);
       tr.appendChild(tdDur);
+      // Sel Aksi
+      const tdAction = document.createElement("td");
+      tdAction.className = "weekly-detail-action";
+      const btn = document.createElement("button");
+      btn.className = "daily-link-btn";
+      btn.innerHTML = '<i class="ph ph-eye"></i>';
+      btn.setAttribute("aria-label", `Lihat jurnal harian untuk hari ${a.day}`);
+      const dateStr = getDateFromWeekDay(journal, a.day);
+      const dailyJournal = dateStr ? findDailyJournalByDate(dateStr) : null;
+      if (dailyJournal) {
+        btn.addEventListener("click", (e) => {
+          e.stopPropagation();
+          openModal(dailyJournal);
+        });
+        btn.disabled = false;
+      } else {
+        btn.disabled = true;
+        btn.style.opacity = "0.5";
+        btn.title = dateStr ? "Jurnal harian tidak tersedia" : "Tidak dapat menentukan tanggal";
+      }
+      tdAction.appendChild(btn);
+      tr.appendChild(tdAction);
       tbody.appendChild(tr);
       totalHours += dur;
     });
@@ -859,6 +916,10 @@ const JournalApp = (() => {
     tdTotalVal.textContent = totalHours.toFixed(1) + " jam";
     trTotal.appendChild(tdTotalLabel);
     trTotal.appendChild(tdTotalVal);
+    // Total row juga punya kolom aksi kosong
+    const tdActionTotal = document.createElement("td");
+    tdActionTotal.textContent = "";
+    trTotal.appendChild(tdActionTotal);
     tbody.appendChild(trTotal);
     table.appendChild(tbody);
     sec0.appendChild(table);
