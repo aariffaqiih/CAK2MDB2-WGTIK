@@ -1609,4 +1609,267 @@ const JOURNALS = [
       ],
     },
   },
+  {
+    id: "daily-2026-03-30",
+    type: "daily",
+    date: "30 Maret 2026",
+    dateSort: "2026-03-30",
+    daily: {
+      targets: ["Memahami basic matplotlib", "Menyelesaikan modul 5 JarKom"],
+      activities: [
+        {
+          time: "08:30 - 09:30",
+          activity: "Mengulas basic python di Codédex",
+          output: "Mengerjakan 4 soal di chapter 1",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 10:30",
+          activity: "Mengerjakan modul 5 JarKom",
+          output:
+            "File laprak modul 5 JarKom dengan soal teori yang sudah selesai",
+          status: "proses",
+        },
+        {
+          time: "10:30 - 12:00",
+          activity: "Kelas teori DKA",
+          output:
+            "Mengetahui apa itu heuristic search dan contoh kasusnya, tapi masih perlu diperdalam",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum Dasar Kecerdasan Artifisial",
+          output:
+            "Mempraktikkan basic matplotlib untuk visualisasi data, tapi masih perlu banyak latihan untuk memahami berbagai jenis plot dan parameter yang digunakan",
+          status: "✓",
+        },
+      ],
+      results:
+        "Laprak modul 5 JarKom belum selesai karena memang cukup banyak, tapi sudah memulai dan memahami basic matplotlib meskipun masih perlu banyak latihan",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Malam tidak produktif sama sekali karena sudah lelah",
+        manajemenWaktu:
+          "Aman, tapi sebaiknya tetap coba sedikit produktif di malam hari walaupun sedikit",
+      },
+      solutions:
+        "Coba lakukan review ringan atau latihan soal yang tidak terlalu berat di malam hari agar tetap ada progres walaupun energi sudah menurun",
+      reflection: {
+        learned:
+          "Memahami dasar-dasar visualisasi data dengan matplotlib, termasuk jenis plot umum seperti line, bar, scatter, dan histogram, serta parameter dasar untuk kustomisasi",
+        improve: "Perbanyak latihan dengan berbagai jenis plot dan",
+        score: 7,
+      },
+    },
+  },
+  {
+    id: "daily-2026-03-31",
+    type: "daily",
+    date: "31 Maret 2026",
+    dateSort: "2026-03-31",
+    daily: {
+      targets: [
+        "Mengikuti praktikum PBO sesuai instruksi asprak sampai selesai",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum Pemrograman Berorientasi Objek",
+          output: "Memahami class, object, field, method, dan keyword this",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 22:00",
+          activity: "Mengerjakan modul 3 praktikum PBO",
+          output:
+            "PDF laporan modul 3 PBO, ada code, penjelasan code, dan flowchart, serta yang paling menjadi fokus adalah membuat simulasi vending machine",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan modul 3 PBO dan membuat sedikit catatan agar ingat bagaimana penulisan kode javanya",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Jangan terlalu plin plan dengan keputusan bagaimana fungsi dan prosedurnya karena itu memakan waktu",
+      reflection: {
+        learned:
+          "Memahami konsep dasar OOP seperti class, object, field, method, dan keyword this, serta belajar bagaimana merancang dan mengimplementasikan simulasi vending machine menggunakan OOP di Java",
+        improve:
+          "Fokus pada perencanaan struktur kode sebelum mulai menulis agar lebih efisien dan tidak banyak revisi besar di tengah jalan",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-01",
+    type: "daily",
+    date: "1 April 2026",
+    dateSort: "2026-04-01",
+    daily: {
+      targets: [
+        "Menyelesaikan modul 5 & 6 praktikum JarKom",
+        "Memahami heuristic search di matkul Strategi Algoritma",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output:
+            "Mengetahui dasar heuristic search dan algoritma huffman, tapi masih belum begitu paham cara kerjanya",
+          status: "✓",
+        },
+        {
+          time: "20:00 - 23:30",
+          activity: "Melanjutkan modul 5 praktikum JarKom",
+          output: "PDF laprak modul 5 JarKom sudah dikumpulkan ke Classroom",
+          status: "✓",
+        },
+        {
+          time: "23:30 - 02:00",
+          activity: "Mengerjakan modul 6 praktikum JarKom",
+          output: "PDF laprak modul 6 JarKom sudah dikumpulkan ke Classroom",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan modul 5 & 6 praktikum JarKom dan mengumpulkan semua laporan tepat waktu",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Rasa kantuk dan malas",
+        manajemenWaktu: "Overtime sampai jam 2 pagi",
+      },
+      solutions: "Paksa diri walaupun malasnya minta ampun",
+      reflection: {
+        learned:
+          "Tidak begitu banyak, hanya materi huffman yang benar-benar paham",
+        improve: "Kurangi overtime, kerjakan besok pagi saja",
+        score: 6,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-02",
+    type: "daily",
+    date: "2 April 2026",
+    dateSort: "2026-04-02",
+    daily: {
+      targets: [
+        "Mengikuti praktikum JarKom sesuai instruksi asprak sampai selesai",
+        "Menyelesaian modul 7 JarKom",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum Jaringan Komputer",
+          output:
+            "Membuat topologi jaringan di cisco packet tracer, 4 pc terhubung ke switch, kemudian swtich terhubung ke access point, lalu access point terhubung ke 4 pc",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 15:30",
+          activity: "Kelas teori Jaringan Komputer",
+          output: "Memahami cara kerja TCP dan UDP",
+          status: "✓",
+        },
+        {
+          time: "20:00 - 23:00",
+          activity: "Mengerjakan modul 7 praktikum JarKom",
+          output: "PDF laprak modul 7 JarKom sudah dikumpulkan ke Classroom",
+          status: "✓",
+        },
+      ],
+      results:
+        "Mengetahui dasar cisco packet tracer dan topologi jaringan sederhana",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Sebelum berangkat jangan lupa charge laptop agar tidak mati di tengah praktikum",
+      reflection: {
+        learned:
+          "Memahami dasar penggunaan cisco packet tracer, dan jadilah orang baik untuk teman",
+        improve: "Jangan terlalu banyak ngobrol dan bercanda",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-03-30",
+    type: "weekly",
+    date: "Minggu ke-6 · 30 Maret - 3 April 2026",
+    dateSort: "2026-03-30",
+    weekly: {
+      weekNumber: 6,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Review basic Python, heuristic search, dan modul 5 JarKom",
+          output:
+            "Dasar matplotlib mulai dipahami, heuristic search diperkenalkan, dan modul 5 JarKom mulai dikerjakan",
+          duration: "4.5",
+        },
+        {
+          day: "Selasa",
+          focus: "Praktikum PBO dan modul 3 PBO",
+          output: "Memahami class, object, this, dan simulasi vending machine",
+          duration: "4.5",
+        },
+        {
+          day: "Rabu",
+          focus: "Menyelesaikan modul 5 & 6 JarKom",
+          output: "Laprak modul 5 dan 6 selesai dan dikumpulkan",
+          duration: "7.5",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktikum JarKom, teori TCP/UDP, dan modul 7",
+          output:
+            "Topologi Packet Tracer dikerjakan, TCP/UDP dipahami, modul 7 selesai",
+          duration: "6.5",
+        },
+        {
+          day: "Jumat",
+          focus: "Tanggal merah wafat Isa Al-Masih",
+          output: "Istirahat",
+          duration: "0",
+        },
+      ],
+      achievements: [
+        "Berhasil menyelesaikan rangkaian modul 5-7 JarKom dalam satu minggu",
+        "Tetap menjaga progres PBO dan DKA meski ada tugas praktikum yang padat serta akhir minggu bertepatan dengan tanggal merah",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu ini cukup padat di praktikum JarKom dan penguatan PBO dasar. Hari Jumat yang libur bisa dipakai untuk recovery, tapi jangan sampai mengganggu ritme minggu berikutnya.",
+      },
+      obstacles: {
+        akademik:
+          "Tugas praktikum menumpuk di pertengahan minggu, terutama JarKom dan PBO",
+        teknis: "Tidak ada hambatan teknis yang signifikan",
+        pribadi:
+          "Rasa lelah dan kecenderungan overtime di malam hari masih perlu dikendalikan",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil menutup minggu dengan semua modul utama JarKom selesai dan tetap ada progres di PBO serta DKA",
+        biggestMistake:
+          "Masih cenderung memaksa kerja saat energi sudah turun, sehingga efektivitas malam hari berkurang",
+        nextStrategy:
+          "Kerjakan tugas berat lebih awal, sisakan malam untuk review ringan, dan manfaatkan hari libur untuk pemulihan sekaligus merapikan catatan materi",
+      },
+      nextWeekPlan: [
+        "Memperkuat PBO, terutama constructor dan latihan coding",
+        "Melanjutkan review heuristic search dan materi DKA lain yang masih kurang paham",
+      ],
+    },
+  },
 ];
