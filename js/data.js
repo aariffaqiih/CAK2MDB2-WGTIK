@@ -1639,7 +1639,7 @@ const JOURNALS = [
         },
         {
           time: "15:30 - 17:00",
-          activity: "Kelas praktikum Dasar Kecerdasan Artifisial",
+          activity: "Kelas praktikum DKA",
           output:
             "Mempraktikkan basic matplotlib untuk visualisasi data, tapi masih perlu banyak latihan untuk memahami berbagai jenis plot dan parameter yang digunakan",
           status: "✓",
@@ -1870,6 +1870,83 @@ const JOURNALS = [
         "Memperkuat PBO, terutama constructor dan latihan coding",
         "Melanjutkan review heuristic search dan materi DKA lain yang masih kurang paham",
       ],
+    },
+  },
+  {
+    id: "daily-2026-04-06",
+    type: "daily",
+    date: "6 April 2026",
+    dateSort: "2026-04-06",
+    daily: {
+      targets: [
+        "Memahami algoritma hill climbing",
+        "Memahami cara coding BFS menggunakan library networkx dan matplotlib",
+        "Melanjutkan progres web app GDGoC",
+        "Mempersiapkan diri untuk kuis strategi algoritma di hari rabu",
+      ],
+      activities: [
+        {
+          time: "09:30 - 10:00",
+          activity: "Melakukan testing web app GDGoC",
+          output: "Menemukan beberapa kekurangan untuk dikerjakan nanti",
+          status: "✓",
+        },
+        {
+          time: "10:30 - 11:30",
+          activity: "Kelas teori DKA",
+          output: "Mengetahui simple HC dan steepest HC",
+          status: "✓",
+        },
+        {
+          time: "12:30 - 14:30",
+          activity: "Melanjutkan progres web app GDGoC",
+          output:
+            "Fitur chatbot, dan membuat fitur tambahan untuk dashboard admin",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 15:00",
+          activity: "Belajar mandiri modul 5 DKA",
+          output: "Membuat graf sederhana menggunakan networkx dan matplotlib",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum DKA",
+          output:
+            "Menyelesaikan modul 5 yaitu membuat graf menggunakan networkx dan matplotlib",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 20:00",
+          activity:
+            "Memperbaiki kekurangan dan mencari celah-celah lain di fitur web app GDGoC",
+          output: "Beberapa fitur diperbarui dan beberapa layout dirapikan",
+          status: "✓",
+        },
+        {
+          time: "22:00 - 22:45",
+          activity: "Membantu tugas bapak",
+          output: "Tugas bapak saya selesai",
+          status: "✓",
+        },
+      ],
+      results:
+        "Target harian mayoritas tercapai. Konsep Hill Climbing dan visualisasi graf BFS dengan NetworkX/Matplotlib berhasil dipraktikkan. Web app GDGoC berkembang dengan fitur chatbot, dashboard admin, dan perbaikan layout. Persiapan kuis strategi algoritma sedikit tertunda karena fokus ke proyek.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis:
+          "Bingung antara mau belajar untuk kuis di hari rabu atau melanjutkan web app GDGoC, tapi saya memilih melanjutkan web app",
+        manajemenWaktu: "Tidak begitu aman, karena bimbang diantara 2 pilihan",
+      },
+      solutions:
+        "Jangan teralu perfeksionis di 1 fitur, lanjut fitur lain kalau sekiranya sudah cukup, jangan malas",
+      reflection: {
+        learned:
+          "Memahami prinsip Hill Climbing serta implementasi graf BFS. Belajar workflow iterasi web app, debugging, dan menyadari dampak negatif perfeksionisme terhadap progres serta manajemen waktu",
+        improve: "Coba timeboxing, agar ada waktu untuk belajar",
+        score: 0,
+      },
     },
   },
 ];
