@@ -1945,7 +1945,149 @@ const JOURNALS = [
         learned:
           "Memahami prinsip Hill Climbing serta implementasi graf BFS. Belajar workflow iterasi web app, debugging, dan menyadari dampak negatif perfeksionisme terhadap progres serta manajemen waktu",
         improve: "Coba timeboxing, agar ada waktu untuk belajar",
-        score: 0,
+        score: 6,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-07",
+    type: "daily",
+    date: "7 April 2026",
+    dateSort: "2026-04-07",
+    daily: {
+      targets: [
+        "Mengikuti mata kuliah IML dan kelas praktikum PBO",
+        "Belajar untuk kuis strategi algoritma di hari rabu",
+      ],
+      activities: [
+        {
+          time: "07:45 - 09:00",
+          activity: "Mata kuliah IMK",
+          output:
+            "Mengetahui bagaimana cara menggunakan moqups untuk membuat wireframe dan membuat dashboard sederhana",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 11:00",
+          activity: "Kelas praktikum PBO",
+          output:
+            "Mengetahui apa itu enkapsulasi, constructor, dan pembagian package atau modul",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 14:00",
+          activity: "Belajar untuk kuis strategi algoritma besok",
+          output: "Memahami dasar algoritma greedy",
+          status: "✓",
+        },
+        {
+          time: "21:00 - 01:30",
+          activity: "Belajar untuk kuis strategi algoritma besok",
+          output:
+            "Memahami TSP, MST, pohon huffman, dan greedy by weight/ profit/ density",
+          status: "✓",
+        },
+      ],
+      results:
+        "Hal baru yang saya dapatkan adalah mencoba moqups, sisanya adalah materi PBO, dan belajar mandiri strategi algoritma",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Ngantuk di siang hari",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Kurangi begadang, langsung tidur kalau sekiranya sudah selesai urusan",
+      reflection: {
+        learned:
+          "Memahami prinsip dasar PBO seperti enkapsulasi, constructor, dan pembagian package atau modul",
+        improve: "Jangan terlalu santai, belajar yang lebih serius",
+        score: 6,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-08",
+    type: "daily",
+    date: "8 April 2026",
+    dateSort: "2026-04-08",
+    daily: {
+      targets: [
+        "Mengikuti kuis strategi algoritma",
+        "Mengerjakan modul 8 JarKom",
+      ],
+      activities: [
+        {
+          time: "07:00 - 09:00",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Mendapat nilai kuis 81",
+          status: "✓",
+        },
+      ],
+      results:
+        "Sangat kecewa dengan hasil nilai kuis, karena tidak sesuai ekspektasi",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis:
+          "Tidak produktif sama sekali setelah selesai dari mata kuliah strategi algoritma",
+        manajemenWaktu: "Kacau",
+      },
+      solutions:
+        "Jangan terlalu percaya diri dengan jawaban yang sudah dipilih, wajib cek lagi jawabannya",
+      reflection: {
+        learned:
+          "Jangan hanya belajar hitungan, tapi juga teori, karena ternyata soal kuis 60% teori",
+        improve:
+          "Perbaiki time management, anggap saja hari ini adalah istirahat 1 hari, tapi jangan diulangi besok-besok",
+        score: 4,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-09",
+    type: "daily",
+    date: "9 April 2026",
+    dateSort: "2026-04-09",
+    daily: {
+      targets: [
+        "Mengikuti mata kuliah JarKom",
+        "Menyelesaikan laprak PBO modul 4",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:03",
+          activity: "Kelas praktikum JarKom",
+          output:
+            "Praktik menghubungkan 3 pc dengan 3 router dan kelas IPnya berbeda-beda",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 15:30",
+          activity: "Kelas teori JarKom",
+          output: "Mengerjakan kuis tentang TCP, UDP, dan congestion control",
+          status: "✓",
+        },
+        {
+          time: "20:00 - 23:30",
+          activity: "Mengerjakan modul 4 praktikum PBO",
+          output: "PDF laprak modul 4 PBO sudah selesai",
+          status: "✓",
+        },
+      ],
+      results:
+        "Mengerti konsep package, mengerti cara menyambungkan device yang berbeda kelas IP, dan mengerti cara menghitung congestion, serta saya sempat baca berita bahwa Claude rilis model baru bernama mythos tapi belum untuk publik, baru untuk 12 mitra saja",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Kesulitan mencari kunci motor ketika mau pulang",
+        manajemenWaktu: "Lumayan aman",
+      },
+      solutions:
+        "Jangan sembarangan meletakkan kunci motor agar tidak susah dicari",
+      reflection: {
+        learned:
+          "Memahami konsep package di PBO, praktik jaringan dengan router dan PC di JarKom, serta konsep congestion control. Juga mendapatkan informasi tentang rilis model baru Claude Mythos",
+        improve:
+          "Coba cari cara bagaimana cara copy paste data configurasi di cisco packet tracer agar tidak ngetik manual",
+        score: 7,
       },
     },
   },
