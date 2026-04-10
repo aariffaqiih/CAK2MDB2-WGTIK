@@ -2022,6 +2022,12 @@ const JOURNALS = [
           output: "Mendapat nilai kuis 81",
           status: "✓",
         },
+        {
+          time: "14:00 - 14:30",
+          activity: "Mengerjakan kuis 5 IMK",
+          output: "Kuis 5 IMK sudah selesai",
+          status: "✓",
+        },
       ],
       results:
         "Sangat kecewa dengan hasil nilai kuis, karena tidak sesuai ekspektasi",
@@ -2038,7 +2044,7 @@ const JOURNALS = [
           "Jangan hanya belajar hitungan, tapi juga teori, karena ternyata soal kuis 60% teori",
         improve:
           "Perbaiki time management, anggap saja hari ini adalah istirahat 1 hari, tapi jangan diulangi besok-besok",
-        score: 4,
+        score: 5,
       },
     },
   },
@@ -2089,6 +2095,145 @@ const JOURNALS = [
           "Coba cari cara bagaimana cara copy paste data configurasi di cisco packet tracer agar tidak ngetik manual",
         score: 7,
       },
+    },
+  },
+  {
+    id: "daily-2026-04-10",
+    type: "daily",
+    date: "10 April 2026",
+    dateSort: "2026-04-10",
+    daily: {
+      targets: [
+        "Mengikuti mata kuliah WGTIK",
+        "Mengikuti kelas teori PBO",
+        "Belajar mandiri coding inheritance",
+        "Menyelesaikan modul 4 praktikum DKA",
+      ],
+      activities: [
+        {
+          time: "13:00 - 14:30",
+          activity: "Belajar mandiri coding inheritance",
+          output: "Code java hasil latihan mendiri",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:00",
+          activity: "Kelas teori PBO",
+          output: "Memahami cara melakukan inheritance dan overriding",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 19:15",
+          activity: "Mencari referensi design untuk mata kuliah IMK",
+          output: "Mendapat 3 referensi design",
+          status: "✓",
+        },
+        {
+          time: "19:15 - 21:00",
+          activity: "Merancang ide tema untuk tugas kelompok PBO",
+          output:
+            "Menghasilkan rancangan ide untuk sistem reservasi ruangan di kampus tapi untuk di waktu diluar jam perkuliahan dan hari libur",
+          status: "✓",
+        },
+        {
+          time: "22:00 - 23:50",
+          activity: "Mengerjakan modul 4 praktikum DKA",
+          output: "Modul 4 praktikum DKA sudah selesai",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil belajar mandiri inheritance, memahami materi inheritance dan overriding di PBO, menyelesaikan modul 4 DKA, dan mendapatkan ide desain dan tema untuk tugas kelompok PBO. Namun, kurang produktif di pagi hari karena kurang enak badan.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis:
+          "Tidak hadir di mata kuliah WGTIK karena kurang enak badan karena kemarin kehujanan",
+        manajemenWaktu: "Kacau di pagi hari, tapi siang sampai malam aman",
+      },
+      solutions:
+        "Tidur lebih awal dan konsumsi vitamin agar kesehatan terjaga, dan tetap memaksimalkan waktu produktif di siang dan malam hari.",
+      reflection: {
+        learned:
+          "Lebih paham konsep inheritance dan overriding di Java dari dosen daripada dari AI, dan kebetulan dosen PBO di kelas saya menurut saya adalah dosen terbaik di kampus.",
+        improve:
+          "Atur waktu tidur agar bisa hadir di semua kelas, jangan lupa jaga kesehatan di musim hujan.",
+        score: 7,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-04-06",
+    type: "weekly",
+    date: "Minggu ke-7 · 6-10 April 2026",
+    dateSort: "2026-04-06",
+    weekly: {
+      weekNumber: 7,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Hill Climbing, graf NetworkX, dan progres web app GDGoC",
+          output:
+            "Memahami simple/steepest HC, praktik graf BFS dengan matplotlib, fitur chatbot dan dashboard admin diperbarui",
+          duration: "7.25",
+        },
+        {
+          day: "Selasa",
+          focus: "IMK, praktikum PBO, dan persiapan kuis strategi algoritma",
+          output:
+            "Belajar moqups, memahami enkapsulasi-constructor-package, serta review greedy/TSP/MST/Huffman",
+          duration: "8.25",
+        },
+        {
+          day: "Rabu",
+          focus: "Kuis strategi algoritma dan kuis IMK",
+          output:
+            "Kuis strategi algoritma selesai dengan nilai 81 dan kuis 5 IMK dituntaskan",
+          duration: "2.5",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktikum dan teori JarKom serta penyelesaian laprak PBO",
+          output:
+            "Praktik router lintas kelas IP, kuis TCP/UDP/congestion control selesai, laprak modul 4 PBO dikumpulkan",
+          duration: "8.5",
+        },
+        {
+          day: "Jumat",
+          focus: "Pendalaman inheritance PBO, ide project, dan modul 4 DKA",
+          output:
+            "Memahami inheritance-overriding, menghasilkan ide sistem reservasi ruangan kampus, dan modul 4 DKA selesai",
+          duration: "8.25",
+        },
+      ],
+      achievements: [
+        "Berhasil menjaga progres lintas mata kuliah: DKA, PBO, JarKom, dan IMK tetap berjalan di minggu yang padat",
+        "Materi OOP naik level dari constructor ke inheritance/overriding sambil menuntaskan beberapa output praktikum",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu ini ada kombinasi progres bagus di praktik dan teori, tetapi ritme belajar sempat drop setelah kuis dan kondisi fisik kurang fit. Fokus berikutnya adalah konsistensi energi harian agar hasil akademik lebih stabil.",
+      },
+      obstacles: {
+        akademik:
+          "Hasil kuis strategi algoritma (81) belum sesuai ekspektasi karena komposisi teori lebih dominan dari perkiraan",
+        teknis: "Tidak ada hambatan teknis signifikan",
+        pribadi:
+          "Kurang enak badan, sempat tidak hadir WGTIK, dan pola begadang membuat energi siang turun",
+      },
+      evaluation: {
+        bestSuccess:
+          "Tetap produktif menuntaskan modul penting (PBO dan DKA) sambil menaikkan pemahaman OOP ke inheritance/overriding",
+        biggestMistake:
+          "Manajemen energi dan waktu belum konsisten, terutama setelah kuis dan saat kondisi fisik menurun",
+        nextStrategy:
+          "Gunakan timeboxing belajar teori-praktik, tidur lebih teratur, dan review materi kuis lebih awal agar performa tidak bergantung pada belajar mepet",
+      },
+      nextWeekPlan: [
+        "Memperkuat materi strategi algoritma berbasis teori + latihan soal campuran",
+        "Lanjutkan pendalaman PBO (inheritance, overriding, dan latihan implementasi mini project)",
+      ],
     },
   },
 ];
