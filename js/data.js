@@ -2236,4 +2236,128 @@ const JOURNALS = [
       ],
     },
   },
+  {
+    id: "daily-2026-04-13",
+    type: "daily",
+    date: "13 April 2026",
+    dateSort: "2026-04-13",
+    daily: {
+      targets: [
+        "Melakukan eksperimen bersama teman untuk tugas besar WGTIK yaitu model untuk mengganti slide PPT secara otomatis",
+        "Membuat script video untuk semi final GDGoC",
+        "Memahami greedy BFS dan A* di kelas teori DKA",
+      ],
+      activities: [
+        {
+          time: "08:30 - 10:20",
+          activity: "Membuat dataset tracking pose untuk membuat petunjuk arah",
+          output:
+            "Dataset pose tangan menunjuk ke kanan untuk next slide, ke kiri untuk balik ke slide sebelumnya, dan menyilang menutup presentasi",
+          status: "✓",
+        },
+        {
+          time: "10:30 - 12:00",
+          activity: "Kelas teori DKA",
+          output: "Mengetahui greedy BFS dan A* tapi masih perlu diasah lagi",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 14:00",
+          activity: "Membuat script untuk semi final GDGoC",
+          output:
+            "Script untuk intro, latar belakang masalah, dan pengenalan fitur",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum DKA",
+          output:
+            "Mengetahui implementasi BFS, DFS, dan UCS di python menggunakan library matplotlib dan networx",
+          status: "✓",
+        },
+        {
+          time: "20:00 - 23:59",
+          activity: "Membuat user interface konversi mata uang untuk tugas IMK",
+          output:
+            "User interface konversi mata uang yang sudah memiliki prototype dan animasi dan bisa dicoba untuk melakukan konversi",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan eksperimen dataset tracking pose, memahami greedy BFS dan A* meski perlu pendalaman, membuat script semi final GDGoC, dan menyelesaikan UI konversi mata uang dengan animasi di Figma.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Tetap konsisten dalam mengatur waktu dan memprioritaskan tugas yang penting agar semua target harian tercapai.",
+      reflection: {
+        learned:
+          "Saya kembali mengingat bagaimana cara membuat animasi di figma setelah lebih dari setahun tidak membuat animasi di figma",
+        improve:
+          "Taruh pulpen di tempat yang mudah dijangkau agar tidak kesulitan saat mencari pulpen",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-14",
+    type: "daily",
+    date: "14 April 2026",
+    dateSort: "2026-04-14",
+    daily: {
+      targets: [
+        "Presentasi tugas user interface untuk matkul IMK",
+        "Mengikuti praktikum PBO sesuai arahan dari asprak",
+        "Menentukan tema untuk tubes PBO dan membuat rancangan class diagram",
+      ],
+      activities: [
+        {
+          time: "07:30 - 09:30",
+          activity: "Mata kuliah IMK",
+          output:
+            "Memahami step 6 dalam membuat user interface, yaitu pemilihan device, penentuan tampilan tergantung pada task user, mengetahui komponen seperti pop-up, date picker, dan macam-macam form input",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum PBO",
+          output:
+            "Mengetahui relasi antar class yaitu asosiasi, agregasi, dan komposisi",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 16:00",
+          activity:
+            "Diskusi dengan teman sekelompok untuk menentukan tema dan membuat rancangan class diagram",
+          output: "Tema sudah fix, dan rancangan class diagram sudah 80% jadi",
+          status: "✓",
+        },
+        {
+          time: "21:00 - 22:00",
+          activity: "Belajar mandiri materi greedy BFS untuk matkul DKA",
+          output:
+            "Memahami betul bagaimana cara menghitung greedy BFS, tapi algoritma A* masih belum terlalu paham karena cukup kompleks",
+          status: "✓",
+        },
+      ],
+      results:
+        "ternyata presentasi tugas IMK diundur minggu depan, memahami relasi antar class di praktikum PBO, menyelesaikan rancangan class diagram tubes PBO hingga 80%, dan memperdalam pemahaman greedy BFS meski A* masih perlu pendalaman.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Sebelum memberi ide, pastikan sudah paham betul keseluruhan ide nya agar tidak terlalu mentah dan tidak bingung ketika ditanya teman",
+      reflection: {
+        learned:
+          "Memahami relasi antar class dalam OOP, dan algoritma greedy BFS",
+        improve:
+          "Fokus pada algoritma A* dengan mempelajari contoh kasus dan implementasi kode untuk memperkuat pemahaman.",
+        score: 8,
+      },
+    },
+  },
 ];
