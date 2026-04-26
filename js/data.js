@@ -263,10 +263,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-02-23",
     type: "weekly",
-    date: "Minggu ke-1 · 23-27 Februari 2026",
+    date: "Minggu ke-0 · 23-27 Februari 2026",
     dateSort: "2026-02-23",
     weekly: {
-      weekNumber: 1,
+      weekNumber: 0,
       activities: [
         {
           day: "Senin",
@@ -559,10 +559,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-03-02",
     type: "weekly",
-    date: "Minggu ke-2 · 2-6 Maret 2026",
+    date: "Minggu ke-1 · 2-6 Maret 2026",
     dateSort: "2026-03-02",
     weekly: {
-      weekNumber: 2,
+      weekNumber: 1,
       activities: [
         {
           day: "Senin",
@@ -860,10 +860,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-03-09",
     type: "weekly",
-    date: "Minggu ke-3 · 9-13 Maret 2026",
+    date: "Minggu ke-2 · 9-13 Maret 2026",
     dateSort: "2026-03-09",
     weekly: {
-      weekNumber: 3,
+      weekNumber: 2,
       activities: [
         {
           day: "Senin",
@@ -1190,10 +1190,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-03-16",
     type: "weekly",
-    date: "Minggu ke-4 · 16-20 Maret 2026",
+    date: "Minggu ke-3 · 16-20 Maret 2026",
     dateSort: "2026-03-16",
     weekly: {
-      weekNumber: 4,
+      weekNumber: 3,
       activities: [
         {
           day: "Senin",
@@ -1541,10 +1541,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-03-23",
     type: "weekly",
-    date: "Minggu ke-5 · 23-27 Maret 2026",
+    date: "Minggu ke-4 · 23-27 Maret 2026",
     dateSort: "2026-03-23",
     weekly: {
-      weekNumber: 5,
+      weekNumber: 4,
       activities: [
         {
           day: "Senin",
@@ -1803,10 +1803,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-03-30",
     type: "weekly",
-    date: "Minggu ke-6 · 30 Maret - 3 April 2026",
+    date: "Minggu ke-5 · 30 Maret - 3 April 2026",
     dateSort: "2026-03-30",
     weekly: {
-      weekNumber: 6,
+      weekNumber: 5,
       activities: [
         {
           day: "Senin",
@@ -2164,10 +2164,10 @@ const JOURNALS = [
   {
     id: "weekly-2026-04-06",
     type: "weekly",
-    date: "Minggu ke-7 · 6-10 April 2026",
+    date: "Minggu ke-6 · 6-10 April 2026",
     dateSort: "2026-04-06",
     weekly: {
-      weekNumber: 7,
+      weekNumber: 6,
       activities: [
         {
           day: "Senin",
@@ -2358,6 +2358,314 @@ const JOURNALS = [
           "Fokus pada algoritma A* dengan mempelajari contoh kasus dan implementasi kode untuk memperkuat pemahaman.",
         score: 8,
       },
+    },
+  },
+  {
+    type: "daily",
+    date: "20 April 2026",
+    dateSort: "2026-04-20",
+    daily: {
+      targets: [
+        "Menyelesaikan bahan presentasi IMK untuk hari selasa",
+        "Menyelesaikan code java untuk tugas presentasi PBO",
+        "Mengikuti UTS DKA",
+      ],
+      activities: [
+        {
+          time: "08:30 - 09:30",
+          activity: "Mengerjakan tugas PBO java",
+          output: "file java sudah selesai",
+          status: "✓",
+        },
+        {
+          time: "10:00 - 10:30",
+          activity: "Belajar DKA sebelum UTS",
+          output: "Paham materi UTS DKA",
+          status: "✓",
+        },
+        {
+          time: "10:30 - 11:30",
+          activity: "UTS DKA",
+          output: "UTS DKA selesai",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 23:00",
+          activity: "Mengerjakan project UI design untuk presentasi IMK",
+          output:
+            "project UI design sudah selesai beserta animasi dan prototype",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan tugas PBO, mengikuti UTS DKA dengan lancar, dan menyelesaikan project UI design untuk presentasi IMK.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Tetap fokus pada prioritas harian dan alokasikan waktu untuk review materi sebelum ujian.",
+      reflection: {
+        learned:
+          "Memahami pentingnya manajemen waktu untuk menyelesaikan tugas dan ujian secara efisien.",
+        improve:
+          "Perbanyak latihan soal untuk ujian agar lebih percaya diri saat mengerjakan.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-21",
+    type: "daily",
+    date: "21 April 2026",
+    dateSort: "2026-04-21",
+    daily: {
+      targets: [
+        "Presentasi project UI design di matkul DKA",
+        "Belajar materi Strategi Algoritma untuk UTS",
+      ],
+      activities: [
+        {
+          time: "07:30 - 09:30",
+          activity: "Mata kuliah IMK",
+          output: "Mendapat nilai 100 di presentasi",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum PBO",
+          output: "Mengetahui cara coding polymorphism di java",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 23:00",
+          activity: "Belajar untuk UTS Strategi Algoritma",
+          output: "Memahami materi dan membuat cheat sheet",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil mendapatkan nilai sempurna di presentasi IMK, memahami polymorphism di PBO, dan mempersiapkan diri untuk UTS Strategi Algoritma.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Tetap konsisten dalam belajar dan gunakan cheat sheet untuk membantu mengingat poin penting.",
+      reflection: {
+        learned:
+          "Memahami konsep polymorphism di Java dan pentingnya persiapan matang untuk presentasi.",
+        improve:
+          "Latihan lebih banyak soal strategi algoritma untuk memperkuat pemahaman.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-22",
+    type: "daily",
+    date: "22 April 2026",
+    dateSort: "2026-04-22",
+    daily: {
+      targets: [
+        "Mengikuti UTS Strategi Algoritma",
+        "Belajar materi UTS JarKom",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Mendapat nilai UTS 100",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 17:00",
+          activity: "Belajar materi UTS JarKom sesi 1",
+          output: "Paham bagian teori",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 23:00",
+          activity: "Belajar materi UTS JarKom sesi 2",
+          output: "Paham bagian perhitungan",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil mendapatkan nilai sempurna di UTS Strategi Algoritma dan memahami materi UTS JarKom baik teori maupun perhitungan.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lanjutkan pola belajar yang terstruktur untuk ujian berikutnya.",
+      reflection: {
+        learned:
+          "Memahami pentingnya pembagian waktu belajar untuk teori dan perhitungan.",
+        improve:
+          "Gunakan waktu belajar lebih efisien dengan fokus pada poin-poin penting.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-23",
+    type: "daily",
+    date: "23 April 2026",
+    dateSort: "2026-04-23",
+    daily: {
+      targets: [
+        "Mengulas kembali materi JarKom",
+        "Mengikuti UTS JarKom",
+        "Memperbaiki artikel WGTIK",
+      ],
+      activities: [
+        {
+          time: "08:30 - 10:30",
+          activity: "Mengulas kembali materi JarKom",
+          output: "Ingatan lebih matang",
+          status: "✓",
+        },
+        {
+          time: "12:30 - 14:00",
+          activity: "Mengerjakan UTS JarKom",
+          output: "UTS JarKom selesai",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 20:00",
+          activity: "Memperbaiki artikel WGTIK",
+          output: "Ada ilustrasi untuk memperjelas konteks",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil mengikuti UTS JarKom dengan lancar dan memperbaiki artikel WGTIK dengan menambahkan ilustrasi.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Tetap fokus pada tugas berikutnya dan gunakan waktu luang untuk review materi.",
+      reflection: {
+        learned:
+          "Memahami pentingnya ilustrasi dalam memperjelas konteks artikel.",
+        improve:
+          "Perbanyak latihan soal untuk memperkuat pemahaman materi JarKom.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-24",
+    type: "daily",
+    date: "24 April 2026",
+    dateSort: "2026-04-24",
+    daily: {
+      targets: ["Belajar PBO untuk UTS"],
+      activities: [
+        {
+          time: "13:00 - 17:00",
+          activity: "Belajar PBO sesi 1",
+          output: "catatan code java",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 23:00",
+          activity: "Belajar PBO sesi 2",
+          output: "catatan code java dan class diagram",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil mempersiapkan diri untuk UTS PBO dengan membuat catatan kode Java dan class diagram.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lanjutkan latihan coding untuk memperkuat pemahaman konsep PBO.",
+      reflection: {
+        learned:
+          "Memahami pentingnya membuat catatan untuk membantu mengingat konsep-konsep penting.",
+        improve:
+          "Perbanyak latihan soal dan implementasi kode untuk memperkuat pemahaman.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-04-20",
+    type: "weekly",
+    date: "Minggu ke-8 · 20-24 April 2026",
+    dateSort: "2026-04-20",
+    weekly: {
+      weekNumber: 8,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Belajar materi dasar PBO dan menyelesaikan tugas kelompok",
+          output: "Memahami konsep dasar PBO dan tugas kelompok selesai",
+          duration: "4",
+        },
+        {
+          day: "Selasa",
+          focus: "Praktikum JarKom dan belajar algoritma greedy",
+          output: "Praktikum selesai dan memahami algoritma greedy",
+          duration: "5",
+        },
+        {
+          day: "Rabu",
+          focus: "Menyelesaikan modul praktikum DKA",
+          output: "Modul praktikum DKA selesai",
+          duration: "3.5",
+        },
+        {
+          day: "Kamis",
+          focus: "Belajar mandiri strategi algoritma dan persiapan kuis",
+          output: "Materi strategi algoritma dipahami, kuis siap",
+          duration: "4",
+        },
+        {
+          day: "Jumat",
+          focus: "Menyelesaikan tugas IMK dan belajar inheritance PBO",
+          output: "Tugas IMK selesai, memahami inheritance PBO",
+          duration: "4.5",
+        },
+      ],
+      achievements: [
+        "Berhasil menyelesaikan tugas kelompok dan praktikum tepat waktu",
+        "Memahami konsep dasar PBO dan algoritma greedy",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu ini berjalan lancar dengan fokus pada tugas kelompok dan pemahaman materi dasar.",
+      },
+      obstacles: {
+        akademik: "Kesulitan memahami beberapa konsep algoritma greedy",
+        teknis: "Tidak ada hambatan teknis yang signifikan",
+        pribadi:
+          "Manajemen waktu perlu ditingkatkan untuk menghindari tugas menumpuk",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil menyelesaikan tugas kelompok dan memahami konsep dasar PBO",
+        biggestMistake:
+          "Kurang mendalam dalam belajar algoritma greedy, perlu lebih banyak latihan",
+        nextStrategy:
+          "Alokasikan waktu lebih banyak untuk belajar algoritma dan latihan soal",
+      },
+      nextWeekPlan: [
+        "Menyelesaikan tugas individu dan kelompok tepat waktu",
+        "Memperdalam pemahaman algoritma greedy dan strategi algoritma lainnya",
+      ],
     },
   },
 ];
