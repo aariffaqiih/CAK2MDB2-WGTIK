@@ -4,7 +4,7 @@ const IDENTITY = {
   kelas: "PS1IF-12-REG06",
   bio: "Mahasiswa Teknik Informatika semester 4 yang sedang mendalami data science, machine learning, dan analisis data. Blog ini adalah catatan jujur perjalanan belajarku — target, capaian, kegagalan, dan refleksi",
   photo:
-    "https://media.licdn.com/dms/image/v2/D5603AQF_6_AR3OXybA/profile-displayphoto-scale_400_400/B56ZlSzn1HH8Ag-/0/1758030924397?e=1775692800&v=beta&t=mGwxVLsPyAj2A7UjrMRNRu1q5Ig5NxDz7zyhNIp7H4A",
+    "https://raw.githubusercontent.com/aariffaqiih/CAK2MDB2-WGTIK/refs/heads/main/img/ugly_man.JPG",
 };
 const JOURNALS = [
   {
@@ -2236,6 +2236,7 @@ const JOURNALS = [
       ],
     },
   },
+
   {
     id: "daily-2026-04-13",
     type: "daily",
@@ -2358,6 +2359,218 @@ const JOURNALS = [
           "Fokus pada algoritma A* dengan mempelajari contoh kasus dan implementasi kode untuk memperkuat pemahaman.",
         score: 8,
       },
+    },
+  },
+  {
+    id: "daily-2026-04-15",
+    type: "daily",
+    date: "15 April 2026",
+    dateSort: "2026-04-15",
+    daily: {
+      targets: ["Mengikuti matkul Strategi Algoritma"],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Mengetahui materi divide and conquer",
+          status: "✓",
+        },
+        {
+          time: "10:00 - 10:23",
+          activity: "Mengerjakan kuis divide and conquer",
+          output: "Mendapat nilai 100",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil memahami materi divide and conquer dan mendapatkan nilai sempurna di kuis.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Tetap konsisten dalam belajar dan gunakan waktu untuk memperdalam materi yang belum dipahami.",
+      reflection: {
+        learned:
+          "Memahami konsep divide and conquer dan penerapannya dalam algoritma.",
+        improve:
+          "Perbanyak latihan soal untuk memperkuat pemahaman dan implementasi divide and conquer.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-16",
+    type: "daily",
+    date: "16 April 2026",
+    dateSort: "2026-04-16",
+    daily: {
+      targets: [
+        "Mengikuti praktikum JarKom",
+        "Memahami konfigurasi DHCP, DNS, dan WEB Server",
+        "Memahami teori control plan dan data plan",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum JarKom",
+          output: "Mempraktikkan modul 5 konfigurasi DHCP, DNS dan WEB Server",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 15:30",
+          activity: "Kelas teori JarKom",
+          output:
+            "Mengetahui control plan, data plan, station manager, dan DHCP vs static",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil memahami konfigurasi DHCP, DNS, dan WEB Server serta teori control plan dan data plan.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lanjutkan latihan konfigurasi jaringan untuk memperkuat pemahaman.",
+      reflection: {
+        learned:
+          "Memahami perbedaan DHCP dan static IP serta konsep control plan dan data plan.",
+        improve:
+          "Perbanyak latihan konfigurasi jaringan untuk memperkuat pemahaman praktis.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-17",
+    type: "daily",
+    date: "17 April 2026",
+    dateSort: "2026-04-17",
+    daily: {
+      targets: [
+        "Mengikuti kelas teori PBO",
+        "Melakukan wawancara panitia market day",
+      ],
+      activities: [
+        {
+          time: "09:30 - 10:00",
+          activity: "Mata kuliah WGTIK",
+          output: "Lebih paham tentang esai dan tugas besar",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:00",
+          activity: "Kelas teori PBO",
+          output: "Mengetahui polymorphism dan type casting",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 19:45",
+          activity: "Wawancara panitia market day",
+          output: "Sudah selesai, tinggal menunggu hasil",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil memahami polymorphism dan type casting di PBO serta menyelesaikan wawancara panitia market day.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Tetap fokus pada tugas berikutnya dan gunakan waktu luang untuk review materi.",
+      reflection: {
+        learned:
+          "Memahami konsep polymorphism dan type casting di Java serta pentingnya persiapan wawancara.",
+        improve:
+          "Perbanyak latihan coding polymorphism untuk memperkuat pemahaman.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-04-17",
+    type: "weekly",
+    date: "Minggu ke-7 · 17-21 April 2026",
+    dateSort: "2026-04-17",
+    weekly: {
+      weekNumber: 7,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Belajar divide and conquer dan kuis strategi algoritma",
+          output: "Memahami divide and conquer, nilai kuis 100",
+          duration: "2.5",
+        },
+        {
+          day: "Selasa",
+          focus: "Praktikum JarKom dan teori DHCP vs static",
+          output: "Konfigurasi DHCP, DNS, dan WEB Server dipahami",
+          duration: "5",
+        },
+        {
+          day: "Rabu",
+          focus: "Teori PBO dan wawancara panitia market day",
+          output: "Memahami polymorphism dan type casting, wawancara selesai",
+          duration: "3",
+        },
+        {
+          day: "Kamis",
+          focus: "Eksperimen dataset pose dan kelas DKA",
+          output: "Dataset pose selesai dan memahami BFS, DFS, UCS",
+          duration: "6",
+        },
+        {
+          day: "Jumat",
+          focus: "Pembuatan script GDGoC dan UI Figma",
+          output: "Script semi final dan prototype UI selesai",
+          duration: "5",
+        },
+        {
+          day: "Sabtu",
+          focus: "Belajar mandiri greedy BFS dan A*",
+          output: "Greedy BFS dipahami lebih dalam",
+          duration: "2",
+        },
+        {
+          day: "Minggu",
+          focus: "Review materi dan istirahat",
+          output: "Rekap pembelajaran selama seminggu",
+          duration: "2",
+        },
+      ],
+      achievements: [
+        "Berhasil memahami divide and conquer dan mendapatkan nilai sempurna di kuis strategi algoritma.",
+        "Memahami konfigurasi DHCP, DNS, dan WEB Server serta teori control plan dan data plan.",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Minggu ini berjalan lancar dengan fokus pada teori dan wawancara.",
+      },
+      obstacles: {
+        akademik: "Kesulitan memahami beberapa konsep type casting di PBO",
+        teknis: "Tidak ada hambatan teknis yang signifikan",
+        pribadi:
+          "Manajemen waktu perlu ditingkatkan untuk menghindari tugas menumpuk",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil memahami divide and conquer dan mendapatkan nilai sempurna di kuis strategi algoritma.",
+        biggestMistake:
+          "Kurang mendalam dalam belajar type casting di PBO, perlu lebih banyak latihan.",
+        nextStrategy:
+          "Alokasikan waktu lebih banyak untuk belajar teori dan latihan soal.",
+      },
+      nextWeekPlan: [
+        "Menyelesaikan tugas individu dan kelompok tepat waktu.",
+        "Memperdalam pemahaman type casting dan polymorphism di PBO.",
+      ],
     },
   },
   {
