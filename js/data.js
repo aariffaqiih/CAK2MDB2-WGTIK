@@ -2236,7 +2236,6 @@ const JOURNALS = [
       ],
     },
   },
-
   {
     id: "daily-2026-04-13",
     type: "daily",
@@ -2493,10 +2492,10 @@ const JOURNALS = [
     },
   },
   {
-    id: "weekly-2026-04-17",
+    id: "weekly-2026-04-13",
     type: "weekly",
-    date: "Minggu ke-7 · 17-21 April 2026",
-    dateSort: "2026-04-17",
+    date: "Minggu ke-7 · 13-17 April 2026",
+    dateSort: "2026-04-13",
     weekly: {
       weekNumber: 7,
       activities: [
@@ -2529,18 +2528,6 @@ const JOURNALS = [
           focus: "Pembuatan script GDGoC dan UI Figma",
           output: "Script semi final dan prototype UI selesai",
           duration: "5",
-        },
-        {
-          day: "Sabtu",
-          focus: "Belajar mandiri greedy BFS dan A*",
-          output: "Greedy BFS dipahami lebih dalam",
-          duration: "2",
-        },
-        {
-          day: "Minggu",
-          focus: "Review materi dan istirahat",
-          output: "Rekap pembelajaran selama seminggu",
-          duration: "2",
         },
       ],
       achievements: [
@@ -2878,6 +2865,294 @@ const JOURNALS = [
       nextWeekPlan: [
         "Menyelesaikan tugas individu dan kelompok tepat waktu",
         "Memperdalam pemahaman algoritma greedy dan strategi algoritma lainnya",
+      ],
+    },
+  },
+  {
+    id: "daily-2026-04-27",
+    type: "daily",
+    date: "27 April 2026",
+    dateSort: "2026-04-27",
+    daily: {
+      targets: [
+        "Survey data mahasiswa via google form untuk testing model prediksi",
+        "Presentasi WGTIK",
+        "Bertemu user web GDGoC untuk meminta testimoni",
+      ],
+      activities: [
+        {
+          time: "09:30 - 09:50",
+          activity: "Membuat form survey",
+          output: "Link disebarluaskan",
+          status: "✓",
+        },
+        {
+          time: "10:00 - 11:30",
+          activity: "Merekam video presentasi semi final GDGoC",
+          output: "beberapa script sudah terekam",
+          status: "✓",
+        },
+        {
+          time: "11:30 - 12:30",
+          activity: "Persiapan presentasi WGTIK",
+          output: "Prototype siap dan menguasai slide",
+          status: "✓",
+        },
+        {
+          time: "12:45 - 13:00",
+          activity: "Presentasi WGTIK",
+          output: "Mendapat saran perbaikan",
+          status: "✓",
+        },
+        {
+          time: "15:40 - 16:15",
+          activity: "Bertemu dengan user",
+          output: "Mendapat testimoni dan saran",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan pembuatan dan penyebaran survey, merekam sebagian besar video presentasi GDGoC, melakukan presentasi WGTIK, serta mendapatkan feedback langsung dari user.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Pertahankan ritme eksekusi cepat dan lanjutkan iterasi berdasarkan feedback yang didapat.",
+      reflection: {
+        learned:
+          "Pentingnya validasi langsung ke user dan iterasi cepat dalam pengembangan produk.",
+        improve:
+          "Perlu lebih terstruktur dalam menyiapkan script agar proses recording lebih efisien.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-28",
+    type: "daily",
+    date: "28 April 2026",
+    dateSort: "2026-04-28",
+    daily: {
+      targets: [
+        "Melanjutkan progress video semi final GDGoC hingga siap submit",
+        "Mengikuti praktikum PBO dengan fokus memahami konsep lanjutan",
+        "Koordinasi kebutuhan market day dengan peserta",
+      ],
+      activities: [
+        {
+          time: "08:45 - 09:00",
+          activity:
+            "Menghubungi peserta market day yang akan menyewa tempat untuk jualan",
+          output: "10 kelompok sudah dihubungi",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 11:00",
+          activity: "Kelas praktikum PBO",
+          output:
+            "Mempraktikkan upcanting dan downcasting serta collection di java",
+          status: "✓",
+        },
+        {
+          time: "14:00 - 16:00",
+          activity: "Merekam video presentasi semi final GDGoC",
+          output: "Semua script sudah terekam",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 20:30",
+          activity: "Merekam demo project semi final GDGoC",
+          output: "Demo project sudah terekam",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil menyelesaikan seluruh rekaman video dan demo project GDGoC serta menjalankan koordinasi market day dengan baik.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Fokus pada penyelesaian akhir (finishing) agar tidak menumpuk di akhir waktu.",
+      reflection: {
+        learned:
+          "Eksekusi cepat tanpa banyak penundaan sangat membantu menyelesaikan banyak task dalam satu hari.",
+        improve:
+          "Perlu meningkatkan kualitas komunikasi agar koordinasi lebih efisien.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-29",
+    type: "daily",
+    date: "29 April 2026",
+    dateSort: "2026-04-29",
+    daily: {
+      targets: [
+        "Memahami konsep dynamic programming",
+        "Menyelesaikan modul 5 JarKom",
+        "Memastikan konfigurasi server berjalan dengan benar",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Mengetahui dasar dynamic programming",
+          status: "✓",
+        },
+        {
+          time: "10:50 - 12:00",
+          activity:
+            "Mengerjakan JarKom modul 5 konfigurasi DHCP, DNS dan WEB Server",
+          output: "Belum selesai",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 21:00",
+          activity:
+            "Mengerjakan JarKom modul 5 konfigurasi DHCP, DNS dan WEB Server",
+          output: "Selesai dan sudah dikumpulkan",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil memahami dasar dynamic programming dan menyelesaikan serta mengumpulkan modul 5 JarKom.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Gunakan pembagian waktu (break session) untuk menyelesaikan task yang kompleks.",
+      reflection: {
+        learned:
+          "Dynamic programming membutuhkan pemahaman pola dan latihan intensif.",
+        improve:
+          "Perlu memperbanyak latihan soal DP agar lebih terbiasa dengan variasi kasus.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-04-30",
+    type: "daily",
+    date: "30 April 2026",
+    dateSort: "2026-04-30",
+    daily: {
+      targets: [
+        "Memahami implementasi arsitektur client-server",
+        "Menyelesaikan editing video GDGoC",
+        "Mengikuti koordinasi market day",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum JarKom",
+          output: "Mempraktikkan arsitektur client-proxy-server python socket",
+          status: "✓",
+        },
+        {
+          time: "14:00 - 17:00",
+          activity: "Mengedit video semi final GDGoC",
+          output: "Video sudah diedit sebagian",
+          status: "✓",
+        },
+        {
+          time: "18:30 - 22:00",
+          activity: "Diskusi progres persiapan market day",
+          output: "Mengikuti diskusi dan menyimak progres teman-teman panitia",
+          status: "✓",
+        },
+        {
+          time: "22:30 - 23:45",
+          activity: "Mengedit video semi final GDGoC dan mengumpulkannya",
+          output: "Video sudah selesai dan dikumpulkan",
+          status: "✓",
+        },
+      ],
+      results:
+        "Berhasil memahami arsitektur client-proxy-server, menyelesaikan dan mengumpulkan video GDGoC, serta mengikuti diskusi market day.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Prioritaskan task dengan deadline terdekat untuk menghindari penumpukan.",
+      reflection: {
+        learned:
+          "Manajemen prioritas sangat penting ketika banyak task berjalan paralel.",
+        improve: "Kurangi multitasking berlebihan agar hasil lebih optimal.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-04-27",
+    type: "weekly",
+    date: "Minggu ke-9 · 27-30 April 2026",
+    dateSort: "2026-04-27",
+    weekly: {
+      weekNumber: 9,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Survey data, presentasi WGTIK, dan validasi user",
+          output: "Survey berjalan, presentasi selesai, mendapat feedback user",
+          duration: "5",
+        },
+        {
+          day: "Selasa",
+          focus: "Praktikum PBO dan rekaman video GDGoC",
+          output: "Memahami casting di Java, video dan demo selesai direkam",
+          duration: "5",
+        },
+        {
+          day: "Rabu",
+          focus: "Belajar dynamic programming dan menyelesaikan modul JarKom",
+          output: "Paham dasar DP, modul selesai dan dikumpulkan",
+          duration: "5",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktikum JarKom dan editing video GDGoC",
+          output: "Paham arsitektur jaringan dan video selesai",
+          duration: "6",
+        },
+        {
+          day: "Jumat",
+          focus: "Libur (tanggal merah) dan recovery",
+          output: "Istirahat dan recharge energi",
+          duration: "2",
+        },
+      ],
+      achievements: [
+        "Berhasil menyelesaikan seluruh kebutuhan semi final GDGoC",
+        "Berhasil menyelesaikan modul JarKom dan memahami dynamic programming",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Tanggal 1 Mei tanggal merah",
+      },
+      obstacles: {
+        akademik: "Pemahaman dynamic programming masih dasar",
+        teknis: "Tidak ada hambatan signifikan",
+        pribadi: "Cenderung multitasking berlebihan",
+      },
+      evaluation: {
+        bestSuccess: "Menyelesaikan seluruh deliverables GDGoC tepat waktu",
+        biggestMistake: "Kurang fokus saat belajar dynamic programming",
+        nextStrategy: "Fokus pada deep work dan kurangi multitasking",
+      },
+      nextWeekPlan: [
+        "Memperdalam dynamic programming dengan latihan soal",
+        "Mulai evaluasi dan pengembangan lanjutan project data",
       ],
     },
   },
