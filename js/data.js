@@ -3156,4 +3156,346 @@ const JOURNALS = [
       ],
     },
   },
+  {
+    id: "daily-2026-05-04",
+    type: "daily",
+    date: "4 Mei 2026",
+    dateSort: "2026-05-04",
+    daily: {
+      targets: [
+        "Menyelesaikan administrasi input TAK",
+        "Menyelesaikan modul 9 PBO",
+        "Belajar dasar data science",
+      ],
+      activities: [
+        {
+          time: "07:38 - 07:46",
+          activity: "Mengumpulkan sertifikat dan input TAK",
+          output: "Berhasil menyelesaikan input TAK",
+          status: "✓",
+        },
+        {
+          time: "07:47 - 09:04",
+          activity: "Mengerjakan modul 9 PBO",
+          output: "PDF selesai dan sudah dikumpulkan",
+          status: "✓",
+        },
+        {
+          time: "10:30 - 12:30",
+          activity: "Kelas teori DKA",
+          output: "Mengetahui materi reasoning dari cara AI berpikir",
+          status: "✓",
+        },
+        {
+          time: "12:00 - 13:10",
+          activity: "Memperbaiki error web GDGoC",
+          output: "Berhasil memperbaiki bug pada website GDGoC",
+          status: "✓",
+        },
+        {
+          time: "13:16 - 13:39",
+          activity: "Membaca buku tip & trik ChatGPT dan AI di perpustakaan",
+          output: "Menambah wawasan penggunaan AI dan ChatGPT",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum DKA",
+          output: "Mempraktikkan graf A* di Python dengan NetworkX",
+          status: "✓",
+        },
+        {
+          time: "18:42 - 19:13",
+          activity: "Membaca buku dasar data science karya Dr. Dedy Rahman",
+          output:
+            "Mengetahui penggunaan clustering, regression, classification, encoding, dan data scaling",
+          status: "✓",
+        },
+      ],
+      results:
+        "Semua target hari ini tercapai. Administrasi TAK berhasil diselesaikan, modul 9 PBO selesai dan dikumpulkan tepat waktu, serta pemahaman dasar data science bertambah dari bacaan mandiri dan praktik DKA.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Pertahankan ritme belajar terstruktur dengan membagi sesi teori dan praktik. Dokumentasikan poin penting dari materi reasoning, A*, dan data science agar mudah direview sebelum kuis atau ujian.",
+      reflection: {
+        learned:
+          "Memahami konsep reasoning dalam AI, praktik graf A* menggunakan Python dan NetworkX, serta mendapatkan gambaran awal konsep data science seperti clustering, regression, classification, encoding, dan scaling.",
+        improve:
+          "Konsisten membuat ringkasan harian setelah kelas agar materi teknis tidak cepat terlupakan dan bisa dipakai sebagai catatan belajar mingguan.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-05",
+    type: "daily",
+    date: "5 Mei 2026",
+    dateSort: "2026-05-05",
+    daily: {
+      targets: [
+        "Menyelesaikan bug database GDGoC",
+        "Review materi dynamic programming",
+      ],
+      activities: [
+        {
+          time: "04:04 - 04:38",
+          activity: "Memperbaiki bug database web GDGoC",
+          output: "Berhasil memperbaiki bug database website GDGoC",
+          status: "✓",
+        },
+        {
+          time: "07:30 - 09:30",
+          activity: "Mata kuliah IMK",
+          output: "Mengetahui internasionalisasi dan aksesibilitas pada UI",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum PBO",
+          output: "Mempraktikkan exception error handling di Java",
+          status: "✓",
+        },
+        {
+          time: "14:00 - 16:00",
+          activity: "Mengerjakan laprak PBO modul 10",
+          output: "PDF selesai dan sudah dikumpulkan",
+          status: "✓",
+        },
+        {
+          time: "16:00 - 16:15",
+          activity: "Input TAK",
+          output: "2 sertifikat berhasil diinput",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 20:30",
+          activity: "Review materi dynamic programming",
+          output:
+            "Memahami kembali konsep dynamic programming pada strategi algoritma",
+          status: "✓",
+        },
+      ],
+      results:
+        "Target utama hari ini tercapai penuh: bug database GDGoC selesai diperbaiki, aktivitas perkuliahan IMK dan praktikum PBO berjalan lancar, laprak modul 10 selesai dikumpulkan, serta review dynamic programming terlaksana.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lanjutkan pola eksekusi bertahap dari tugas teknis ke akademik seperti hari ini. Simpan catatan bug dan langkah perbaikannya sebagai referensi jika error serupa muncul kembali.",
+      reflection: {
+        learned:
+          "Memperdalam pemahaman aksesibilitas dan internasionalisasi UI di IMK, memahami praktik exception handling Java di PBO, serta menguatkan kembali pola berpikir dynamic programming.",
+        improve:
+          "Jaga konsistensi waktu istirahat setelah aktivitas dini hari agar energi belajar di malam hari tetap stabil tanpa menurunkan kualitas fokus.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-06",
+    type: "daily",
+    date: "6 Mei 2026",
+    dateSort: "2026-05-06",
+    daily: {
+      targets: [
+        "Memahami dynamic programming",
+        "Mencari media partner market day",
+        "Meningkatkan pemahaman strategi algoritma",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Mengetahui bottom-up dan top-down dynamic programming",
+          status: "✓",
+        },
+        {
+          time: "19:59 - 20:30",
+          activity: "Mencari nomor media partner untuk acara market day",
+          output:
+            "Mendapatkan kontak media partner untuk kebutuhan acara market day",
+          status: "✓",
+        },
+      ],
+      results:
+        "Target harian terpenuhi. Materi dynamic programming di kelas membantu memperjelas perbedaan bottom-up dan top-down, serta kebutuhan media partner untuk market day mulai terpetakan melalui kontak yang sudah didapat.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Lanjutkan follow-up ke kontak media partner yang sudah didapat dengan format pesan yang jelas agar proses koordinasi market day lebih cepat dan terukur.",
+      reflection: {
+        learned:
+          "Memahami alur penyelesaian dynamic programming dengan dua pendekatan utama (top-down memoization dan bottom-up tabulation) serta pentingnya komunikasi awal dalam koordinasi acara.",
+        improve:
+          "Tambahkan latihan soal dynamic programming di luar kelas supaya konsep tidak hanya dipahami secara teori tetapi juga terbiasa diterapkan.",
+        score: 8,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-07",
+    type: "daily",
+    date: "7 Mei 2026",
+    dateSort: "2026-05-07",
+    daily: {
+      targets: [
+        "Menyelesaikan modul jaringan komputer",
+        "Belajar konfigurasi web server",
+        "Meningkatkan pemahaman jaringan komputer",
+      ],
+      activities: [
+        {
+          time: "10:59 - 12:00",
+          activity: "Mengerjakan modul 9 Jarkom tentang web server",
+          output: "Mempraktikkan konfigurasi dan penggunaan web server",
+          status: "✓",
+        },
+      ],
+      results:
+        "Walaupun aktivitas utama hanya satu sesi, target inti hari ini tetap tercapai: modul 9 Jarkom selesai dikerjakan dan pemahaman konfigurasi web server meningkat melalui praktik langsung.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Pertahankan kebiasaan praktik langsung saat belajar jaringan dan tambahkan sesi review singkat untuk mencatat langkah konfigurasi agar mudah direplikasi.",
+      reflection: {
+        learned:
+          "Memahami proses dasar konfigurasi web server dan alur pengujian layanan setelah konfigurasi diterapkan pada lingkungan praktikum.",
+        improve:
+          "Perlu menambah durasi belajar mandiri jaringan komputer supaya tidak hanya mengandalkan satu sesi pengerjaan modul.",
+        score: 7,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-08",
+    type: "daily",
+    date: "8 Mei 2026",
+    dateSort: "2026-05-08",
+    daily: {
+      targets: [
+        "Mengikuti kuliah tamu WGTIK",
+        "Memahami konsep MVC pada PBO",
+        "Menambah wawasan IoT",
+      ],
+      activities: [
+        {
+          time: "08:55 - 11:00",
+          activity: "Kuliah tamu WGTIK",
+          output:
+            "Mengetahui penggunaan IoT di bidang kesehatan dan budi daya ikan",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:00",
+          activity: "Kelas teori PBO",
+          output: "Mengetahui dasar MVC dan mempraktikkan view dan controller",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 20:00",
+          activity: "Review materi MVC dan PBO",
+          output: "Memperdalam pemahaman konsep MVC pada Java",
+          status: "✓",
+        },
+      ],
+      results:
+        "Seluruh target hari ini tercapai. Kuliah tamu WGTIK menambah wawasan penerapan IoT, kelas PBO memperjelas konsep MVC, dan sesi review malam membantu memperkuat materi yang dipelajari.",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions:
+        "Terapkan hasil review ke latihan coding sederhana berbasis MVC agar pemahaman tidak berhenti di konsep, sekaligus memperkuat keterkaitan antara teori dan implementasi.",
+      reflection: {
+        learned:
+          "Memahami contoh implementasi IoT di bidang kesehatan dan budi daya ikan serta memperdalam struktur MVC di Java, khususnya peran view dan controller dalam pemisahan tanggung jawab aplikasi.",
+        improve:
+          "Perbanyak praktik membuat mini project MVC agar lebih terbiasa menghubungkan model, view, dan controller secara utuh.",
+        score: 9,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-05-04",
+    type: "weekly",
+    date: "Minggu ke-10 · 4-8 Mei 2026",
+    dateSort: "2026-05-04",
+    weekly: {
+      weekNumber: 10,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Administrasi akademik, PBO, DKA, dan penguatan data science",
+          output: "Input TAK selesai, modul 9 PBO terkumpul, praktik A* dan reading data science",
+          duration: "8",
+        },
+        {
+          day: "Selasa",
+          focus: "Perbaikan bug GDGoC, IMK, praktikum PBO, dan review DP",
+          output: "Bug database selesai, laprak PBO modul 10 terkumpul, DP direview",
+          duration: "8",
+        },
+        {
+          day: "Rabu",
+          focus: "Strategi Algoritma (dynamic programming) dan koordinasi market day",
+          output: "Memahami top-down vs bottom-up, kontak media partner didapat",
+          duration: "2",
+        },
+        {
+          day: "Kamis",
+          focus: "Praktik Jarkom web server",
+          output: "Modul 9 Jarkom selesai dengan konfigurasi web server",
+          duration: "1",
+        },
+        {
+          day: "Jumat",
+          focus: "Kuliah tamu WGTIK, teori PBO MVC, dan review materi",
+          output: "Wawasan IoT bertambah, konsep MVC dipahami lebih kuat",
+          duration: "6",
+        },
+      ],
+      achievements: [
+        "Menjaga konsistensi penyelesaian tugas teknis dan akademik selama lima hari berturut-turut tanpa hambatan berarti",
+        "Pemahaman materi inti meningkat di tiga area penting: dynamic programming, konfigurasi web server, dan konsep MVC",
+      ],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 42,
+        note: "Minggu ini stabil dan produktif. Tugas-tugas prioritas selesai tepat waktu serta ada peningkatan pemahaman materi inti. Fokus berikutnya adalah memperbanyak praktik terarah agar pemahaman konseptual berubah menjadi skill implementatif.",
+      },
+      obstacles: {
+        akademik:
+          "Pemahaman dynamic programming dan MVC sudah meningkat, tetapi masih perlu latihan soal dan implementasi lebih banyak agar benar-benar matang",
+        teknis: "Tidak ada hambatan teknis signifikan minggu ini",
+        pribadi:
+          "Durasi belajar di hari Kamis relatif singkat sehingga progres harian kurang maksimal dibanding hari lain",
+      },
+      evaluation: {
+        bestSuccess:
+          "Berhasil menjaga ritme konsisten: tugas selesai, perkuliahan aktif, dan materi inti tetap direview di luar kelas",
+        biggestMistake:
+          "Masih ada hari dengan intensitas belajar rendah sehingga kesempatan pendalaman materi belum dimanfaatkan optimal",
+        nextStrategy:
+          "Gunakan timeboxing harian untuk menyeimbangkan kuliah, tugas, dan latihan mandiri; targetkan minimal satu sesi latihan implementasi setiap hari",
+      },
+      nextWeekPlan: [
+        "Memperdalam dynamic programming melalui latihan soal bertingkat dan pembahasan solusi",
+        "Membuat mini project sederhana berbasis MVC serta melanjutkan tindak lanjut koordinasi media partner market day",
+      ],
+    },
+  },
 ];
