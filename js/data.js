@@ -3439,19 +3439,23 @@ const JOURNALS = [
         {
           day: "Senin",
           focus: "Administrasi akademik, PBO, DKA, dan penguatan data science",
-          output: "Input TAK selesai, modul 9 PBO terkumpul, praktik A* dan reading data science",
+          output:
+            "Input TAK selesai, modul 9 PBO terkumpul, praktik A* dan reading data science",
           duration: "8",
         },
         {
           day: "Selasa",
           focus: "Perbaikan bug GDGoC, IMK, praktikum PBO, dan review DP",
-          output: "Bug database selesai, laprak PBO modul 10 terkumpul, DP direview",
+          output:
+            "Bug database selesai, laprak PBO modul 10 terkumpul, DP direview",
           duration: "8",
         },
         {
           day: "Rabu",
-          focus: "Strategi Algoritma (dynamic programming) dan koordinasi market day",
-          output: "Memahami top-down vs bottom-up, kontak media partner didapat",
+          focus:
+            "Strategi Algoritma (dynamic programming) dan koordinasi market day",
+          output:
+            "Memahami top-down vs bottom-up, kontak media partner didapat",
           duration: "2",
         },
         {
@@ -3498,4 +3502,844 @@ const JOURNALS = [
       ],
     },
   },
+  {
+    id: "daily-2026-05-11",
+    type: "daily",
+    date: "11 Mei 2026",
+    dateSort: "2026-05-11",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 10:30",
+          activity: "Review ulang materi spring boot",
+          output: "Membuat materi spring boot untuk membantu presentasi",
+          status: "✓",
+        },
+        {
+          time: "10:30 - 12:30",
+          activity: "Kelas teori DKA",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "14:00 - 15:00",
+          activity: "Melanjutkan menulis materi spring boot",
+          output: "isi materi bertambah",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum DKA",
+          output: "Mempraktikkan library sympy untuk menulis notasi matematika",
+          status: "✓",
+        },
+        {
+          time: "19:30 - 20:00",
+          activity: "Memperbaiki kode spring boot",
+          output: "Program spring boot berjalan tanpa error",
+          status: "✓",
+        },
+      ],
+      results: "Maju ke depan mempraktikan 1 soal library sympy dan mendapat nilai plus dari asprak, XXXXXXXXXXXXXXXXXXXX",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-12",
+    type: "daily",
+    date: "12 Mei 2026",
+    dateSort: "2026-05-12",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum PBO",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Jatuh dari motor",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Jangan kebut-kebutan, hati-hati",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-13",
+    type: "daily",
+    date: "13 Mei 2026",
+    dateSort: "2026-05-13",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-14",
+    type: "daily",
+    date: "14 Mei 2026",
+    dateSort: "2026-05-14",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum JarKom",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 15:30",
+          activity: "Kelas teori JarKom",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-15",
+    type: "daily",
+    date: "15 Mei 2026",
+    dateSort: "2026-05-15",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 11:30",
+          activity: "Mata kuliah WGTIK",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:00",
+          activity: "Kelas teori PBO",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-05-11",
+    type: "weekly",
+    date: "Minggu ke-11 · 18-22 Mei 2026",
+    dateSort: "2026-05-18",
+    weekly: {
+      weekNumber: 11,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Selasa",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Rabu",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Kamis",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Jumat",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+      ],
+      achievements: ["Menyelesaikan tugas mingguan", "Memahami konsep materi baru"],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Tetap semangat dan jaga kesehatan",
+      },
+      obstacles: {
+        akademik: "Tugas cukup banyak dan menumpuk",
+        teknis: "Koneksi internet sesekali tidak stabil",
+        pribadi: "Kurang istirahat di akhir pekan",
+      },
+      evaluation: {
+        bestSuccess: "Semua tugas selesai tepat waktu",
+        biggestMistake: "Menunda pekerjaan di awal minggu",
+        nextStrategy: "Mencicil tugas lebih awal dan lebih fokus",
+      },
+      nextWeekPlan: ["Belajar materi baru", "Mengerjakan tugas sebelum deadline"],
+    },
+  },
+  {
+    id: "daily-2026-05-18",
+    type: "daily",
+    date: "18 Mei 2026",
+    dateSort: "2026-05-18",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "10:30 - 12:30",
+          activity: "Kelas teori DKA",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum DKA",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-19",
+    type: "daily",
+    date: "19 Mei 2026",
+    dateSort: "2026-05-19",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "07:30 - 09:30",
+          activity: "Mata kuliah IMK",
+          output: "Penilaian ",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum PBO",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-20",
+    type: "daily",
+    date: "20 Mei 2026",
+    dateSort: "2026-05-20",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-21",
+    type: "daily",
+    date: "21 Mei 2026",
+    dateSort: "2026-05-21",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum JarKom",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 15:30",
+          activity: "Kelas teori JarKom",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-22",
+    type: "daily",
+    date: "22 Mei 2026",
+    dateSort: "2026-05-22",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 11:30",
+          activity: "Mata kuliah WGTIK",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:00",
+          activity: "Kelas teori PBO",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-05-18",
+    type: "weekly",
+    date: "Minggu ke-12 · 25-29 Mei 2026",
+    dateSort: "2026-05-25",
+    weekly: {
+      weekNumber: 12,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Selasa",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Rabu",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Kamis",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Jumat",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+      ],
+      achievements: ["Menyelesaikan tugas mingguan", "Memahami konsep materi baru"],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Tetap semangat dan jaga kesehatan",
+      },
+      obstacles: {
+        akademik: "Tugas cukup banyak dan menumpuk",
+        teknis: "Koneksi internet sesekali tidak stabil",
+        pribadi: "Kurang istirahat di akhir pekan",
+      },
+      evaluation: {
+        bestSuccess: "Semua tugas selesai tepat waktu",
+        biggestMistake: "Menunda pekerjaan di awal minggu",
+        nextStrategy: "Mencicil tugas lebih awal dan lebih fokus",
+      },
+      nextWeekPlan: ["Belajar materi baru", "Mengerjakan tugas sebelum deadline"],
+    },
+  },
+  {
+    id: "daily-2026-05-25",
+    type: "daily",
+    date: "25 Mei 2026",
+    dateSort: "2026-05-25",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "10:30 - 12:30",
+          activity: "Kelas teori DKA",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "15:30 - 17:00",
+          activity: "Kelas praktikum DKA",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-26",
+    type: "daily",
+    date: "26 Mei 2026",
+    dateSort: "2026-05-26",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "07:30 - 09:30",
+          activity: "Mata kuliah IMK",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum PBO",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-27",
+    type: "daily",
+    date: "27 Mei 2026",
+    dateSort: "2026-05-27",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "08:00 - 09:30",
+          activity: "Mata kuliah Strategi Algoritma",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-28",
+    type: "daily",
+    date: "28 Mei 2026",
+    dateSort: "2026-05-28",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 12:00",
+          activity: "Kelas praktikum JarKom",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "13:00 - 15:30",
+          activity: "Kelas teori JarKom",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "daily-2026-05-29",
+    type: "daily",
+    date: "29 Mei 2026",
+    dateSort: "2026-05-29",
+    daily: {
+      targets: [
+        "Memahami materi perkuliahan dengan baik",
+        "Menyelesaikan tugas praktikum tepat waktu",
+        "Mengerjakan project akhir mata kuliah",
+      ],
+      activities: [
+        {
+          time: "09:30 - 11:30",
+          activity: "Mata kuliah WGTIK",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+        {
+          time: "14:30 - 17:00",
+          activity: "Kelas teori PBO",
+          output: "Memahami materi yang disampaikan",
+          status: "✓",
+        },
+        {
+          time: "19:00 - 21:00",
+          activity: "Belajar mandiri dan mengerjakan tugas",
+          output: "Progress tugas bertambah",
+          status: "✓",
+        },
+      ],
+      results: "Kegiatan berjalan lancar dan target hari ini tercapai dengan baik",
+      obstacles: {
+        teknis: "Tidak ada",
+        nonTeknis: "Tidak ada",
+        manajemenWaktu: "Aman",
+      },
+      solutions: "Meningkatkan fokus dan mengurangi distraksi",
+      reflection: {
+        learned: "Konsistensi dan manajemen waktu sangat penting untuk produktivitas",
+        improve: "Harus lebih disiplin dalam mengikuti jadwal yang telah dibuat",
+        score: 0,
+      },
+    },
+  },
+  {
+    id: "weekly-2026-05-25",
+    type: "weekly",
+    date: "Minggu ke-12 · 25-29 Mei 2026",
+    dateSort: "2026-05-25",
+    weekly: {
+      weekNumber: 0,
+      activities: [
+        {
+          day: "Senin",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Selasa",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Rabu",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Kamis",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+        {
+          day: "Jumat",
+          focus: "Mengerjakan tugas dan review materi",
+          output: "Progress tugas bertambah",
+          duration: "2 Jam",
+        },
+      ],
+      achievements: ["Menyelesaikan tugas mingguan", "Memahami konsep materi baru"],
+      semesterTarget: {
+        target:
+          "Mencapai IP >= 3,7 dengan memprioritaskan matkul PBO dan DKA sambil mempersiapkan diri sebagai data scientist yang berfokus pada pemahaman seperti over/underfitting, data leakage, teknik imputasi, serta metode evaluasi model yang tepat dan menghasilkan 2-3 portofolio end-to-end yang mencakup tahapan rumusan masalah, data preprocessing, eksplorasi data, pemodelan, evaluasi, hingga interpretasi hasil berbasis insight",
+        progress: 0,
+        note: "Tetap semangat dan jaga kesehatan",
+      },
+      obstacles: {
+        akademik: "Tugas cukup banyak dan menumpuk",
+        teknis: "Koneksi internet sesekali tidak stabil",
+        pribadi: "Kurang istirahat di akhir pekan",
+      },
+      evaluation: {
+        bestSuccess: "Semua tugas selesai tepat waktu",
+        biggestMistake: "Menunda pekerjaan di awal minggu",
+        nextStrategy: "Mencicil tugas lebih awal dan lebih fokus",
+      },
+      nextWeekPlan: ["Belajar materi baru", "Mengerjakan tugas sebelum deadline"],
+    },
+  }
 ];
